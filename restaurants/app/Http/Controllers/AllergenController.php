@@ -14,15 +14,15 @@ class AllergenController extends Controller
 {
     public function addAllergen(Request $request, $meal_id)
     {
-        $meal = Meal::find($meal_id);
+        $meal = Meal::findOrFail($meal_id);
 
-        $allergen = new Allergen;
+        $allergen = $request->input('allergen');
 
-        $allergen->meal_id = $meal_id;
-
-        $allergen->name = $request->input('allergen');
-
-        $allergen->save();
+        if($meal->allergens()->find($allergen) == null){
+            $meal->allergens()->attach($allergen);
+        } else {
+            session()->flash('duplicate', 'This allergen has already been listed');
+        }
        
         return redirect()->back();
     }
