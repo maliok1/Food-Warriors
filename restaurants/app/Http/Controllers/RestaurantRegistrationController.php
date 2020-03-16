@@ -35,6 +35,6 @@ class RestaurantRegistrationController extends Controller
             'email'=> $user->email,
             'password' =>$request->input('password')
         ]);
-        return redirect('/home');
+        return redirect('/');
     }
 }

@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/restaurant-registration', 'RestaurantRegistrationController@form');
 Route::post('/restaurant-registration', 'RestaurantRegistrationController@register');
 
-Route::get('/restaurants', 'RestaurantController@index');
+Route::get('/', 'RestaurantController@index');
 
 Route::post('/comment/{id}', 'CommentsController@store')->middleware('auth');
 Route::get('/restaurant/{id}', 'RestaurantController@show');
