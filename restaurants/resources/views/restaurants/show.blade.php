@@ -36,6 +36,8 @@
     <h5>Pick-up time</h5>
     <p>{{$meal->pickup_time}}</p>
 
+    <h3>{{$meal->allergen_id}}</h3>
+ @auth
 <!-- Add an allergen -->
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
@@ -46,9 +48,9 @@
           <input type="submit" value="submit allergen">
         </select>
       </form>
- 
+
     <!--Delete a meal  --> 
-    @auth
+   
       @if(auth()->user()->id === $restaurant->user_id)
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')

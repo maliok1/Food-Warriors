@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAllergenMenuTable extends Migration
+class CreateAllergenMealTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAllergenMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('allergen_menu', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('allergen_meal', function (Blueprint $table) {
+            $table->unsignedInteger('allergen_id');
+            $table->unsignedInteger('meal_id');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateAllergenMenuTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('allergen_menu');
+        Schema::dropIfExists('allergen_meal');
     }
 }
