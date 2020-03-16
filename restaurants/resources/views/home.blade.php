@@ -14,10 +14,10 @@
                         </div>
                     @endif
 
-                    {{Auth::user()->name}} is logged in!
-                    @if(Auth::user()->restaurant !== null)
-                        You are a manager of {{Auth::user()->restaurant->name}}
-                    @endif
+                    {{-- {{Auth::user()->name}} is logged in! --}}
+                    {{-- @if(Auth::user()->restaurant !== null)
+                        You are a manager of {{Auth::user()->restaurant->name}} --}}
+                   {{--  @endif --}}
                 </div>
             </div>
         </div>
