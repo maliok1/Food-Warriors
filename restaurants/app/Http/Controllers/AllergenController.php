@@ -26,4 +26,15 @@ class AllergenController extends Controller
        
         return redirect()->back();
     }
+
+    public function removeAllergen(Request $request, $meal_id)
+    {
+        $meal = Meal::findOrFail($meal_id);
+
+        $allergen = $request->input('allergen');
+
+        $meal->allergens()->detach($allergen);
+
+        return redirect()->back();
+    }
 }

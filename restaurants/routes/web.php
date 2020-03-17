@@ -42,4 +42,4 @@ Route::delete('/restaurant/{id}/delete', 'MealController@deleteMeal');
 //Allergen
 
 Route::post('/restaurant/add-allergen/{meal_id}', 'AllergenController@addAllergen');
- 
+Route::get('/restaurant/remove-allergen/{meal_id}', 'AllergenController@removeAllergen');
