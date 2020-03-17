@@ -35,9 +35,8 @@
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
     <p>{{$meal->pickup_time}}</p>
-
-<!-- Display an allergen -->
 @auth
+<!-- Display an allergen -->
     <h5>Allergens:</h5>
     @foreach($meal->allergens as $allergen)
       <li>{{$allergen->name}}</li>
@@ -48,6 +47,7 @@
         <input type="hidden" name="allergen" value={{$allergen->id}}> 
       </form>
     @endforeach
+    
 <!-- Add an allergen -->
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
@@ -68,7 +68,7 @@
           <input type="submit" value="delete">
         </form>
         @endif
-    @endauth    
+@endauth    
       <hr>
 
   @endforeach
