@@ -35,9 +35,20 @@
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
     <p>{{$meal->pickup_time}}</p>
+<!-- Display an allergen -->
+    <h5>Price</h5>
+    @foreach($meal->allergens as $allergen)
+      <li>{{$allergen->name}}</li>
 
-    <h3>{{$meal->allergen_id}}</h3>
+<!-- remove an allergen -->
+      <form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
+        @csrf 
+        <input type="submit" value="delete allergen">
+        <input type="hidden" name="allergen" value={{$allergen->id}}> 
+      </form>
+    @endforeach
  @auth
+
 <!-- Add an allergen -->
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
