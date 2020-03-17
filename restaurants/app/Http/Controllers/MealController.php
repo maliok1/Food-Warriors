@@ -34,6 +34,4 @@ class MealController extends Controller
         $meal->delete();
         return redirect()->back();
     }
-    
-    
 }
