@@ -15,7 +15,7 @@ class CreateAllergensTable extends Migration
     {
         Schema::create('allergens', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('meal_id');
+            $table->unsignedInteger('meal_id')->nullable;
             $table->string('name');
             $table->timestamps();
         });
