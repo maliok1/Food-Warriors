@@ -17,11 +17,12 @@
         <input type="text" name="description">
         <label for="">Price</label>
         <input type="number" name="price">
-        <label for="">Pick-up time</label>
-        <input type="text" name="pickup_time">
+        <label for="">Pick-up from</label>
+        <input type="time" name="pickup_time_start">
+        <label for="">to</label>
+        <input type="time" name="pickup_time_end">
         <input type="submit" value="submit">
       </form>
-
       @endif  
     @endauth
    <hr>
@@ -34,7 +35,7 @@
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
-    <p>{{$meal->pickup_time}}</p>
+    <p>{{$meal->pickup_time_start}} - {{$meal->pickup_time_end}}</p>
 @auth
 <!-- Display an allergen -->
     <h5>Allergens:</h5>

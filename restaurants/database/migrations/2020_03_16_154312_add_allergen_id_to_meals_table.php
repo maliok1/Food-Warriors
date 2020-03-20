@@ -15,7 +15,7 @@ class AddAllergenIdToMealsTable extends Migration
     {
         Schema::table('meals', function (Blueprint $table) 
         { 
-            $table->integer('allergen_id')->nullable;
+            $table->integer('allergen_id')->nullable();
         });
     }
     public function down()
