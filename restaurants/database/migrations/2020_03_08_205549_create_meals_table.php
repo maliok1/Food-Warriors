@@ -19,7 +19,8 @@ class CreateMealsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
-            $table->string('pickup_time');
+            $table->time('pickup_time_start');
+            $table->time('pickup_time_end');
            
             $table->timestamps();
         });

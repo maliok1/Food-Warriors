@@ -23,7 +23,8 @@ class MealController extends Controller
         $meal->name = $request->input('name');
         $meal->description = $request->input('description');
         $meal->price = $request->input('price');
-        $meal->pickup_time = $request->input('pickup_time');
+        $meal->pickup_time_start = $request->input('pickup_time_start');
+        $meal->pickup_time_end = $request->input('pickup_time_end');
         $meal->save();
 
         return redirect()->back();
