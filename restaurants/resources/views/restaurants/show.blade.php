@@ -35,7 +35,7 @@
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
-    <p>{{$meal->pickup_time_start}} - {{$meal->pickup_time_end}}</p>
+    <p>{{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 @auth
 <!-- Display an allergen -->
     <h5>Allergens:</h5>
