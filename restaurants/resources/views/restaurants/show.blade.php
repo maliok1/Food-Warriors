@@ -35,7 +35,9 @@
   @foreach($restaurant->meals as $meal)
     <h4>{{$meal->name}}</h4>
     <p>{{$meal->description}}</p>
-    <img src="{{$meal->image}}" alt="{{$meal->name}}">
+    @if($meal->image)
+        <img src="{{$meal->image}}" alt="{{$meal->name}}"> 
+    @endif
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
@@ -55,12 +57,8 @@
     
     <p>{{$meal->pickup_time}}</p>
 
-<!-- Reserve a meal -->
-    <form method="get" action="">
-      <button>Reserve</button>
-    </form>
-
 <!-- Add an allergen -->
+    @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
         <select name="allergen">
@@ -73,7 +71,7 @@
 
     <!--Delete a meal  --> 
    
-      @if(auth()->user()->id === $restaurant->user_id)
+      
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
@@ -81,14 +79,18 @@
         </form>
         @endif
 @endauth    
-      <hr>
-
+     
+  <!-- Reserve a meal -->
+  <form method="get" action="">
+      <button>Reserve</button>
+  </form>
+ <hr>
   @endforeach
-  <hr>
+ 
 <!-- Comments display -->
    <h3>Comments:</h3>
    @foreach($restaurant->comments as $comment)
-      Comment:
+    <hr>   Comment:
       <p>{{$comment->comment}}</p> 
       <p> By {{$comment->user->name}}</p>
       Created at: <br>

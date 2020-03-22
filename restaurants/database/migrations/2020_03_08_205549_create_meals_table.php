@@ -18,7 +18,7 @@ class CreateMealsTable extends Migration
             $table->unsignedInteger('restaurant_id');
             $table->string('name');
             $table->text('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('price');
             $table->time('pickup_time_start');
             $table->time('pickup_time_end');
