@@ -11,6 +11,7 @@ class Restaurant extends Model
         'name',
         'city',
         'description',
+        'image'
     ];
     
     public function user(){

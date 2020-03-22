@@ -24,7 +24,7 @@ class CommentsController extends Controller
         $comment->save();
         session()->flash('success_massage', 'Review saved.');
 
-        return redirect()-> action('RestaurantRegistrationController@show', $restaurant->id);
+        return redirect()-> back();
     }
 
     public function deleteComment($id){

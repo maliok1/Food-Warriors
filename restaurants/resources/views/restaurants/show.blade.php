@@ -2,19 +2,22 @@
 
 @section('restaurant detailed')
   <h2>{{$restaurant->name}}</h2> 
+  <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}"> 
    <p>{{$restaurant->city}}</p>
    <p>{{$restaurant->description}}</p>
 
-<!-- A form for a meal description -->
+<!-- A form for to create a meal -->
     <hr>
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
-      <form action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post">
+      <form action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
         <label for="">Name of the package</label>
         <input type="text" name="name">
         <label for="">Describe your package</label>
         <input type="text" name="description">
+        <label for="">Image</label><br>
+        <input type="file" name="image_file">
         <label for="">Price</label>
         <input type="number" name="price">
         <label for="">Pick-up from</label>
@@ -32,6 +35,7 @@
   @foreach($restaurant->meals as $meal)
     <h4>{{$meal->name}}</h4>
     <p>{{$meal->description}}</p>
+    <img src="{{$meal->image}}" alt="{{$meal->name}}">
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
@@ -103,7 +107,6 @@
         <textarea name="reply" id="" cols="10" rows="2"></textarea>
         <input type="submit" value="reply">
       </form>
-      <hr>
       @endif
    @endauth  
 <!--Delete a comment  -->
@@ -115,8 +118,8 @@
         <input type="submit" value="delete">
       </form>
       @endif
-  @endauth    
       <hr>
+  @endauth    
     @endforeach
 <!-- Leave a comment -->
    @auth
