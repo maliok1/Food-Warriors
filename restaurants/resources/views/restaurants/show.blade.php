@@ -41,10 +41,12 @@
     <h5>Pick-up time</h5>
     <p>{{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 @auth
+
 <!-- Display an allergen -->
     <h5>Allergens:</h5>
     @foreach($meal->allergens as $allergen)
       <li>{{$allergen->name}}</li>
+
 <!-- remove an allergen -->
       <form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
         @csrf 
@@ -54,11 +56,6 @@
     @endforeach
     
     <p>{{$meal->pickup_time}}</p>
-
-<!-- Reserve a meal -->
-    <form method="get" action="">
-      <button>Reserve</button>
-    </form>
 
 <!-- Add an allergen -->
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
@@ -80,10 +77,24 @@
           <input type="submit" value="delete">
         </form>
         @endif
-@endauth    
-      <hr>
+@endauth   
+
+      <!-- Reserve a meal -->
+      <form >
+          <button>Reserve</button>
+      </form> 
+
+
+      <!-- Reserve a meal -->
+      @guest
+          <form method="get" action="{{ route('login')}}">
+              <button>Reserve</button>
+          </form> 
+      @endguest
+  <hr>
 
   @endforeach
+  
   <hr>
 <!-- Comments display -->
    <h3>Comments:</h3>
