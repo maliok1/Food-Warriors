@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+<style>
+#map {
+    height: 400px;
+    width: 80%;
+    margin-left: 5em;
+    margin-bottom: 2em;
+}
+</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
