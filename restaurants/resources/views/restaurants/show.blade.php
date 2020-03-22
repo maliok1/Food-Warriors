@@ -2,6 +2,7 @@
 
 @section('restaurant detailed')
   <h2>{{$restaurant->name}}</h2> 
+  <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}"> 
    <p>{{$restaurant->city}}</p>
    <p>{{$restaurant->description}}</p>
 

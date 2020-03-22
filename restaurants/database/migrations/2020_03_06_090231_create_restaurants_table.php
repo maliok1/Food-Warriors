@@ -20,6 +20,8 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('city');
             $table->text('description');
+            $table->string('image');
+            
             
             $table->timestamps();
         });

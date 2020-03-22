@@ -8,7 +8,7 @@
                 <div class="card-header">Restaurant Registration</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ action ('RestaurantRegistrationController@register') }}">
+                    <form method="POST" action="{{ action ('RestaurantRegistrationController@register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -59,11 +59,16 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                            <input type="text" name="restaurant_name" placeholder="Name of you restaurant">
+                            <input type="text" name="restaurant_city" placeholder="City"> 
+                            <br>
+                            <label for="">add an image: </label>
+                            <input type="file" name="image_file">
+                            <br>
+                            <label for="">Describe your restaurant</label>
+                            <br>
+                            <textarea name="restaurant_description" id="" cols="20" rows="5"></textarea>
                         </div>
-                        <input type="text" name="restaurant_name" placeholder="Name of you restaurant">
-                        <input type="text" name="restaurant_city" placeholder="City">
-                        <textarea name="restaurant_description" id="" cols="30" rows="10" placeholder="Describe your restaurant"></textarea>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="button" onclick="location.href='{{ url('/register') }}'" class="btn btn-primary">

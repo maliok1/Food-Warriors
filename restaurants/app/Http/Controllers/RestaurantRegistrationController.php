@@ -10,6 +10,7 @@ use App\CommentReply;
 use App\Meal;
 use App\Allergen;
 
+
 class RestaurantRegistrationController extends Controller
 {
     public function form()
@@ -17,18 +18,24 @@ class RestaurantRegistrationController extends Controller
         return view('auth.restaurant-register');
     }
     public function register(Request $request)
-    {
-        //validate
+    {    
+        
         $user = User::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
             'password'=>bcrypt($request->input('password')),
         ]);
-        Restaurant::create([
+        if ($file = $request->file('image_file')) {
+                    $original_name = $file->getClientOriginalName();
+                    
+                    $file->storeAs('restaurants',   $original_name,  'uploads');
+                }
+        $restaurant = Restaurant::create([
             'user_id' => $user->id,
             'name'=>$request->input('restaurant_name'),
             'city' => $request->input('restaurant_city'),
-            'description' =>$request->input('restaurant_description')
+            'description' =>$request->input('restaurant_description'),
+            'image' => '/uploads/restaurants/'.$original_name
         ]);
 
         Auth::attempt([
