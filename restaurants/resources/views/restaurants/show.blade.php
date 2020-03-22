@@ -49,6 +49,13 @@
       </form>
     @endforeach
     
+    <p>{{$meal->pickup_time}}</p>
+
+<!-- Reserve a meal -->
+    <form method="get" action="">
+      <button>Reserve</button>
+    </form>
+
 <!-- Add an allergen -->
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf

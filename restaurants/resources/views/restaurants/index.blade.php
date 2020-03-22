@@ -3,7 +3,8 @@
 @section('list of restaurants') 
     <h1>Restaurants:</h1>
     @foreach($restaurants as $restaurant)
-      <h4>{{$restaurant->name}}</h4>
+      <a href="/restaurant/{{$restaurant->id}}">{{$restaurant->name}}</a>
       <h5>{{$restaurant->city}}</h5>
     @endforeach
 @endsection
+
