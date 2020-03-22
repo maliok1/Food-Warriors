@@ -110,7 +110,6 @@
           <input type="submit" value="delete">
         </form>
         @endif
-<<<<<<< HEAD
 @endauth   
 
       <!-- Reserve a meal -->
@@ -130,17 +129,7 @@
   @endforeach
   
   <hr>
-=======
-@endauth    
-     
-  <!-- Reserve a meal -->
-  <form method="get" action="">
-      <button>Reserve</button>
-  </form>
- <hr>
-  @endforeach
- 
->>>>>>> Nastja
+
 <!-- Comments display -->
    <h3>Comments:</h3>
    @foreach($restaurant->comments as $comment)
