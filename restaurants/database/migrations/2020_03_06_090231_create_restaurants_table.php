@@ -19,6 +19,9 @@ class CreateRestaurantsTable extends Migration
 
             $table->string('name');
             $table->string('city');
+            $table->string('address_address')->nullable();
+            $table->double('address_latitude')->nullable();
+            $table->double('address_longitude')->nullable();
             $table->text('description');
             $table->string('image')->nullable();
             
