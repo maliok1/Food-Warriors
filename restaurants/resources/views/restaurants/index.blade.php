@@ -1,5 +1,14 @@
 @extends ('layouts.app')
 
+<!-- Go to your restaurant button-->
+
+@if(auth()->user()->id === $restaurant->user_id)
+        <form method="get" action="">
+          @csrf
+          <button>My restaurant</button>
+        </form> 
+      @endif
+
 @section('list of restaurants') 
     <h1>Restaurants:</h1>
     @foreach($restaurants as $restaurant)
