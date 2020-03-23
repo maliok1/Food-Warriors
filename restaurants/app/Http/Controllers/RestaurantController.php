@@ -16,16 +16,26 @@ class RestaurantController extends Controller{
     return view('restaurants.index',compact('restaurants'));
 }
 
-public function show($id) 
-{
-    $restaurant = Restaurant::findOrFail($id);
-    $user = User::all();
-    $comments = Comment::all();
-    $replies = CommentReply::all();
-    $meals = Meal::all();
-    $allergens = Allergen::all();
-    return view('restaurants.show', compact('restaurant', 'user','id', 'comments', 'replies', 'meals', 'allergens'));
+  public function show($id) 
+  {
+      $restaurant = Restaurant::findOrFail($id);
+      $user = User::all();
+      $comments = Comment::all();
+      $replies = CommentReply::all();
+      $meals = Meal::all();
+      $allergens = Allergen::all();
+      return view('restaurants.show', compact('restaurant', 'user','id', 'comments', 'replies', 'meals', 'allergens'));
 
-}
+  }
+
+  public function search(Request $request){
+    
+      $q = $request->input( 'q' );
+      $restaurant = Restaurant::where('name','LIKE','%'.$q.'%')->get();
+      if(count($restaurant) > 0)
+          return view('restaurants/search-results')->withDetails($restaurant)->withQuery( $q );
+      else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
+  }
+
 }
 

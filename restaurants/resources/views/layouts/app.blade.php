@@ -33,7 +33,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                    <form action="/search" method="POST" role="search">
+                        {{ csrf_field() }}
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="q"
+                                placeholder="Search restaurants"> <span class="input-group-btn">
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-search">Search</span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -78,6 +88,8 @@
             @yield('list of restaurants')
 
             @yield('restaurant detailed')
+
+            @yield('restaurants search results')
         </main>
     </div>
 </body>
