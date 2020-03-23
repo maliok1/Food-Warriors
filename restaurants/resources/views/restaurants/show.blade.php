@@ -26,6 +26,14 @@
         <input type="time" name="pickup_time_end">
         <input type="submit" value="submit">
       </form>
+
+      @if($errors->any())
+          <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+                  <p>{{ $error }}</p>
+              @endforeach
+          </div>
+      @endif
       @endif  
     @endauth
    <hr>

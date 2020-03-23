@@ -25,7 +25,7 @@ class MealController extends Controller
             'pickup_time_end' => 'required',
             'image' => 'nullable'
         ]);
-
+        
         
         $meal = new Meal;
         if ($file = $request->file('image_file')) {

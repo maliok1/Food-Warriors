@@ -15,12 +15,14 @@
           </thead>
           <tbody>
               @foreach($details as $restaurant)
+              
               <tr>
-                  <td>{{$restaurant->name}}</td>
+                  <td><a href="/restaurant/{{$restaurant->id}}">{{$restaurant->name}}</a></td>
                   <td>{{$restaurant->city}}</td>
                   <td>{{$restaurant->description}}</td>
                   <td><img src="{{$restaurant->image}}" alt="{{$restaurant->name}}"></td>
               </tr>
+            
               @endforeach
           </tbody>
       </table>
