@@ -4,14 +4,13 @@
   <div class="container">
       @if(isset($details))
           <p> The Search results for your query <b> {{ $query }} </b> are :</p>
-      <h2>Sample User details</h2>
+      <h2>Restaurants you have been searching for:</h2>
       <table class="table table-striped">
           <thead>
               <tr>
                   <th>Name</th>
                   <th>City</th>
                   <th>Description</th>
-
               </tr>
           </thead>
           <tbody>
