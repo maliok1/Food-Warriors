@@ -71,7 +71,7 @@
         </select>
       </form>
 
-      <div id="map"></div>
+      <!-- <div id="map"></div>
     <script>
       function initMap() {
           const position = {lat: 50.092282, lng: 14.497125}; // there we should provide location from DB (so it means when a restaurant is registering they should input LAT and LNG) or some idea how to do it eaisier?
@@ -98,9 +98,9 @@
       }
   </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
-  type="text/javascript"></script>
- 
-  
+  type="text/javascript"></script> -->
+      
+
     <!--Delete a meal  --> 
    
       

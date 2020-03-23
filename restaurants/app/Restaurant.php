@@ -10,6 +10,9 @@ class Restaurant extends Model
         'user_id',
         'name',
         'city',
+        'address_address',
+        'address_latitude',
+        'address_longitude',
         'description',
         'image'
     ];
