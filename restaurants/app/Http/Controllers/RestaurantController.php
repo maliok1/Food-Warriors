@@ -11,12 +11,15 @@ use App\Meal;
 use App\Allergen;
 
 class RestaurantController extends Controller{
-  public function index(){
+  public function index($id){
     $restaurants = Restaurant::all();
-    return view('restaurants.index',compact('restaurants'));
+    $restaurant = Restaurant::findOrFail($id);
+    $user = User::all();
+    return view('restaurants.index',compact('restaurants', 'restaurant', 'user', 'id'));
 }
 
   public function show($id) 
+<<<<<<< HEAD
   {
       $restaurant = Restaurant::findOrFail($id);
       $user = User::all();
@@ -36,6 +39,16 @@ class RestaurantController extends Controller{
           return view('restaurants/search-results')->withDetails($restaurant)->withQuery( $q );
       else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
   }
+=======
+{
+    $restaurant = Restaurant::findOrFail($id);
+    $user = User::all();
+    $comments = Comment::all();
+    $replies = CommentReply::all();
+    $meals = Meal::all();
+    $allergens = Allergen::all();
+    return view('restaurants.show', compact('restaurant', 'user','id', 'comments', 'replies', 'meals', 'allergens'));
+>>>>>>> michaela
 
 }
 
