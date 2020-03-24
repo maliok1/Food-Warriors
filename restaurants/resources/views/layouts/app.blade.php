@@ -102,10 +102,11 @@
             @yield('restaurant detailed')
 
             @yield('restaurants search results')
+            
             @yield('user page')
 
             @yield('cart')
-            
+
             @yield('scripts')
         </main>
     </div>

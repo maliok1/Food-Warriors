@@ -59,6 +59,7 @@ Route::post('/search', 'RestaurantController@search');
 
 
 //Users
+Route::get('/users/{path?}', 'UserController@index');
 
 
-Route::get('/users/{user}', 'UserController@index');
+Route::view('/?{path}', 'app' );

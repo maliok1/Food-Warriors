@@ -1,6 +1,6 @@
 @extends ('layouts.app')
 
 @section('user page') 
-    {{$user->name}}
-    {{dd($user)}}
+    <div id="root"></div>
+    
 @endsection
