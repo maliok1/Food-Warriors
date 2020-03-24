@@ -26,6 +26,14 @@
         <input type="time" name="pickup_time_end">
         <input type="submit" value="submit">
       </form>
+
+      @if($errors->any())
+          <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+                  <p>{{ $error }}</p>
+              @endforeach
+          </div>
+      @endif
       @endif  
     @endauth
    <hr>
@@ -35,7 +43,9 @@
   @foreach($restaurant->meals as $meal)
     <h4>{{$meal->name}}</h4>
     <p>{{$meal->description}}</p>
-    <img src="{{$meal->image}}" alt="{{$meal->name}}">
+    @if($meal->image)
+        <img src="{{$meal->image}}" alt="{{$meal->name}}"> 
+    @endif
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
     <h5>Pick-up time</h5>
@@ -58,6 +68,7 @@
     <p>{{$meal->pickup_time}}</p>
 
 <!-- Add an allergen -->
+    @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
         <select name="allergen">
@@ -68,7 +79,7 @@
         </select>
       </form>
 
-      <div id="map">
+      <!-- <div id="map"></div>
     <script>
       function initMap() {
           const position = {lat: 50.092282, lng: 14.497125}; // there we should provide location from DB (so it means when a restaurant is registering they should input LAT and LNG) or some idea how to do it eaisier?
@@ -95,12 +106,12 @@
       }
   </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
-  type="text/javascript"></script>
-      </div>
-  
+  type="text/javascript"></script> -->
+      
+
     <!--Delete a meal  --> 
    
-      @if(auth()->user()->id === $restaurant->user_id)
+      
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
@@ -129,10 +140,11 @@
   @endforeach
   
   <hr>
+
 <!-- Comments display -->
    <h3>Comments:</h3>
    @foreach($restaurant->comments as $comment)
-      Comment:
+    <hr>   Comment:
       <p>{{$comment->comment}}</p> 
       <p> By {{$comment->user->name}}</p>
       Created at: <br>
