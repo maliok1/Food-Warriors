@@ -5,6 +5,14 @@
 @section('list of restaurants') 
 
    <!-- Go to your restaurant button-->
+   
+  @auth 
+    @foreach($restaurants as $restaurant)
+      @if(auth()->user()->id === $restaurant->user_id)
+             <a href="restaurant/{{$restaurant->id}}">Go to my restaurant</a>
+      @endif
+    @endforeach 
+  @endauth
 
     <h1>Restaurants:</h1>
 

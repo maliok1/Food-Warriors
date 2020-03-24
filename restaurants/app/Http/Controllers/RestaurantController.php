@@ -13,8 +13,9 @@ use App\Allergen;
 class RestaurantController extends Controller{
   public function index(){
     $restaurants = Restaurant::all();
-    return view('restaurants.index',compact('restaurants'));
-}
+    $users = User::all();
+    return view('restaurants.index',compact('restaurants', 'users'));
+  }
 
   public function show($id) 
   {
@@ -36,5 +37,11 @@ class RestaurantController extends Controller{
           return view('restaurants/search-results')->withDetails($restaurant)->withQuery( $q );
       else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
   }
+
+  public function cart() {
+
+    return view('restaurants.cart');
+  }
+
 }
 

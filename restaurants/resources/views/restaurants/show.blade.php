@@ -107,7 +107,6 @@
   </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
   type="text/javascript"></script> -->
-      
 
     <!--Delete a meal  --> 
    
@@ -121,19 +120,13 @@
 
     <!-- Reserve a meal -->
       @if(auth()->user()->id !== $restaurant->user_id)
-        <form method="get" action="">
-          @csrf
-          <button>Reserve</button>
-        </form> 
+          <a href="/cart">Reserve meal</a>    
       @endif
 @endauth   
 
     <!-- Reserve a meal -> log in -->
         @guest
-          <form method="get" action="{{ route('login')}}">
-            @csrf
-              <button>Reserve</button>
-          </form>  
+          <a href="/login">Reserve meal</a>
         @endguest
   <hr>
 
