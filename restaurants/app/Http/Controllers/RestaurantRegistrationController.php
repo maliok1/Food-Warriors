@@ -9,6 +9,7 @@ use App\Comment;
 use App\CommentReply;
 use App\Meal;
 use App\Allergen;
+use Validator;
 
 
 class RestaurantRegistrationController extends Controller
@@ -17,14 +18,22 @@ class RestaurantRegistrationController extends Controller
     {
         return view('auth.restaurant-register');
     }
+   
+    
+     
     public function register(Request $request)
-    {    
-        
+    {     
+        $this->validate($request, [
+            'name' => 'required|string|max:255|unique:users,name',
+            'email' => 'required|min:8'
+        ]); 
+
         $user = User::create([
             'name'=>$request->input('name'),
             'email'=>$request->input('email'),
             'password'=>bcrypt($request->input('password')),
         ]);
+
         if ($file = $request->file('image_file')) {
                     $original_name = $file->getClientOriginalName();
                     

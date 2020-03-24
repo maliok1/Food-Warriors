@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,10 @@ Route::post('/comment/{id}/reply', 'CommentReplyController@store')->middleware('
 Route::post('/restaurant/{id}/meal', 'MealController@storeMeal');
 Route::delete('/restaurant/{id}/delete', 'MealController@deleteMeal');
 
+// Cart
+
+Route::get('/cart', 'RestaurantController@cart');
+
 
 //Allergen
 
@@ -51,3 +56,9 @@ Route::get('/restaurant/remove-allergen/{meal_id}', 'AllergenController@removeAl
 // Search
 
 Route::post('/search', 'RestaurantController@search');
+
+
+//Users
+
+
+Route::get('/users/{user}', 'UserController@index');
