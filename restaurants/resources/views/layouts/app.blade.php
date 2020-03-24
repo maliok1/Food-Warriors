@@ -98,6 +98,8 @@
             @yield('restaurant detailed')
 
             @yield('restaurants search results')
+            @yield('user page')
+            
         </main>
     </div>
 </body>

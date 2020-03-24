@@ -48,3 +48,9 @@ Route::get('/restaurant/remove-allergen/{meal_id}', 'AllergenController@removeAl
 // Search
 
 Route::post('/search', 'RestaurantController@search');
+
+
+//Users
+
+
+Route::get('/users/{user}', 'UserController@index');
