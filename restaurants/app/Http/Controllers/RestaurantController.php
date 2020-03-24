@@ -11,12 +11,14 @@ use App\Meal;
 use App\Allergen;
 
 class RestaurantController extends Controller{
-  public function index(){
+  public function index($id){
     $restaurants = Restaurant::all();
-    return view('restaurants.index',compact('restaurants'));
+    $restaurant = Restaurant::findOrFail($id);
+    $user = User::all();
+    return view('restaurants.index',compact('restaurants', 'restaurant', 'user', 'id'));
 }
 
-public function show($id) 
+  public function show($id) 
 {
     $restaurant = Restaurant::findOrFail($id);
     $user = User::all();

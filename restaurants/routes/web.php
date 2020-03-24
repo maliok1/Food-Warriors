@@ -28,6 +28,8 @@ Route::get('/', 'RestaurantController@index')->name('home');
 Route::post('/comment/{id}', 'CommentsController@store')->middleware('auth');
 Route::get('/restaurant/{id}', 'RestaurantController@show');
 
+
+
 Route::delete('/comment/{id}/delete', 'CommentsController@deleteComment')->middleware('auth');
 
 Route::post('/comment/{id}/reply', 'CommentReplyController@store')->middleware('auth');
