@@ -36,6 +36,5 @@ class RestaurantController extends Controller{
           return view('restaurants/search-results')->withDetails($restaurant)->withQuery( $q );
       else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
   }
-
 }
 

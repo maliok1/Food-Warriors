@@ -22,10 +22,13 @@ Auth::routes();
 Route::get('/restaurant-registration', 'RestaurantRegistrationController@form');
 Route::post('/restaurant-registration', 'RestaurantRegistrationController@register');
 
-Route::get('/', 'RestaurantController@index')->name('home');;
+Route::get('/', 'RestaurantController@index')->name('home');
+
 
 Route::post('/comment/{id}', 'CommentsController@store')->middleware('auth');
 Route::get('/restaurant/{id}', 'RestaurantController@show');
+
+
 
 Route::delete('/comment/{id}/delete', 'CommentsController@deleteComment')->middleware('auth');
 
