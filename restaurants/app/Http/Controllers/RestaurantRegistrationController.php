@@ -34,6 +34,9 @@ class RestaurantRegistrationController extends Controller
             'user_id' => $user->id,
             'name'=>$request->input('restaurant_name'),
             'city' => $request->input('restaurant_city'),
+            'address_address' => $request->input('address_address'),
+            'address_latitude' => $request->input('address_latitude'),
+            'address_longitude' => $request->input('address_longitude'),
             'description' =>$request->input('restaurant_description'),
             'image' => '/uploads/restaurants/'.$original_name
         ]);

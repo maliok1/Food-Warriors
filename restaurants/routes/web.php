@@ -46,3 +46,8 @@ Route::delete('/restaurant/{id}/delete', 'MealController@deleteMeal');
 
 Route::post('/restaurant/add-allergen/{meal_id}', 'AllergenController@addAllergen');
 Route::get('/restaurant/remove-allergen/{meal_id}', 'AllergenController@removeAllergen');
+
+
+// Search
+
+Route::post('/search', 'RestaurantController@search');

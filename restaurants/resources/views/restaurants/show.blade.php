@@ -106,9 +106,21 @@
       }
   </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
+<<<<<<< HEAD
   type="text/javascript"></script> -->
       
 
+{{-- =======
+<<<<<<< HEAD
+  type="text/javascript"></script> -->
+      
+
+=======
+  type="text/javascript"></script>
+      </div>
+  
+>>>>>>> michaela
+>>>>>>> master --}}
     <!--Delete a meal  --> 
    
       

@@ -16,18 +16,25 @@ class MealController extends Controller
 
     public function storeMeal(Request $request, $restaurant_id){
         $restaurant = Restaurant::findOrFail($restaurant_id);
-
+        
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'pickup_time_start' => 'required',
+            'pickup_time_end' => 'required',
+            'image' => 'nullable'
+        ]);
+        
+        
+        $meal = new Meal;
         if ($file = $request->file('image_file')) {
             $original_name = $file->getClientOriginalName();
-            
             $file->storeAs('meals',   $original_name,  'uploads');
+            $meal->image = '/uploads/meals/'.$original_name;
         }
 
-
-
-
-
-        $meal = new Meal;
+        
 
         $meal->restaurant_id = $restaurant_id;
         $meal->name = $request->input('name');
@@ -35,7 +42,7 @@ class MealController extends Controller
         $meal->price = $request->input('price');
         $meal->pickup_time_start = $request->input('pickup_time_start');
         $meal->pickup_time_end = $request->input('pickup_time_end');
-        $meal->image = '/uploads/meals/'.$original_name;
+       
         $meal->save();
 
         return redirect()->back();

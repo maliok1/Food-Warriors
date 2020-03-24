@@ -20,7 +20,7 @@
       @if($restaurant->image)
         <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}"> 
       @endif
-     
+     <br>
     @endforeach
 @endsection
 

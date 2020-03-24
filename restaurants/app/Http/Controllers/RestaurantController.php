@@ -17,6 +17,10 @@ class RestaurantController extends Controller{
 }
 
   public function show($id) 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
   {
       $restaurant = Restaurant::findOrFail($id);
       $user = User::all();
@@ -36,6 +40,19 @@ class RestaurantController extends Controller{
           return view('restaurants/search-results')->withDetails($restaurant)->withQuery( $q );
       else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
   }
+<<<<<<< HEAD
+=======
+=======
+{
+    $restaurant = Restaurant::findOrFail($id);
+    $user = User::all();
+    $comments = Comment::all();
+    $replies = CommentReply::all();
+    $meals = Meal::all();
+    $allergens = Allergen::all();
+    return view('restaurants.show', compact('restaurant', 'user','id', 'comments', 'replies', 'meals', 'allergens'));
+>>>>>>> michaela
+>>>>>>> master
 
 }
 
