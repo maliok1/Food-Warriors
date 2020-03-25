@@ -59,25 +59,48 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                            <input type="text" name="restaurant_name" placeholder="Name of you restaurant">
-                            <input type="text" name="restaurant_city" placeholder="City">
-<div class="form-group">
-    <label for="address_address">Address</label>
-    <input type="text" id="address-input" name="address_address" class="form-control map-input">
-    <input type="hidden" name="address_latitude" id="address-latitude" value="0" />
-    <input type="hidden" name="address_longitude" id="address-longitude" value="0" />
-</div>
-<div id="address-map-container" style="width:100%;height:400px; ">
-    <div style="width: 100%; height: 100%" id="address-map"></div>
-</div>
-                            <br>
-                            <label for="">add an image: </label>
-                            <input type="file" name="image_file">
-                            <br>
-                            <label for="">Describe your restaurant</label>
-                            <br>
-                            <textarea name="restaurant_description" id="" cols="20" rows="5"></textarea>
+                            
                         </div>
+
+                        <div class="form-group row">
+                            <label for="" class="col-md-4 col-form-label text-md-right">Name of you restaurant </label>
+
+                            <div class="col-md-6">
+                                <input  type="text" name="restaurant_name" placeholder="Name of you restaurant" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="address_address" class="col-md-4 col-form-label text-md-right">Address</label>
+                            <div class="col-md-6">
+                                <input type="text" name="restaurant_city" placeholder="City" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="address-input" name="address_address" class="form-control map-input">
+                                <input type="hidden" name="address_latitude" id="address-latitude" value="0" />
+                                <input type="hidden" name="address_longitude" id="address-longitude" value="0" />
+                            </div>
+                                                
+                            <div id="address-map-container" style="width:100%;height:400px; " class="col-md-6">
+                                <div style="width: 100%; height: 100%" id="address-map"></div>
+                            </div>
+                        </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-md-4 col-form-label text-md-right">Add an image: </label>
+                                <div class="col-md-6">
+                                    <input type="file" name="image_file">
+                                </div>
+                                
+                            </div>
+                            <div class="form-group row">
+
+                                <label for="" class="col-md-4 col-form-label text-md-right">Describe your restaurant</label>
+                                <div class="col-md-6">
+                                <textarea name="restaurant_description" id="" cols="20" rows="5" ></textarea>
+                                </div>
+                            </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="button" onclick="location.href='{{ url('/register') }}'" class="btn btn-primary">
