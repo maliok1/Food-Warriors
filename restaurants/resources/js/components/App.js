@@ -1,24 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Link, Route}  from 'react-router-dom';
 import UserComponent from './UserComponent';
 import axios from 'axios';
 
-
-function App() {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                       <UserComponent />
-                    </div>
-                </div>
-            </div>
+const Homepage = () => {
+    return(
+        <div>
+            homepage
         </div>
-    );
+    )
 }
 
-export default App;
+export default class App extends React.Component {
+
+    
+    render(){
+      return (
+          <BrowserRouter>
+            <div className="container">
+
+</div>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/user/:username" component={UserComponent} />      
+          </BrowserRouter>
+      
+    );  
+    }
+    
+}
+
 
 if (document.getElementById('root')) {
     ReactDOM.render(<App />, document.getElementById('root'));
