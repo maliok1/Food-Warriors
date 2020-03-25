@@ -20,6 +20,7 @@ class CreateMealsTable extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->integer('price');
+            $table->integer('quantity')->nullable();
             $table->time('pickup_time_start');
             $table->time('pickup_time_end');
            
