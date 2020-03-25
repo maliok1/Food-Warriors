@@ -20,6 +20,8 @@
         <input type="file" name="image_file">
         <label for="">Price</label>
         <input type="number" name="price">
+        <label for="">Quantity</label>
+        <input type="number" name="quantity">
         <label for="">Pick-up from</label>
         <input type="time" name="pickup_time_start">
         <label for="">to</label>
@@ -48,6 +50,8 @@
     @endif
     <h5>Price</h5>
     <p>{{$meal->price}} CZK</p>
+    <h5>Left</h5>
+    <p>{{$meal->quantity}}</p>
     <h5>Pick-up time</h5>
     <p>{{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 @auth
@@ -109,7 +113,6 @@
   type="text/javascript"></script> -->
 
     <!--Delete a meal  --> 
-   
       
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')

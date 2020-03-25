@@ -23,7 +23,8 @@ class MealController extends Controller
             'price' => 'required',
             'pickup_time_start' => 'required',
             'pickup_time_end' => 'required',
-            'image' => 'nullable'
+            'image' => 'nullable',
+            'quantity' => 'nullable'
         ]);
         
         
@@ -40,6 +41,7 @@ class MealController extends Controller
         $meal->name = $request->input('name');
         $meal->description = $request->input('description');
         $meal->price = $request->input('price');
+        $meal->quantity = $request->input('quantity');
         $meal->pickup_time_start = $request->input('pickup_time_start');
         $meal->pickup_time_end = $request->input('pickup_time_end');
        
