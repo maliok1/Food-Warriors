@@ -58,8 +58,5 @@ Route::get('/restaurant/remove-allergen/{meal_id}', 'AllergenController@removeAl
 Route::post('/search', 'RestaurantController@search');
 
 
-//Users
-Route::get('/users/{path?}', 'UserController@index');
-
-
-Route::view('/?{path}', 'app' );
+// //Users
+Route::get('/user/{path?}', 'UserController@index');

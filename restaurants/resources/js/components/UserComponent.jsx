@@ -10,18 +10,29 @@ export default class UserComponent extends React.Component{
         }
     }
 
+
     async componentDidMount() {
-      const resp = await axios.get('/user')
-      // axios.get('/users').then(function(response) {
-      //   console.log('response' , response);
-      // })
+      const {username} = this.props.match.params
+      const resp = await axios.get(`http://www.food-warriors.test/api/users/${username}`).then(resp=>{
+        this.setState({
+          name:resp.data.name,
+          email:resp.data.email,
+        })
+      })
       console.log("test")
       console.log("axios response", resp)
-    }
+  }
+
     render(){
+      console.log(this.props.match.params)
       console.log("hello")
       return(
-        <h1>hello world</h1>
+        <div>
+          <h2>{this.state.name} </h2>
+         
+          {this.state.email}
+          
+        </div>
       )
     }
 }
