@@ -58,17 +58,19 @@
 
 <!-- Display an allergen -->
     <h5>Allergens:</h5>
-    @foreach($meal->allergens as $allergen)
-      <li>{{$allergen->name}}</li>
+      @foreach($meal->allergens as $allergen)
+        <li>{{$allergen->name}}</li>
 
 <!-- remove an allergen -->
-      <form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
-        @csrf 
-        <input type="submit" value="delete allergen">
-        <input type="hidden" name="allergen" value={{$allergen->id}}> 
-      </form>
-    @endforeach
-    
+        @if(auth()->user()->id === $restaurant->user_id)
+          <form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
+            @csrf 
+            <input type="submit" value="delete allergen">
+            <input type="hidden" name="allergen" value={{$allergen->id}}> 
+          </form> 
+         @endif
+      @endforeach
+   
     <p>{{$meal->pickup_time}}</p>
 
 <!-- Add an allergen -->
