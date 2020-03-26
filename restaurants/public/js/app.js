@@ -70471,7 +70471,7 @@ var App = /*#__PURE__*/function (_React$Component) {
           path: "/",
           component: Homepage
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-          path: "/user/:username",
+          path: "/users/:username",
           component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
         }))
       );
@@ -70542,12 +70542,11 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UserComponent).call(this, props));
     _this.state = {
-      name: _this.props.match.params.username,
+      name: "",
       email: "",
       password: ""
     };
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
-    console.log('state.name', _this.state.name);
     return _this;
   }
 
@@ -70592,12 +70591,15 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleFormSubmit",
     value: function handleFormSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
+      var username = this.props.match.params.username;
       fetch("http://www.food-warriors.test/api/users/".concat(username), {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-type': 'application/json',
-          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+          "Content-type": "application/json",
+          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
         },
         body: JSON.stringify({
           name: this.state.name,
@@ -70605,16 +70607,15 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
         })
       }).then(function (response) {
         return response.json();
-      }).then(function (data) {});
+      }).then(function (data) {
+        _this3.props.history.replace('/users/' + data.name);
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
-      console.log(this.props.match.params);
-      console.log(this.state.name);
-      console.log(this.state.email);
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "userInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
@@ -70623,9 +70624,9 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           type: "text",
           label: "username",
           value: this.state.name,
-          id: "username",
+          name: "name",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               name: e.target.value
             });
           }
@@ -70633,9 +70634,9 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           type: "email",
           label: "email",
           value: this.state.email,
-          id: "email",
+          name: "email",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               email: e.target.value
             });
           }

@@ -82,7 +82,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/user/{{ Auth::user()->name  }}"
+                                    <a class="dropdown-item" href="/users/{{ Auth::user()->name  }}"
                                     >
                                        Profile
                                     </a>
@@ -118,6 +118,8 @@
 
             @yield('scripts')
         </main>
+
+        
     </div>
 </body>
 </html>

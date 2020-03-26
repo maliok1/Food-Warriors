@@ -5,12 +5,11 @@ export default class UserComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: this.props.match.params.username,
+            name: "",
             email: "",
             password: ""
         };
-       this.handleFormSubmit = this.handleFormSubmit.bind(this);
-       console.log('state.name', this.state.name)
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     async componentDidMount() {
@@ -21,35 +20,34 @@ export default class UserComponent extends React.Component {
                 this.setState({
                     name: response.data.name,
                     email: response.data.email
-                })
+                });
                 // ,console.log("axios response", response);
             });
     }
 
-     handleFormSubmit(e){
-      e.preventDefault();
-      fetch(`http://www.food-warriors.test/api/users/${username}`, {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify({
-            name: this.state.name,
-            email:this.state.email
+    handleFormSubmit(e) {
+        e.preventDefault();
+        const { username } = this.props.match.params;
+         fetch(`http://www.food-warriors.test/api/users/${username}`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+                "X-CSRF-TOKEN": document
+                    .querySelector('meta[name="csrf-token"]')
+                    .getAttribute("content")
+            },
+            body: JSON.stringify({
+                name: this.state.name,
+                email: this.state.email
+            })
         })
-    }).then(response => response.json())
-        .then(data => {
-            
-        })
-};
-    
+            .then(response => response.json())
+            .then(data => {
+               this.props.history.replace('/users/'+ data.name);
+            });
+    }
 
     render() {
-        console.log(this.props.match.params);
-        console.log(this.state.name);
-        console.log(this.state.email);
-        
         return (
             <div className="userInfo">
                 <form onSubmit={this.handleFormSubmit}>
@@ -58,7 +56,7 @@ export default class UserComponent extends React.Component {
                         type="text"
                         label="username"
                         value={this.state.name}
-                        id="username"
+                        name="name"
                         onChange={e => {
                             this.setState({ name: e.target.value });
                         }}
@@ -68,14 +66,14 @@ export default class UserComponent extends React.Component {
                         type="email"
                         label="email"
                         value={this.state.email}
-                        id="email"
+                        name="email"
                         onChange={e => {
                             this.setState({ email: e.target.value });
                         }}
                     />
                     {/* <h3>Image</h3>
                             <input type="textarea" label="Image" placeholder="Enter a URL to an image(optional)" id="image"/> */}
-                       <button className="btn btn-success">Update</button>
+                    <button className="btn btn-success">Update</button>
                 </form>
             </div>
         );
