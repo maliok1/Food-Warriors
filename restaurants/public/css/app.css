@@ -9947,4 +9947,13 @@ h3 {
 button {
   margin-top: 10px;
 }
+
+div img {
+  width: 70%;
+}
+@media (max-width: 425px) {
+  div img {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=app.css.map*/

@@ -10,25 +10,52 @@
     <hr>
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
-      <form action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
+    <div class="card-body">
+      <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
-        <label for="">Name of the package</label>
-        <input type="text" name="name">
-        <label for="">Describe your package</label>
-        <input type="text" name="description">
-        <label for="">Image</label><br>
-        <input type="file" name="image_file">
-        <label for="">Price</label>
-        <input type="number" name="price">
-        <label for="">Quantity</label>
-        <input type="number" name="quantity">
-        <label for="">Pick-up from</label>
-        <input type="time" name="pickup_time_start">
-        <label for="">to</label>
-        <input type="time" name="pickup_time_end">
-        <input type="submit" value="submit">
+        <div class="form-group row ">
+          <label for=""  class="col-md-2 col-form-label text-md-right">Name of the package</label>
+          <div class="col-md-4">
+            <input type="text" name="name" class="form-controll">
+          </div>
+          <label for=""  class="col-md-2 col-form-label text-md-right">Describe your package</label>
+          <div class="col-md-4">
+            <input type="text" name="description"  class="form-controll">
+          </div>
+        </div>
+        <div class="form-group row ">
+          <label for=""  class="col-md-2 col-form-label text-md-right">Image</label><br>
+          <div class="col-md-4">
+            <input type="file" name="image_file"  class="form-controll">
+          </div>
+          <label for=""  class="col-md-2 col-form-label text-md-right">Price</label>
+          <div class="col-md-4">
+            <input type="number" name="price"  class="form-controll">
+          </div>
+        </div>
+                
+        <div class="form-group row ">
+         
+          <label for=""  class="col-md-2 col-form-label text-md-right">Pick-up from</label>
+          <div class="col-md-4">
+            <input type="time" name="pickup_time_start"  class="form-controll">
+          </div>
+          <label for=""  class="col-md-2 col-form-label text-md-right">to</label>
+          <div class="col-md-4">
+           <input type="time" name="pickup_time_end"  class="form-controll">
+          </div>
+        </div>
+        <div class="form-group row ">
+        <label for=""  class="col-md-2 col-form-label text-md-right">Quantity</label>
+          <div class="col-md-4">
+           <input type="number" name="quantity"  class="form-controll">
+          </div>
+        </div>
+        <div class="col-md-12" style="display:flex; justify-content: center">
+          <input type="submit" value="submit"  class="btn btn-primary">
+        </div>
       </form>
-
+</div>
       @if($errors->any())
           <div class="alert alert-danger">
               @foreach($errors->all() as $error)

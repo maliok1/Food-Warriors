@@ -1,3 +1,14 @@
 button{
   margin-top:10px;
 }
+
+div{
+  // display: flex;
+  // flex-direction: column;
+ img{
+  width: 70%;
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+} 
+}
