@@ -38,10 +38,5 @@ class RestaurantController extends Controller{
       else return view ('restaurants/search-results')->withMessage('No Details found. Try to search again !');
   }
 
-  public function cart() {
-
-    return view('restaurants.cart');
-  }
-
 }
 
