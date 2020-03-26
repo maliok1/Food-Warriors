@@ -1,0 +1,10 @@
+button{
+  margin-top:10px;
+}
+
+img{
+  width: 50%;
+  @media (max-width: 425px) {
+    width: 100%;
+  }
+}

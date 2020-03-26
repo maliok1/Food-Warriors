@@ -70521,9 +70521,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -70542,9 +70542,12 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UserComponent).call(this, props));
     _this.state = {
-      name: '',
-      email: ''
+      name: _this.props.match.params.username,
+      email: "",
+      password: ""
     };
+    _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
+    console.log('state.name', _this.state.name);
     return _this;
   }
 
@@ -70561,19 +70564,18 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
               case 0:
                 username = this.props.match.params.username;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://www.food-warriors.test/api/users/".concat(username)).then(function (resp) {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://www.food-warriors.test/api/users/".concat(username)).then(function (response) {
                   _this2.setState({
-                    name: resp.data.name,
-                    email: resp.data.email
-                  });
+                    name: response.data.name,
+                    email: response.data.email
+                  }); // ,console.log("axios response", response);
+
                 });
 
               case 3:
                 resp = _context.sent;
-                console.log("test");
-                console.log("axios response", resp);
 
-              case 6:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -70588,11 +70590,58 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       return componentDidMount;
     }()
   }, {
+    key: "handleFormSubmit",
+    value: function handleFormSubmit(e) {
+      e.preventDefault();
+      fetch("http://www.food-warriors.test/api/users/".concat(username), {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+        body: JSON.stringify({
+          name: this.state.name,
+          email: this.state.email
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {});
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       console.log(this.props.match.params);
-      console.log("hello");
-      return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, this.state.name, " "), this.state.email)
+      console.log(this.state.name);
+      console.log(this.state.email);
+      return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "userInfo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+          onSubmit: this.handleFormSubmit
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "text",
+          label: "username",
+          value: this.state.name,
+          id: "username",
+          onChange: function onChange(e) {
+            _this3.setState({
+              name: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "email",
+          label: "email",
+          value: this.state.email,
+          id: "email",
+          onChange: function onChange(e) {
+            _this3.setState({
+              email: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          className: "btn btn-success"
+        }, "Update")))
       );
     }
   }]);
