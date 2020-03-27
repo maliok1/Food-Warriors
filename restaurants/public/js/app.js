@@ -70471,7 +70471,7 @@ var App = /*#__PURE__*/function (_React$Component) {
           path: "/",
           component: Homepage
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-          path: "/user/:username",
+          path: "/users/:username",
           component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
         }))
       );
@@ -70542,12 +70542,13 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(UserComponent).call(this, props));
     _this.state = {
-      name: _this.props.match.params.username,
+      name: "",
       email: "",
-      password: ""
+      phonenumber: "",
+      image: "",
+      file: null
     };
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
-    console.log('state.name', _this.state.name);
     return _this;
   }
 
@@ -70567,9 +70568,10 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://www.food-warriors.test/api/users/".concat(username)).then(function (response) {
                   _this2.setState({
                     name: response.data.name,
-                    email: response.data.email
-                  }); // ,console.log("axios response", response);
-
+                    email: response.data.email,
+                    phonenumber: response.data.phonenumber,
+                    image: response.data.image
+                  }), console.log("axios response", response);
                 });
 
               case 3:
@@ -70588,33 +70590,41 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       }
 
       return componentDidMount;
-    }()
+    }() //
+
   }, {
     key: "handleFormSubmit",
     value: function handleFormSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
-      fetch("http://www.food-warriors.test/api/users/".concat(username), {
-        method: 'POST',
+      var username = this.props.match.params.username;
+      var url = "http://www.food-warriors.test/api/users/".concat(username);
+      var data = new FormData();
+      data.append('image_file', this.state.file);
+      data.append('name', this.state.name);
+      data.append('email', this.state.email);
+      data.append('phonenumber', this.state.phonenumber);
+      fetch(url, {
+        method: "POST",
         headers: {
-          'Content-type': 'application/json',
-          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+          "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
         },
-        body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email
-        })
+        body: data
       }).then(function (response) {
         return response.json();
-      }).then(function (data) {});
+      }).then(function (data) {
+        _this3.props.history.replace('/users/' + data.name), _this3.setState({
+          image: data.image
+        });
+        console.log(data);
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
-      console.log(this.props.match.params);
-      console.log(this.state.name);
-      console.log(this.state.email);
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
           className: "userInfo"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
@@ -70623,9 +70633,9 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           type: "text",
           label: "username",
           value: this.state.name,
-          id: "username",
+          name: "name",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               name: e.target.value
             });
           }
@@ -70633,10 +70643,30 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           type: "email",
           label: "email",
           value: this.state.email,
-          id: "email",
+          name: "email",
           onChange: function onChange(e) {
-            _this3.setState({
+            _this4.setState({
               email: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "text",
+          label: "phonenumber",
+          value: this.state.phonenumber,
+          name: "phonenumber",
+          onChange: function onChange(e) {
+            _this4.setState({
+              phonenumber: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: this.state.image
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Change your profile picture: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "file",
+          name: "image_file",
+          onChange: function onChange(e) {
+            _this4.setState({
+              file: e.target.files[0]
             });
           }
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {

@@ -90,7 +90,6 @@
                                 <div class="col-md-6">
                                     <input type="file" name="image_file">
                                 </div>
-                                
                             </div>
                             <div class="form-group row">
 

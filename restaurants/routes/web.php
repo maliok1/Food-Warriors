@@ -60,4 +60,4 @@ Route::post('/search', 'RestaurantController@search');
 
 
 // //Users
-Route::get('/user/{path?}', 'UserController@index');
+Route::get('/users/{path?}', 'UserController@index');

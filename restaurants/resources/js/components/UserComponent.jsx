@@ -1,18 +1,21 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios,{ post } from "axios";
 
 export default class UserComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: this.props.match.params.username,
+            name: "",
             email: "",
-            password: ""
+            phonenumber: "",
+            image: "",
+            file: null
         };
-       this.handleFormSubmit = this.handleFormSubmit.bind(this);
-       console.log('state.name', this.state.name)
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
+    
+    
     async componentDidMount() {
         const { username } = this.props.match.params;
         const resp = await axios
@@ -20,36 +23,47 @@ export default class UserComponent extends React.Component {
             .then(response => {
                 this.setState({
                     name: response.data.name,
-                    email: response.data.email
+                    email: response.data.email,
+                    phonenumber: response.data.phonenumber,
+                    image: response.data.image
                 })
-                // ,console.log("axios response", response);
+                ,console.log("axios response", response);
             });
     }
+//
 
-     handleFormSubmit(e){
-      e.preventDefault();
-      fetch(`http://www.food-warriors.test/api/users/${username}`, {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify({
-            name: this.state.name,
-            email:this.state.email
-        })
-    }).then(response => response.json())
-        .then(data => {
-            
-        })
-};
-    
+    handleFormSubmit(e) {
+        e.preventDefault();
 
-    render() {
-        console.log(this.props.match.params);
-        console.log(this.state.name);
-        console.log(this.state.email);
+        const { username } = this.props.match.params;
+        const url = `http://www.food-warriors.test/api/users/${username}`;
+
+        const data = new FormData();
+        data.append('image_file',this.state.file);
+        data.append('name', this.state.name);
+        data.append('email', this.state.email);
+        data.append('phonenumber', this.state.phonenumber);
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": document
+                    .querySelector('meta[name="csrf-token"]')
+                    .getAttribute("content")
+            },
+            body: data
+        })
+            .then(response => response.json())
+            .then(data => {
+               this.props.history.replace('/users/'+ data.name),
+               this.setState({
+                   image: data.image
+               });
+               console.log(data);
+            });
+    }
         
+    render() {
         return (
             <div className="userInfo">
                 <form onSubmit={this.handleFormSubmit}>
@@ -57,8 +71,8 @@ export default class UserComponent extends React.Component {
                     <input
                         type="text"
                         label="username"
-                        value={this.state.name}
-                        id="username"
+                        value= {this.state.name}
+                        name="name"
                         onChange={e => {
                             this.setState({ name: e.target.value });
                         }}
@@ -68,14 +82,31 @@ export default class UserComponent extends React.Component {
                         type="email"
                         label="email"
                         value={this.state.email}
-                        id="email"
+                        name="email"
                         onChange={e => {
                             this.setState({ email: e.target.value });
                         }}
                     />
-                    {/* <h3>Image</h3>
-                            <input type="textarea" label="Image" placeholder="Enter a URL to an image(optional)" id="image"/> */}
-                       <button className="btn btn-success">Update</button>
+                    <h3>Phone number</h3>
+                    <input
+                        type="text"
+                        label="phonenumber"
+                        value={this.state.phonenumber}
+                        name="phonenumber"
+                        onChange={e => {
+                            this.setState({ phonenumber: e.target.value });
+                        }}
+                    />
+                    <br/>
+                    <img src={this.state.image} />
+                    <h3>Change your profile picture: </h3>
+                    <input
+                     type="file"
+                     name="image_file"
+                     onChange={e => {
+                        this.setState({file: e.target.files[0]});}}
+                      />
+                    <button className="btn btn-success">Update</button>
                 </form>
             </div>
         );

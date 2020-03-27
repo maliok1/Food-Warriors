@@ -9945,15 +9945,34 @@ h3 {
   }
 }
 button {
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
-div img {
-  width: 70%;
+img {
+  width: 50%;
 }
 @media (max-width: 425px) {
-  div img {
+  img {
     width: 100%;
   }
+}
+
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple input.form-control[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple input[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple .fa, .active-purple-2 .fa {
+  color: #ce93d8;
 }
 /*# sourceMappingURL=app.css.map*/

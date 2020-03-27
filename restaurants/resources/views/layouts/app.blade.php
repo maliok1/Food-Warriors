@@ -28,6 +28,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     
 </head>
 <body>
@@ -45,16 +46,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                    <form action="/search" method="POST" role="search">
+                    
+                    <form action="/search" method="POST" role="search"  class="form-inline d-flex justify-content-center md-form form-sm active-purple active-purple-2 mt-2">
                         {{ csrf_field() }}
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="q"
-                                placeholder="Search restaurants"> <span class="input-group-btn">
-                                <button type="submit" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-search">Search</span>
-                                </button>
-                            </span>
-                        </div>
+                        <!-- Search form -->
+                            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                                aria-label="Search" name="q">
+
+                            <button type="submit" class="btn btn-default" style="padding: 0 5px">
+                                <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </button>
+                                
                     </form>
                     </ul>
 
@@ -77,7 +82,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/user/{{ Auth::user()->name  }}"
+                                    <a class="dropdown-item" href="/users/{{ Auth::user()->name  }}"
                                     >
                                        Profile
                                     </a>
@@ -113,6 +118,8 @@
 
             @yield('scripts')
         </main>
+
+        
     </div>
 </body>
 </html>
