@@ -70544,7 +70544,9 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       name: "",
       email: "",
-      password: ""
+      phonenumber: "",
+      image: "",
+      file: null
     };
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -70566,9 +70568,10 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
                 return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://www.food-warriors.test/api/users/".concat(username)).then(function (response) {
                   _this2.setState({
                     name: response.data.name,
-                    email: response.data.email
-                  }); // ,console.log("axios response", response);
-
+                    email: response.data.email,
+                    phonenumber: response.data.phonenumber,
+                    image: response.data.image
+                  }), console.log("axios response", response);
                 });
 
               case 3:
@@ -70587,7 +70590,8 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       }
 
       return componentDidMount;
-    }()
+    }() //
+
   }, {
     key: "handleFormSubmit",
     value: function handleFormSubmit(e) {
@@ -70595,20 +70599,25 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       var username = this.props.match.params.username;
-      fetch("http://www.food-warriors.test/api/users/".concat(username), {
+      var url = "http://www.food-warriors.test/api/users/".concat(username);
+      var data = new FormData();
+      data.append('image_file', this.state.file);
+      data.append('name', this.state.name);
+      data.append('email', this.state.email);
+      data.append('phonenumber', this.state.phonenumber);
+      fetch(url, {
         method: "POST",
         headers: {
-          "Content-type": "application/json",
           "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content")
         },
-        body: JSON.stringify({
-          name: this.state.name,
-          email: this.state.email
-        })
+        body: data
       }).then(function (response) {
         return response.json();
       }).then(function (data) {
-        _this3.props.history.replace('/users/' + data.name);
+        _this3.props.history.replace('/users/' + data.name), _this3.setState({
+          image: data.image
+        });
+        console.log(data);
       });
     }
   }, {
@@ -70638,6 +70647,26 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           onChange: function onChange(e) {
             _this4.setState({
               email: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "text",
+          label: "phonenumber",
+          value: this.state.phonenumber,
+          name: "phonenumber",
+          onChange: function onChange(e) {
+            _this4.setState({
+              phonenumber: e.target.value
+            });
+          }
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: this.state.image
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Change your profile picture: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          type: "file",
+          name: "image_file",
+          onChange: function onChange(e) {
+            _this4.setState({
+              file: e.target.files[0]
             });
           }
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {

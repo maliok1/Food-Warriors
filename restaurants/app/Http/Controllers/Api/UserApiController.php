@@ -16,15 +16,18 @@ class UserApiController extends Controller
 
 
   public function update($user, Request $request){
-    //   $request->validate([
-    //     'name' => 'required|string|max:255'
-    // ]);
-
       $user = User::where('name', $user)->firstOrFail();
 
+      $file_name = null;
+      if ($file = $request->file('image_file')) {
+        $file_name = time() . '_'. $file->getClientOriginalName();
+        $file->storeAs('users',   $file_name,  'uploads');
+    }
       $user->update([
         'name' => $request->input('name'),
-        'email' => $request->input('email')
+        'email' => $request->input('email'),
+        'phonenumber' => $request->input('phonenumber'),
+        'image' => $file_name ? '/uploads/users/'.$file_name : $user->image
       ]); 
       return $user;
     }
