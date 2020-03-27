@@ -62,7 +62,6 @@ export default class UserComponent extends React.Component {
                console.log(data);
             });
     }
-        
     render() {
         return (
             <div className="userInfo">
