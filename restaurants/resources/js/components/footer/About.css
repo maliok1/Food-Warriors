@@ -1,0 +1,32 @@
+
+.person-wrapper {
+    margin-bottom: 2em;
+}
+
+.profile-pic {
+    
+    width: 70%;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    margin-top: 3em;
+
+}
+.profile-pic:hover {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    width: 90%;
+    border-radius: 50%;
+
+}
+
+
+h3 {
+    margin-bottom: 1em;
+}
+
+/* @media (max-height:800px){
+    footer { position: static; }
+} */
