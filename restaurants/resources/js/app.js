@@ -1,16 +1,37 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes React and other helpers. It's a great starting point while
- * building robust, powerful web applications using React + Laravel.
+const mix = require('laravel-mix');
+require('dotenv').config();
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel application. By default, we are compiling the Sass
+ | file for the application as well as bundling up all the JS files.
+ |
  */
-
-require('./bootstrap');
-
-/**
- * Next, we will create a fresh React component instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-require('./components/App');
-require('./components/Footer');
+ 
+mix.options({
+    processCssUrls: false
+});
+ 
+if (!mix.inProduction()) {
+    mix.webpackConfig({
+        devtool: 'source-map'
+    })
+    .sourceMaps()
+}
+ 
+mix.react('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+ 
+    .browserSync({
+        host: 'localhost',
+        port: 3000,
+        proxy: {
+            target: process.env.APP_URL // Yay! Using APP_URL from the .env file!
+        }
+    });
+ 
+// add versioning 
+mix.version();
