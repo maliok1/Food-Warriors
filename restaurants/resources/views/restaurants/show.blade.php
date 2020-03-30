@@ -150,9 +150,13 @@
         </form>
         @endif
 
-    <!-- Reserve a meal -->
+  <!-- Reserve a meal -> user -->
+  
       @if(auth()->user()->id !== $restaurant->user_id)
-          <a href="/cart">Reserve meal</a>    
+        <form action="{{action ('MealController@cart', $meal->id)}}" method="post">
+          @csrf 
+          <input type="submit" value="Reserve">
+        </form>
       @endif
 @endauth   
 

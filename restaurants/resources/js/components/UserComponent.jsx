@@ -12,7 +12,7 @@ export default class UserComponent extends React.Component {
             file: null
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
     }
 
     
@@ -20,7 +20,7 @@ export default class UserComponent extends React.Component {
     async componentDidMount() {
         const { username } = this.props.match.params;
         const resp = await axios
-            .get(`http://www.food-warriors.test/api/users/${username}`)
+            .get(`/api/users/${username}`)
             .then(response => {
                 this.setState({
                     name: response.data.name,
@@ -37,7 +37,7 @@ export default class UserComponent extends React.Component {
         e.preventDefault();
 
         const { username } = this.props.match.params;
-        const url = `http://www.food-warriors.test/api/users/${username}`;
+        const url = `/api/users/${username}`;
 
         const data = new FormData();
         data.append('image_file',this.state.file);
@@ -63,28 +63,6 @@ export default class UserComponent extends React.Component {
                console.log(data);
             });
     }
-
-    handleDelete(){ 
-        // e.preventDefault();
-
-        // const { username } = this.props.match.params;
-        // const url = `http://www.food-warriors.test/api/users/${username}`;
-        // const resp = await axios
-        //     .delete(`http://www.food-warriors.test/api/users/${username}`)
-        //     .then(response => {
-        //         this.setState({
-        //             name: null,
-        //             email:null,
-        //             phonenumber:null,
-        //             image: null
-        //         })
-        //         ,console.log("axios response", response);
-        //     });
-        console.log('hello');
-        
-        
-    }
-        
     render() {
         return (
             <div className="userInfo">
@@ -129,7 +107,7 @@ export default class UserComponent extends React.Component {
                         this.setState({file: e.target.files[0]});}}
                       /> 
                     <button className="btn btn-success">Update</button>
-                    <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button>
+                    {/* <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button> */}
                 </form>
             </div>
         );

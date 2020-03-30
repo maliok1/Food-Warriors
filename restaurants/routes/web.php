@@ -44,7 +44,8 @@ Route::delete('/restaurant/{id}/delete', 'MealController@deleteMeal');
 
 // Cart
 
-Route::get('/cart', 'RestaurantController@cart');
+ Route::post('/restaurant/{id}', 'MealController@cart');
+ Route::get('/cart', 'MealController@showCart');
 
 
 //Allergen
@@ -60,3 +61,17 @@ Route::post('/search', 'RestaurantController@search');
 
 // //Users
 Route::get('/users/{path?}', 'UserController@index');
+Route::get('/user/{path?}', 'UserController@index');
+
+// Footer links
+Route::get( '/about', function(){
+    return view( 'users.about' );
+} )->where('path', '.*');
+
+Route::get( '/contact', function(){
+    return view( 'users.contact' );
+} )->where('path', '.*');
+
+Route::get( '/news', function(){
+    return view( 'users.news' );
+} )->where('path', '.*');

@@ -55,4 +55,24 @@ class MealController extends Controller
         $meal->delete();
         return redirect()->back();
     }
-}
+
+    public function showCart() {
+
+        return view('restaurants.cart');
+    }
+
+    public function cart($id) {
+
+        $meal = Meal::find($id);
+
+    if ($meal->quantity > 0) {
+        $meal->decrement('quantity');
+        $meal->save();
+
+        return view('restaurants.cart');
+    }else {
+
+        return redirect()->back();
+        }
+      }
+ }
