@@ -4,13 +4,14 @@ import {BrowserRouter, Link, Route}  from 'react-router-dom';
 import UserComponent from './UserComponent';
 import axios from 'axios';
 
-const Homepage = () => {
+const DeletedMessage = () => {
     return(
         <div>
-            homepage
+            You have successfully deleted your profile
         </div>
     )
 }
+
 
 export default class App extends React.Component {
 
@@ -21,8 +22,8 @@ export default class App extends React.Component {
             <div className="container">
 
 </div>
-          <Route exact path="/" component={Homepage} />
-          <Route path="/users/:username" component={UserComponent} />      
+          <Route path="/users/:username" component={UserComponent} />
+          <Route exact path="/deleted" component={DeletedMessage} /> 
           </BrowserRouter>
       
     );  
