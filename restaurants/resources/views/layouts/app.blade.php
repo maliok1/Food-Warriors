@@ -29,6 +29,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
 <body>
@@ -105,6 +106,9 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('about')
+            @yield('contact')
+            @yield('news')
 
             @yield('list of restaurants')
 
@@ -118,8 +122,13 @@
 
             @yield('scripts')
         </main>
+<<<<<<< HEAD
 
         
+=======
+        <footer class="fixed-bottom" id = "footer">
+        </footer>
+>>>>>>> Bakho
     </div>
 </body>
 </html>
