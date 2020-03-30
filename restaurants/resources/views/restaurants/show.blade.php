@@ -2,14 +2,20 @@
 
 @section('restaurant detailed')
   <h2>{{$restaurant->name}}</h2> 
-  <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}"> 
-   <p>{{$restaurant->city}}</p>
-   <p>{{$restaurant->description}}</p>
+ 
+  <img  class="img-fluid" style="width: 100vw; height: 30rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+   
+    <h2>{{$restaurant->city}}</h2>
+    <p>{{$restaurant->description}}</p>
+
+    
 
 <!-- A form for to create a meal -->
-    <hr>
+    
     @auth
+    
     @if(auth()->user()->id === $restaurant->user_id)
+    <hr>
     <div class="card-body">
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
@@ -57,30 +63,32 @@
       </form>
 </div>
       @if($errors->any())
-          <div class="alert alert-danger">
-              @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-              @endforeach
-          </div>
+        <div class="alert alert-danger">
+          @foreach($errors->all() as $error)
+            <p>{{ $error }}</p>
+          @endforeach
+        </div>
       @endif
-      @endif  
-    @endauth
+    @endif  
+  @endauth
    <hr>
 
 <!-- Display Meals -->
-<h3>Meals available today</h3> 
-  @foreach($restaurant->meals as $meal)
-    <h4>{{$meal->name}}</h4>
-    <p>{{$meal->description}}</p>
-    @if($meal->image)
-        <img src="{{$meal->image}}" alt="{{$meal->name}}"> 
-    @endif
-    <h5>Price</h5>
-    <p>{{$meal->price}} CZK</p>
-    <h5>Left</h5>
-    <p>{{$meal->quantity}}</p>
-    <h5>Pick-up time</h5>
-    <p>{{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
+
+  <h3 class="m-3">Meals available today</h3> 
+    @foreach($restaurant->meals as $meal)
+      <div class="d-inline-flex">
+        <div class="card m-3" style="width: 35rem">
+          @if($meal->image)
+          <img src="{{$meal->image}}" alt="{{$meal->name}}"> 
+          @endif
+        <div class="card-body">
+          <h3 class="card-title">{{$meal->name}}</h3>
+          <p>{{$meal->description}}</p>
+          <h5>Price: {{$meal->price}} CZK</h5>   
+          <h5>Left: {{$meal->quantity}}</h5>
+          <h5>Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</h5>
+
 @auth
 
 <!-- Display an allergen -->
@@ -164,14 +172,16 @@
         @guest
           <a href="/login">Reserve meal</a>
         @endguest
-  <hr>
-
+  
+</div>
+</div>
+</div>
   @endforeach
   
   <hr>
 
 <!-- Comments display -->
-   <h3>Comments:</h3>
+   <h3 class="m-3">Comments:</h3>
    @foreach($restaurant->comments as $comment)
     <hr>   Comment:
       <p>{{$comment->comment}}</p> 
