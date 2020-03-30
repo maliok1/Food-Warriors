@@ -12,6 +12,7 @@ export default class UserComponent extends React.Component {
             file: null
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     
@@ -104,8 +105,9 @@ export default class UserComponent extends React.Component {
                      name="image_file"
                      onChange={e => {
                         this.setState({file: e.target.files[0]});}}
-                      />
+                      /> 
                     <button className="btn btn-success">Update</button>
+                    <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button>
                 </form>
             </div>
         );
