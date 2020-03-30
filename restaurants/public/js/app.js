@@ -85832,8 +85832,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var Homepage = function Homepage() {
-  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "homepage")
+var DeletedMessage = function DeletedMessage() {
+  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "You have successfully deleted your profile")
   );
 };
 
@@ -85852,12 +85852,12 @@ var App = /*#__PURE__*/function (_React$Component) {
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "container"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-          exact: true,
-          path: "/",
-          component: Homepage
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
           path: "/users/:username",
           component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/deleted",
+          component: DeletedMessage
         }))
       );
     }
@@ -86007,6 +86007,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -86034,6 +86035,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var UserComponent = /*#__PURE__*/function (_React$Component) {
   _inherits(UserComponent, _React$Component);
 
@@ -86050,7 +86052,8 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       image: "",
       file: null
     };
-    _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this)); // this.handleDelete = this.handleDelete.bind(this);
+    _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this)); // this.logout = this.logout.bind(this);
 
     return _this;
   }
@@ -86093,8 +86096,7 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       }
 
       return componentDidMount;
-    }() //
-
+    }()
   }, {
     key: "handleFormSubmit",
     value: function handleFormSubmit(e) {
@@ -86123,6 +86125,36 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
         console.log(data);
       });
     }
+  }, {
+    key: "handleDelete",
+    value: function () {
+      var _handleDelete = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var username, resp;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                username = this.props.match.params.username;
+                _context2.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/api/users/delete/".concat(username)).then(this.props.history.push('/deleted'));
+
+              case 3:
+                resp = _context2.sent;
+
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this);
+      }));
+
+      function handleDelete() {
+        return _handleDelete.apply(this, arguments);
+      }
+
+      return handleDelete;
+    }()
   }, {
     key: "render",
     value: function render() {
@@ -86174,7 +86206,10 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
           }
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
           className: "btn btn-success"
-        }, "Update")))
+        }, "Update")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          onClick: this.handleDelete,
+          className: "btn btn-danger"
+        }, "Delete my account"))
       );
     }
   }]);
