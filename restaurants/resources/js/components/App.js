@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
 </div>
           <Route path="/users/:username" component={UserComponent} />
-          <Route exact path="/deleted" component={DeletedMessage} /> 
+          <Route exact path="/" component={DeletedMessage} /> 
           </BrowserRouter>
       
     );  

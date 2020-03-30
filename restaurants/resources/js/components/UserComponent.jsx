@@ -69,14 +69,10 @@ export default class UserComponent extends React.Component {
     const resp = await axios
         .post(`/api/users/delete/${username}`)
         .then(
-            this.props.history.push('/deleted')
+            window.history.pushState({},'', '/')
         );
     }
 
-
-    
-        
-    
 
     render() {
         return (
