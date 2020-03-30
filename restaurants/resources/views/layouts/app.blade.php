@@ -122,13 +122,10 @@
 
             @yield('scripts')
         </main>
-<<<<<<< HEAD
 
         
-=======
         <footer class="fixed-bottom" id = "footer">
         </footer>
->>>>>>> Bakho
     </div>
 </body>
 </html>
