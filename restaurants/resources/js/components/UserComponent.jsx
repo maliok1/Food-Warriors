@@ -65,21 +65,23 @@ export default class UserComponent extends React.Component {
     }
 
     handleDelete(){ 
-        e.preventDefault();
+        // e.preventDefault();
 
-        const { username } = this.props.match.params;
-        const url = `http://www.food-warriors.test/api/users/${username}`;
-        const resp = await axios
-            .delete(`http://www.food-warriors.test/api/users/${username}`)
-            .then(response => {
-                this.setState({
-                    name: null,
-                    email:null,
-                    phonenumber:null,
-                    image: null
-                })
-                ,console.log("axios response", response);
-            });
+        // const { username } = this.props.match.params;
+        // const url = `http://www.food-warriors.test/api/users/${username}`;
+        // const resp = await axios
+        //     .delete(`http://www.food-warriors.test/api/users/${username}`)
+        //     .then(response => {
+        //         this.setState({
+        //             name: null,
+        //             email:null,
+        //             phonenumber:null,
+        //             image: null
+        //         })
+        //         ,console.log("axios response", response);
+        //     });
+        console.log('hello');
+        
         
     }
         
