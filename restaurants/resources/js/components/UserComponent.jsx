@@ -12,6 +12,7 @@ export default class UserComponent extends React.Component {
             file: null
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     
@@ -62,6 +63,25 @@ export default class UserComponent extends React.Component {
                console.log(data);
             });
     }
+
+    handleDelete(){ 
+        e.preventDefault();
+
+        const { username } = this.props.match.params;
+        const url = `http://www.food-warriors.test/api/users/${username}`;
+        const resp = await axios
+            .delete(`http://www.food-warriors.test/api/users/${username}`)
+            .then(response => {
+                this.setState({
+                    name: null,
+                    email:null,
+                    phonenumber:null,
+                    image: null
+                })
+                ,console.log("axios response", response);
+            });
+        
+    }
         
     render() {
         return (
@@ -105,8 +125,9 @@ export default class UserComponent extends React.Component {
                      name="image_file"
                      onChange={e => {
                         this.setState({file: e.target.files[0]});}}
-                      />
+                      /> 
                     <button className="btn btn-success">Update</button>
+                    <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button>
                 </form>
             </div>
         );

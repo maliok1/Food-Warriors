@@ -36,5 +36,7 @@ class UserApiController extends Controller
       return $user;
    }
 
-  
+  public function delete(User $user){
+    return $user->delete();
+  }
 }
