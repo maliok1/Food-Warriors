@@ -1,14 +1,13 @@
 @extends('layouts.app')
 
 @section('restaurant detailed')
-  <h2>{{$restaurant->name}}</h2> 
+
+  <h2 class="m-3 some-class">{{$restaurant->name}}</h2> 
  
   <img  class="img-fluid" style="width: 100vw; height: 30rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
    
-    <h2>{{$restaurant->city}}</h2>
-    <p>{{$restaurant->description}}</p>
-
-    
+    <h2 class="m-3">{{$restaurant->city}}</h2>
+    <p class="m-3">{{$restaurant->description}}</p>
 
 <!-- A form for to create a meal -->
     
@@ -84,10 +83,10 @@
           @endif
         <div class="card-body">
           <h3 class="card-title">{{$meal->name}}</h3>
-          <p>{{$meal->description}}</p>
-          <h5>Price: {{$meal->price}} CZK</h5>   
-          <h5>Left: {{$meal->quantity}}</h5>
-          <h5>Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</h5>
+          <p class="m-1">{{$meal->description}}</p>
+          <p class="m-1 mt-3">Price: {{$meal->price}} CZK</p>   
+          <p class="m-1">Left: {{$meal->quantity}}</p>
+          <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 
 @auth
 
@@ -156,7 +155,7 @@
           @csrf
           <input type="submit" value="delete">
         </form>
-        @endif
+      @endif
 
   <!-- Reserve a meal -> user -->
   
@@ -166,67 +165,86 @@
           <input type="submit" value="Reserve">
         </form>
       @endif
-@endauth   
+    @endauth   
 
     <!-- Reserve a meal -> log in -->
         @guest
           <a href="/login">Reserve meal</a>
         @endguest
   
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
   @endforeach
   
   <hr>
 
 <!-- Comments display -->
+<div class="media-body">
    <h3 class="m-3">Comments:</h3>
-   @foreach($restaurant->comments as $comment)
-    <hr>   Comment:
-      <p>{{$comment->comment}}</p> 
-      <p> By {{$comment->user->name}}</p>
-      Created at: <br>
-      <p>{{$comment->created_at}}</p>
+    @foreach($restaurant->comments as $comment)
+      <div class="m-4 card" style="width: 40rem"> 
+        <span class="ml-3 m-1">{{$comment->user->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+        <div class="card"> 
+          <p class="m-3">{{$comment->comment}}</p> 
+        </div>
+      </div>
+
 <!-- Reply display -->
+  <div class="ml-5" style="width: 40rem">
       @if($comment->comment_reply !== null)
-       <strong>Reply from restaurant:</strong><br>
-       <p>{{$comment->comment_reply->reply}}</p> 
+       <span class="ml-3 m-1">Reply from {{$comment->restaurant->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+       <div class="card">
+         <p class="m-3">{{$comment->comment_reply->reply}}</p> 
       @endif
+  </div>  
+</div>
+
+<!--Delete a comment  -->
+    @auth
+    <div class="ml-5">
+        @if($comment->user_id === Auth::user()->id)
+          <form action="{{ action('CommentsController@deleteComment', $comment->id) }}" method="post">
+            @method('delete')
+            @csrf
+            <input class="something" type="submit" value="delete">
+          </form>
+        @endif
+      </div>
+    @endauth  
     
-<!-- Reply to a commnet-->
+<!-- Reply to a comment-->
   @auth
+    <div class="ml-5 m-3">
       @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
-        <textarea name="reply" id="" cols="10" rows="2"></textarea>
+        <textarea class="form-control" style="width: 20rem" type="text" id="" name="reply"></textarea>
         <input type="submit" value="reply">
       </form>
       @endif
-   @endauth  
-<!--Delete a comment  -->
-  @auth
-      @if($comment->user_id === Auth::user()->id)
-      <form action="{{ action('CommentsController@deleteComment', $comment->id) }}" method="post">
-        @method('delete')
-        @csrf
-        <input type="submit" value="delete">
-      </form>
-      @endif
-      <hr>
-  @endauth    
-    @endforeach
+    </div> 
+  @endauth   
+  @endforeach
+
 <!-- Leave a comment -->
    @auth
+   @if(auth()->user()->id !== $restaurant->user_id)
+    <div class="ml-5 mb-5 m-3">
       <form action="{{action ('CommentsController@store', $restaurant->id) }}" method="post">
-      @csrf
-      <h4>Leave your comment</h4>
-      <textarea name="comment" id="" cols="30" rows="10"></textarea>
-      <input type="submit" value="save">
-    </form>
+        @csrf
+        <h4>Leave your comment</h4>
+        <textarea class="form-control" style="width: 20rem" name="comment" id=""></textarea>
+        <input type="submit" value="save">
+      </form>
+    </div>
+    @endif
    @endauth
+
 <!-- Log-in section -->
-    @guest
-        <h2>Please <a href="{{ route('login') }}">login</a> to leave a comment</h2>
-    @endguest
-@endsection
+      @guest
+        <div class="ml-5">
+          <h3 class="mb-5">Please <a href="{{ route('login') }}">login</a> to leave a comment!</h3>
+        </div>
+      @endguest
+  @endsection
