@@ -24,15 +24,14 @@
                   @if($restaurant->image)
                     <img class="card-img-top" style="border-radius: 15px" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
                   @endif
-                <div class="card-body">
-                  <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
-                  <h5 class="card-title">{{$restaurant->city}}</h5>
-                  <p class="card-text"></p>
+                  <div class="card-body">
+                    <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
+                    <h5 class="card-title">{{$restaurant->city}}</h5>
+                  </div>
                 </div>
+               </div>
               </div>
-            </div>
-          </div>
-        @endforeach
+            @endforeach
     @endsection
 </div>
 
