@@ -37,6 +37,8 @@ class UserApiController extends Controller
    }
 
   public function delete(User $user){
-    return $user->delete();
+    // $user = User::where('name', $user)->firstOrFail();
+   return  $user->delete();
+  //  return  redirect('/');
   }
 }

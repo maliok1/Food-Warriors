@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios,{ post } from "axios";
+import axios , { post, get } from "axios";
+import  { Redirect } from 'react-router-dom'
 
 export default class UserComponent extends React.Component {
     constructor(props) {
@@ -12,10 +13,9 @@ export default class UserComponent extends React.Component {
             file: null
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        // this.handleDelete = this.handleDelete.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        // this.logout = this.logout.bind(this);
     }
-
-    
     
     async componentDidMount() {
         const { username } = this.props.match.params;
@@ -31,7 +31,6 @@ export default class UserComponent extends React.Component {
                 ,console.log("axios response", response);
             });
     }
-//
 
     handleFormSubmit(e) {
         e.preventDefault();
@@ -63,6 +62,17 @@ export default class UserComponent extends React.Component {
                console.log(data);
             });
     }
+
+    
+    async handleDelete(){
+    const { username } = this.props.match.params;
+    const resp = await axios
+        .post(`/api/users/delete/${username}`)
+        .then(
+            this.props.history.push('/deleted')
+        );
+    }
+
     render() {
         return (
             <div className="userInfo">
@@ -107,8 +117,9 @@ export default class UserComponent extends React.Component {
                         this.setState({file: e.target.files[0]});}}
                       /> 
                     <button className="btn btn-success">Update</button>
-                    {/* <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button> */}
                 </form>
+                
+                 <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button>
             </div>
         );
     }
