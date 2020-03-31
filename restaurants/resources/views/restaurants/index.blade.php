@@ -15,7 +15,7 @@
 
     <!-- List of restaurants -->
 
-      <h1 class="m-2">Restaurants</h1>
+      <h1 class="m-2 ">Restaurants</h1>
         <hr>
           @foreach($restaurants as $restaurant)
             <div class="d-inline-flex m-2">
