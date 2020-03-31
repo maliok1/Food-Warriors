@@ -13,8 +13,4 @@ require('./bootstrap');
  */
 
 require('./components/App');
-<<<<<<< HEAD
 //require('./components/Footer');
-=======
-//require('./components/Footer');
->>>>>>> master

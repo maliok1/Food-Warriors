@@ -9976,41 +9976,67 @@ img {
   color: #ce93d8;
 }
 
-button {
-  margin: 10px 0;
+.reply-comment {
+  margin-left: 90px;
 }
 
-img {
+.button-style {
+  margin: 6px;
+  padding: 0.5rem 0.7rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.button-style:hover {
+  background-color: #ad5642;
+  color: white;
+}
+
+.comment-section {
   width: 50%;
+  margin: 4% 5%;
 }
 
-@media (max-width: 425px) {
-  img {
-    width: 100%;
-  }
+.comment-head {
+  margin-left: 2%;
+  margin-bottom: 2%;
 }
 
-.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
+.comment-body {
+  margin-left: 5%;
 }
 
-.active-purple input.form-control[type=text] {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
+.reply-comment {
+  margin-top: 2%;
+  margin-left: 25%;
 }
 
-.active-purple input[type=text] {
-  border-bottom: 1px solid #ce93d8;
-  box-shadow: 0 1px 0 0 #ce93d8;
+.display-reply-comment {
+  margin-left: 15%;
 }
 
-.active-purple .fa,
-.active-purple-2 .fa {
-  color: #ce93d8;
+.form-comment {
+  margin-left: 5%;
+  width: 90%;
+  height: 15%;
+  border-radius: 1px solid grey;
 }
 
-.some-class {
-  background: pink;
+.deleteBTN {
+  margin-top: 1%;
+  margin-left: 75%;
 }
 
+.submitBTN {
+  margin-top: 1%;
+  margin-left: 83%;
+}
+
+.hr {
+  width: 110%;
+  background-color: gray;
+}
+/*# sourceMappingURL=app.css.map*/

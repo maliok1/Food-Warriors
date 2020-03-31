@@ -70447,13 +70447,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-<<<<<<< HEAD
-var Homepage = function Homepage() {
-  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "homepage")
-=======
 var DeletedMessage = function DeletedMessage() {
   return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "You have successfully deleted your profile")
->>>>>>> master
   );
 };
 
@@ -70472,21 +70467,12 @@ var App = /*#__PURE__*/function (_React$Component) {
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "container"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-<<<<<<< HEAD
-          exact: true,
-          path: "/",
-          component: Homepage
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-          path: "/users/:username",
-          component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
-=======
           path: "/users/:username",
           component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
           exact: true,
           path: "/",
           component: DeletedMessage
->>>>>>> master
         }))
       );
     }
@@ -70638,8 +70624,6 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-<<<<<<< HEAD
-=======
     key: "handleDelete",
     value: function () {
       var _handleDelete = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
@@ -70670,7 +70654,6 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       return handleDelete;
     }()
   }, {
->>>>>>> master
     key: "render",
     value: function render() {
       var _this4 = this;
