@@ -1,13 +1,8 @@
 button{
   margin:10px 0;
+  background-color:#ce93d8;
 }
 
-img{
-  width: 50%;
-  @media (max-width: 425px) {
-    width: 100%;
-  }
-}
 .active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
   border-bottom: 1px solid #ce93d8;
   box-shadow: 0 1px 0 0 #ce93d8;
@@ -22,4 +17,7 @@ img{
 }
 .active-purple .fa, .active-purple-2 .fa {
   color: #ce93d8;
+}
+.some-class{
+  background: green;
 }

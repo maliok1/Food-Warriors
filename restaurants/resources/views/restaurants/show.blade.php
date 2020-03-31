@@ -1,15 +1,12 @@
-@extends('layouts.app')
+@extends ('layouts.app')
 
 @section('restaurant detailed')
-  <h2>{{$restaurant->name}}</h2> 
+  <h2 >{{$restaurant->name}}</h2> 
  
   <img  class="img-fluid" style="width: 100vw; height: 30rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-   
+    
     <h2>{{$restaurant->city}}</h2>
     <p>{{$restaurant->description}}</p>
-
-    
-
 <!-- A form for to create a meal -->
     
     @auth

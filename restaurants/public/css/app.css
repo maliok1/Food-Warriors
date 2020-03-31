@@ -1,4 +1,32 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+button {
+  margin: 10px 0;
+  background-color: #ce93d8;
+}
+
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple input.form-control[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple input[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple .fa, .active-purple-2 .fa {
+  color: #ce93d8;
+}
+
+.some-class {
+  background: green;
+}
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
