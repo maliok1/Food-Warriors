@@ -85832,14 +85832,9 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-<<<<<<< HEAD
 var DeletedMessage = function DeletedMessage() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "You have successfully deleted your profile");
-=======
-var Homepage = function Homepage() {
-  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "homepage")
+  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "You have successfully deleted your profile")
   );
->>>>>>> Bakho
 };
 
 var App = /*#__PURE__*/function (_React$Component) {
@@ -85854,30 +85849,17 @@ var App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-<<<<<<< HEAD
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-        path: "/users/:username",
-        component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-        exact: true,
-        path: "/deleted",
-        component: DeletedMessage
-      }));
-=======
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "container"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-          exact: true,
-          path: "/",
-          component: Homepage
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
           path: "/users/:username",
           component: _UserComponent__WEBPACK_IMPORTED_MODULE_3__["default"]
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+          exact: true,
+          path: "/deleted",
+          component: DeletedMessage
         }))
       );
->>>>>>> Bakho
     }
   }]);
 
@@ -86176,78 +86158,31 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this4 = this;
 
-<<<<<<< HEAD
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "userInfo "
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-        className: "row form__group field"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "profile-image-holder col-md-6"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-        src: this.state.image
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
-        className: "label-img"
-      }, "Click to select your profile image...", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        className: "image-upload",
-        type: "file",
-        name: "image_file",
-        onChange: function onChange(e) {
-          _this4.setState({
-            file: e.target.files[0]
-          });
-        }
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "profile-info col-md-6"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        className: "form__field",
-        type: "text",
-        label: "username",
-        value: this.state.name,
-        name: "name",
-        onChange: function onChange(e) {
-          _this4.setState({
-            name: e.target.value
-          });
-        }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        className: "form__field",
-        type: "email",
-        label: "email",
-        value: this.state.email,
-        name: "email",
-        onChange: function onChange(e) {
-          _this4.setState({
-            email: e.target.value
-          });
-        }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-        className: "form__field",
-        type: "text",
-        label: "phonenumber",
-        value: this.state.phonenumber,
-        name: "phonenumber",
-        onChange: function onChange(e) {
-          _this4.setState({
-            phonenumber: e.target.value
-          });
-        }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row buttons"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        onClick: this.handleFormSubmit,
-        className: "btn btn-update col-md-6 col-lg-2 "
-      }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-        onClick: this.handleDelete,
-        className: "btn btn-danger col-md-4 col-lg-2"
-      }, "Delete my account"))));
-=======
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-          className: "userInfo"
+          className: "userInfo "
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-          onSubmit: this.handleFormSubmit
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          className: "row form__group field"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "profile-image-holder col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+          src: this.state.image
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+          className: "label-img"
+        }, "Click to select your profile image...", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          className: "image-upload",
+          type: "file",
+          name: "image_file",
+          onChange: function onChange(e) {
+            _this4.setState({
+              file: e.target.files[0]
+            });
+          }
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "profile-info col-md-6"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          className: "form__field",
           type: "text",
           label: "username",
           value: this.state.name,
@@ -86257,7 +86192,8 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
               name: e.target.value
             });
           }
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          className: "form__field",
           type: "email",
           label: "email",
           value: this.state.email,
@@ -86267,7 +86203,8 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
               email: e.target.value
             });
           }
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+          className: "form__field",
           type: "text",
           label: "phonenumber",
           value: this.state.phonenumber,
@@ -86277,21 +86214,16 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
               phonenumber: e.target.value
             });
           }
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          src: this.state.image
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", null, "Change your profile picture: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
-          type: "file",
-          name: "image_file",
-          onChange: function onChange(e) {
-            _this4.setState({
-              file: e.target.files[0]
-            });
-          }
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-          className: "btn btn-success"
-        }, "Update")))
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row buttons"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          onClick: this.handleFormSubmit,
+          className: "btn btn-update col-md-6 col-lg-2 "
+        }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+          onClick: this.handleDelete,
+          className: "btn btn-danger col-md-4 col-lg-2"
+        }, "Delete my account"))))
       );
->>>>>>> Bakho
     }
   }]);
 
@@ -86779,8 +86711,6 @@ if (document.getElementById('news')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
 
