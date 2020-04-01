@@ -31,7 +31,7 @@ export default class Contact extends Component {
                         </div>
                         <div className="row">
                             <div className="col-sm-12 form-group">
-                                <button type="submit" className="btn btn-lg btn-default pull-right" >Send &rarr;</button>
+                                <button type="submit" className="btn btn-lg btn-success pull-right" >Send &rarr;</button>
                             </div>
                         </div>
                     </form>
