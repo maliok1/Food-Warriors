@@ -14,7 +14,7 @@
     
     @if(auth()->user()->id === $restaurant->user_id)
     <hr>
-    <div class="card-body">
+    
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row ">
@@ -65,30 +65,33 @@
           @foreach($errors->all() as $error)
             <p>{{ $error }}</p>
           @endforeach
+          <hr>
         </div>
       @endif
     @endif  
   @endauth
-   <hr>
+   
 
 <!-- Display Meals -->
 
-  <h3 class="m-3">Meals available today</h3> 
+  <h2 class="ml-5 mt-4 mb-4">Meals available today</h2> 
+  
+  <div class="con">
     @foreach($restaurant->meals as $meal)
-      <div class="d-inline-flex">
-        
-        <div class="card m-3" style="width: 20rem; height: 35rem; border-radius: 10%">
+    <div class="d-inline-flex" style="margin: 1.5%">
+        <div class="card" style="width: 25rem; height: 45rem; border-radius: 10%; box-shadow: 2px 2px 5px grey;">
           @if($meal->image)
-          <img  class="card-img-top imagemeal" src="{{$meal->image}}" alt="{{$meal->name}}"> 
+          <img  class="card-img-top" style="width: 25rem; height: 20rem; content-fit: cover; border-radius: 10%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
         <div class="card-body">
           <h3 class="card-title">{{$meal->name}}</h3>
           <p class="m-1">{{$meal->description}}</p>
-          <p class="m-1 mt-3">Price: {{$meal->price}} CZK</p>   
+          <hr style="margin: 0"> 
+          <p class="m-1 mt-2">Price: {{$meal->price}} CZK</p>  
           <p class="m-1">Left: {{$meal->quantity}}</p>
           <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 
-@auth
+  @auth
 
 <!-- Display an allergen -->
     <h5 class="m-1">Allergens:</h5>
@@ -153,7 +156,7 @@
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
-          <input class="mt-2 button-style" type="submit" value="delete">
+          <input class="mt-2 button-style" type="submit" value="delete meal">
         </form>
       @endif
 
@@ -162,20 +165,21 @@
       @if(auth()->user()->id !== $restaurant->user_id)
         <form action="{{action ('MealController@cart', $meal->id)}}" method="post">
           @csrf 
-          <input class="mt-2 button-style" type="submit" value="Reserve">
+          <input class="button-style btn2" type="submit" value="Reserve meal">
         </form>
       @endif
     @endauth   
 
     <!-- Reserve a meal -> log in -->
         @guest
-          <a class="mt-2 button-style" href="/login">Reserve meal</a>
+          <a class="button-style btn2" href="/login">Reserve meal</a>
         @endguest
       </div>
     </div>
   </div>
   @endforeach
-  
+
+</div> 
   <hr>
 
 <!-- Comments display -->
@@ -263,6 +267,6 @@
           <h3>Please <a href="{{ route('login') }}">login</a> to leave a comment!</h3>
         </div>
       @endguest
+     </div>
+ 
   @endsection
-</div>
-</div> 

@@ -86769,8 +86769,13 @@ if (document.getElementById('news')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> michaela2
 
 
 /***/ })

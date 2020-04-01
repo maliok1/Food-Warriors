@@ -10502,20 +10502,12 @@ nav.navbar .dropdown-menu-right {
 .restaurant-title {
   margin: 2%;
 }
-.restaurant-title h2 {
-  font-weight: bold;
-}
 
-.addmeal {
-  width: 80%;
-}
-
-.imagemeal {
-  width: 20rem;
-  height: 15rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10%;
+.con {
+  margin: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button-style {
@@ -10581,6 +10573,10 @@ nav.navbar .dropdown-menu-right {
 .submitBTN {
   margin-top: 1%;
   margin-left: 83%;
+}
+
+.btn2 {
+  margin: 15% 25%;
 }
 
 .hr {
