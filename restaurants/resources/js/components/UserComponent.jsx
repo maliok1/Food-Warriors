@@ -13,7 +13,6 @@ export default class UserComponent extends React.Component {
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
-        // this.logout = this.logout.bind(this);
     }
     
     async componentDidMount() {
@@ -30,7 +29,6 @@ export default class UserComponent extends React.Component {
                 ,console.log("axios response", response);
             });
     }
-
     handleFormSubmit(e) {
         e.preventDefault();
 
@@ -62,7 +60,6 @@ export default class UserComponent extends React.Component {
             });
     }
 
-    
     async handleDelete(){
     const { username } = this.props.match.params;
     const resp = await axios
@@ -134,9 +131,9 @@ export default class UserComponent extends React.Component {
 
                     <div className="row buttons">
 
-                        <button onClick={this.handleFormSubmit}  className="btn btn-update col-md-6 col-lg-2 ">Update</button>
+                        <button onClick={this.handleFormSubmit}  className="btn btn-update col-lg-3 ">Update</button>
                         
-                        <button onClick={this.handleDelete} className="btn btn-danger col-md-4 col-lg-2">
+                        <button onClick={this.handleDelete} className="btn btn-danger col-lg-3">
                             Delete my account
                         </button>
                     </div>

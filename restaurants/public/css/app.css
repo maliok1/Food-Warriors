@@ -44,15 +44,17 @@ main {
   color: #874C62;
 }
 .userInfo img {
-  width: 50%;
+  width: 70%;
   border-radius: 45%;
   -webkit-border-radius: 45%;
   -moz-border-radius: 45%;
   -ms-border-radius: 45%;
   -o-border-radius: 45%;
 }
-.userInfo .profile-image-holder, .userInfo .buttons {
-  padding-left: 13%;
+@media (min-width: 776px) {
+  .userInfo .profile-image-holder {
+    padding-left: 14%;
+  }
 }
 .userInfo .buttons {
   display: flex;
@@ -60,11 +62,17 @@ main {
 }
 .userInfo .buttons .btn-update {
   background-color: #C98474;
+  color: whitesmoke;
 }
 .userInfo .buttons .btn-danger {
   margin-top: 15px;
 }
-@media (min-width: 700px) {
+@media (min-width: 776px) {
+  .userInfo .buttons {
+    padding: 0 13%;
+  }
+}
+@media (min-width: 1200px) {
   .userInfo .buttons {
     margin: 15px;
   }

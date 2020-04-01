@@ -6,8 +6,9 @@ import axios from 'axios';
 
 const DeletedMessage = () => {
     return(
-        <div>
-            You have successfully deleted your profile
+        <div class="deleted-account">
+            <h2>You have successfully deleted your profile</h2>
+            <p>We are sorry to see you go</p>
         </div>
     )
 }
