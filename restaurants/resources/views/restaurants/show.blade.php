@@ -181,16 +181,21 @@
 <!-- Comments display -->
 <div class="comment-section">
 
-   <h3 class="mb-5">Comments:</h3>
+   <h3 class="mb-5 comments-title">Comments:</h3>
     @foreach($restaurant->comments as $comment)
       
       <div class="comment-head"> 
-        <span class="head-of-comment"><span class="comment-name">{{$comment->user->name}}</span><span class="ml-3 comment-time">{{$comment->created_at}}</span></span>
+        
+      <img class="user-img" src="{{$comment->user->image}}" />
+
+        <span class="head-of-comment"><span class="comment-name">{{$comment->user->name}}</span></span>
       </div> 
       <div class="comment-body"> 
         <p >{{$comment->comment}}</p> 
       </div>
-        <hr class="hr">
+      <hr class="hr">
+      <span class="ml-3 comment-time pull-right">{{$comment->created_at}}</span>
+        
 
 <!-- Reply display -->
   <div class="display-reply-comment">
@@ -198,7 +203,7 @@
        <div class="comment-head">
         <span>Reply from
         <span class="comment-name">{{$comment->restaurant->name}}</span>
-         <span class="ml-3 comment-time">{{$comment->created_at}}</span>
+         <span class="ml-3 comment-time ">{{$comment->created_at}}</span>
         </span>
        </div>
        <div class="comment-body">
