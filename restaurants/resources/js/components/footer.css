@@ -14,22 +14,17 @@ ul {
     padding:0;
     list-style: none;
 }
-.route {
-    display: flex;
-    flex-wrap: wrap;
-
-}
 .footer-copyright {
     font-family: 'Lato', sans-serif;
     color: #FFF;
-    background: #322f30;
- 
+    background: #874C62;
+    padding-bottom: 1em;
 }
 
 .footer-social-icons {
     font-family: 'Lato', sans-serif;
     color: #FFF;
-    background: #322f30;
+    background:#874C62;
     -webkit-font-smoothing: antialiased;
     width: 100%;
     display: inline-flex;
@@ -42,6 +37,7 @@ ul {
         display: flex;
         justify-content: center;
         width: 100%;
+        padding-top: 2em;
     }
 }
 .social-icon {
@@ -67,7 +63,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
+    background-color: #874C62;
 }
 .fa-facebook:hover {
     background-color: #3d5b99;
@@ -79,7 +75,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
+    background-color: #874C62;
 }
 .fa-twitter:hover {
     background-color: #00aced;
@@ -92,7 +88,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
+    background-color: #874C62;
 }
 .fa-linkedin:hover {
     background-color: #0073a4;
@@ -105,7 +101,7 @@ ul.social-icons {
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition: .5s;
-    background-color: #322f30;
+    background-color: #874C62;
 }
 .fa-github:hover {
     background-color: #5a32a3;
