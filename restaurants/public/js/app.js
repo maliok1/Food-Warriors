@@ -86746,13 +86746,8 @@ if (document.getElementById('news')) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> d71a3abfe3a1bbef866b3fab18d069c221403d83
 
 
 /***/ })
