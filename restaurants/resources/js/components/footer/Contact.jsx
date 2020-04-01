@@ -7,7 +7,7 @@ export default class Contact extends Component {
     render() {
         return (
             <>
-             <div className="container">
+             <div className="container container-contact">
             <div className="row">
                 <div className="col-md-6.5 " id="form_container">
                     <h2>Contact Us</h2> 
