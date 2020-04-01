@@ -20,10 +20,9 @@ export default class App extends React.Component {
       return (
           <BrowserRouter>
             <div className="container">
-
-</div>
+         </div>
           <Route path="/users/:username" component={UserComponent} />
-          <Route exact path="/" component={DeletedMessage} /> 
+          <Route exact path="/deleted" component={DeletedMessage} /> 
           </BrowserRouter>
       
     );  
