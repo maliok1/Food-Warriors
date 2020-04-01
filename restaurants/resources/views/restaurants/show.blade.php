@@ -76,7 +76,7 @@
     @foreach($restaurant->meals as $meal)
       <div class="d-inline-flex">
         
-        <div class="card m-3" style="width: 33%; border-radius: 5%">
+        <div class="card m-3" style="width: 20rem; border-radius: 5%">
           @if($meal->image)
           <img  class="card-img-top" style="border-radius: 5%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
