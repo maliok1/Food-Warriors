@@ -1,16 +1,5 @@
-button{
-  margin:10px 0;
-  background-color:#A7D2CB;
-}
 
-.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
-  border-bottom: 1px solid #A7D2CB;
-  box-shadow: 0 1px 0 0 #A7D2CB;
-}
-.active-purple input.form-control[type=text] {
-  border-bottom: 1px solid #A7D2CB;
-  box-shadow: 0 1px 0 0 #A7D2CB;
-}
+
 .active-purple input[type=text] {
   border-bottom: 1px solid #A7D2CB;
   box-shadow: 0 1px 0 0 #A7D2CB;
@@ -18,10 +7,29 @@ button{
 .active-purple .fa, .active-purple-2 .fa {
   color: #A7D2CB;
 }
+
+
+
+
 nav.navbar{
   background-color: #874C62;
   color: whitesmoke;
+  a{
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  
+  .dropdown-menu-right {
+  background-color: #C98474;
+  }
 }
+
+.navbar-light .navbar-brand{
+    color: seashell;
+    }
 .search-area{
-  margin-bottom: 10px;
+  margin: 10px;
 }
+
+
+
