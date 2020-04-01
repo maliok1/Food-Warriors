@@ -8,7 +8,6 @@
     font-weight: bold;
     
   }
-  
 }
 .addmeal {
   width: 80%;
@@ -85,4 +84,18 @@
   text-align: end;
   margin: 7%;
   
+}
+
+.comment-time{
+  font-size: 0.7rem;
+  font-weight: lighter;
+  color: #C98474;
+  text-shadow: 0.5px 0.5px rgb(167, 161, 161);
+}
+
+.comment-name{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #874C62;
+  text-shadow: 0.5px 0.5px black;
 }
