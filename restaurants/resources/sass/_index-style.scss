@@ -1,0 +1,27 @@
+.restaurants {
+
+  text-align: center;
+  
+}
+.restaurant-body-card {
+  text-align: left;
+  margin: 10px 5px;
+}
+
+.cards {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 10%;
+  border: 1px solid rgb(200, 198, 198);
+  padding: 10px;
+  box-shadow: 2.5px 5px 9px #a8a7a7;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+  }
+  a {
+    color: black;
+  }
+}
