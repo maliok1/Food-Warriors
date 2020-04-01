@@ -13,37 +13,42 @@ main{
   color: #874C62;
 
   img{
-    width: 50%;
+    width: 70%;
     border-radius: 45%;
     -webkit-border-radius: 45%;
     -moz-border-radius: 45%;
     -ms-border-radius: 45%;
     -o-border-radius: 45%;
   }
-  .profile-image-holder , .buttons{
-    padding-left: 13%;
+  .profile-image-holder{
+    @media(min-width: 776px ){
+      padding-left:14%;
+    }
+    
   }
   .buttons{ 
     display: flex;
     flex-direction: column;
     
-   
     .btn-update{
     background-color: #C98474;
+    color: whitesmoke;
     }
   
     .btn-danger{
       margin-top: 15px;
     }
     
-    @media(min-width: 700px ){
+    @media(min-width: 776px ){
+      padding: 0 13%;
+    }
+    @media(min-width: 1200px ){
       margin:15px;
     }
   }
   
 }
 // INPUT FIELDS
-
 .form__field {
   font-family: inherit;
   width: 100%;
@@ -73,7 +78,6 @@ main{
 .form__field{
   &:required,&:invalid { box-shadow:none; }
 }
-
 
 //FILE UPLOAD
 .image-upload {
