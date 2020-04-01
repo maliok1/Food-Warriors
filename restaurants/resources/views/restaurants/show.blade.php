@@ -1,12 +1,12 @@
 @extends ('layouts.app')
 
 @section('restaurant detailed')
-  <h2 >{{$restaurant->name}}</h2> 
- 
-  <img  class="img-fluid" style="width: 100vw; height: 30rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-    
-    <h2>{{$restaurant->city}}</h2>
-    <p>{{$restaurant->description}}</p>
+
+    <img class="img-fluid" style="margin-top:-23px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+    <h2 class="m-3">{{$restaurant->name}}</h2>
+    <h2 class="mr-3 mb-5 pull-right">{{$restaurant->city}}</h2>
+    <p class="m-3">{{$restaurant->description}}</p>
+
 <!-- A form for to create a meal -->
     
     @auth
@@ -55,7 +55,7 @@
           </div>
         </div>
         <div class="col-md-12" style="display:flex; justify-content: center">
-          <input type="submit" value="submit"  class="btn btn-primary">
+          <input type="submit" value="submit"  class="button-style">
         </div>
       </form>
 </div>
@@ -75,30 +75,31 @@
   <h3 class="m-3">Meals available today</h3> 
     @foreach($restaurant->meals as $meal)
       <div class="d-inline-flex">
-        <div class="card m-3" style="width: 35rem">
+        
+        <div class="card m-3" style="width: 33%; border-radius: 5%">
           @if($meal->image)
-          <img src="{{$meal->image}}" alt="{{$meal->name}}"> 
+          <img  class="card-img-top" style="border-radius: 5%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
         <div class="card-body">
           <h3 class="card-title">{{$meal->name}}</h3>
-          <p>{{$meal->description}}</p>
-          <h5>Price: {{$meal->price}} CZK</h5>   
-          <h5>Left: {{$meal->quantity}}</h5>
-          <h5>Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</h5>
+          <p class="m-1">{{$meal->description}}</p>
+          <p class="m-1 mt-3">Price: {{$meal->price}} CZK</p>   
+          <p class="m-1">Left: {{$meal->quantity}}</p>
+          <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 
 @auth
 
 <!-- Display an allergen -->
-    <h5>Allergens:</h5>
+    <h5 class="m-1">Allergens:</h5>
       @foreach($meal->allergens as $allergen)
-        <li>{{$allergen->name}}</li>
+        <li class="m-1">{{$allergen->name}}</li>
 
 <!-- remove an allergen -->
         @if(auth()->user()->id === $restaurant->user_id)
-          <form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
+          <form class="m-1" form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
             @csrf 
-            <input type="submit" value="delete allergen">
-            <input type="hidden" name="allergen" value={{$allergen->id}}> 
+            <input class="m-1 button-style" type="submit" value="delete allergen">
+            <input class="m-1" type="hidden" name="allergen" value={{$allergen->id}}> 
           </form> 
          @endif
       @endforeach
@@ -113,7 +114,7 @@
           @foreach($allergens as $allergen)
             <option value="{{$allergen->id}}">{{$allergen->name}}</option>
           @endforeach
-          <input type="submit" value="submit allergen">
+          <input class="mt-2 button-style" type="submit" value="submit allergen">
         </select>
       </form>
 
@@ -151,79 +152,108 @@
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
-          <input type="submit" value="delete">
+          <input class="mt-2 button-style" type="submit" value="delete">
         </form>
-        @endif
+      @endif
 
   <!-- Reserve a meal -> user -->
   
       @if(auth()->user()->id !== $restaurant->user_id)
         <form action="{{action ('MealController@cart', $meal->id)}}" method="post">
           @csrf 
-          <input type="submit" value="Reserve">
+          <input class="mt-2 button-style" type="submit" value="Reserve">
         </form>
       @endif
-@endauth   
+    @endauth   
 
     <!-- Reserve a meal -> log in -->
         @guest
           <a href="/login">Reserve meal</a>
         @endguest
-  
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
   @endforeach
   
   <hr>
 
 <!-- Comments display -->
-   <h3 class="m-3">Comments:</h3>
-   @foreach($restaurant->comments as $comment)
-    <hr>   Comment:
-      <p>{{$comment->comment}}</p> 
-      <p> By {{$comment->user->name}}</p>
-      Created at: <br>
-      <p>{{$comment->created_at}}</p>
+<div class="comment-section">
+
+   <h3 class="mb-5">Comments:</h3>
+    @foreach($restaurant->comments as $comment)
+      
+      <div class="comment-head"> 
+        <span>{{$comment->user->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+      </div> 
+      <div class="comment-body"> 
+        <p >{{$comment->comment}}</p> 
+      </div>
+        <hr class="hr">
+
 <!-- Reply display -->
+  <div class="display-reply-comment">
       @if($comment->comment_reply !== null)
-       <strong>Reply from restaurant:</strong><br>
-       <p>{{$comment->comment_reply->reply}}</p> 
+       <div class="comment-head">
+        <span>Reply from {{$comment->restaurant->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+       </div>
+       <div class="comment-body">
+         <p >{{$comment->comment_reply->reply}}</p>   
+         <hr class="hr2">
+       </div> 
       @endif
+  </div>
+          
+<!--Delete a comment  -->
+    @auth
+    <div class="ml-5">
+        @if($comment->user_id === Auth::user()->id)
+          <form action="{{ action('CommentsController@deleteComment', $comment->id) }}" method="post">
+            @method('delete')
+            @csrf
+            <input class="button-style deleteBTN" type="submit" value="delete comment">
+          </form>
+        @endif
+      </div>
+    @endauth  
     
-<!-- Reply to a commnet-->
+<!-- Reply to a comment-->
   @auth
+    <div class="reply-comment">
       @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
-        <textarea name="reply" id="" cols="10" rows="2"></textarea>
-        <input type="submit" value="reply">
+        <textarea class="form-comment" type="text" id="" name="reply"></textarea>
+        <input class=" mt-2 button-style submitBTN" type="submit" value="reply">
       </form>
       @endif
-   @endauth  
-<!--Delete a comment  -->
-  @auth
-      @if($comment->user_id === Auth::user()->id)
-      <form action="{{ action('CommentsController@deleteComment', $comment->id) }}" method="post">
-        @method('delete')
-        @csrf
-        <input type="submit" value="delete">
-      </form>
-      @endif
-      <hr>
+    </div> 
   @endauth    
-    @endforeach
+  @endforeach
+
 <!-- Leave a comment -->
-   @auth
+   @auth  
+   @if(auth()->user()->id !== $restaurant->user_id)
+    <div>
+      <div class="reply-comment ">
       <form action="{{action ('CommentsController@store', $restaurant->id) }}" method="post">
-      @csrf
-      <h4>Leave your comment</h4>
-      <textarea name="comment" id="" cols="30" rows="10"></textarea>
-      <input type="submit" value="save">
-    </form>
+        @csrf
+        <h4 style="margin: 5%">Leave your comment</h4>
+        <textarea class="form-comment" name="comment" id=""></textarea>
+        <input class="mt-2 button-style submitBTN" type="submit" value="submit">
+      
+      </form> 
+    </div>
+  </div>
+    @endif
    @endauth
+
 <!-- Log-in section -->
-    @guest
-        <h2>Please <a href="{{ route('login') }}">login</a> to leave a comment</h2>
-    @endguest
-@endsection
+      @guest
+        <div class="login-to-comment">
+          <h3>Please <a href="{{ route('login') }}">login</a> to leave a comment!</h3>
+        </div>
+      @endguest
+  @endsection
+</div>
+</div> 

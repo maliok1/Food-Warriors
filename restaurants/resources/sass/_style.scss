@@ -1,6 +1,10 @@
 button{
   margin:10px 0;
+<<<<<<< HEAD
   background-color:#A7D2CB;
+=======
+  
+>>>>>>> 381ecfc0a0b5ea40929934ff66c3d2b305646dbc
 }
 
 .active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
@@ -16,12 +20,6 @@ button{
   box-shadow: 0 1px 0 0 #A7D2CB;
 }
 .active-purple .fa, .active-purple-2 .fa {
-  color: #A7D2CB;
+  color: #ce93d8;
 }
-nav.navbar{
-  background-color: #874C62;
-  color: whitesmoke;
-}
-.search-area{
-  margin-bottom: 10px;
-}
+

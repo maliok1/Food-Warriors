@@ -1,0 +1,69 @@
+.reply-comment {
+  margin-left: 90px;
+  
+}
+
+.button-style {
+  margin: 6px;
+  padding: 0.5rem 0.7rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+.button-style:hover {
+  background-color: rgb(173, 86, 66);
+  color: white;
+}
+.comment-section {
+  width: 50%;
+  margin: 4% 5%;
+
+}
+.comment-head {
+  margin-left: 2%;
+  margin-bottom: 2%;
+  
+}
+.comment-body {
+  margin-left: 5%;
+  
+}
+.reply-comment {
+  margin-top:2%;
+  margin-left: 25%;
+}
+.display-reply-comment {
+  margin-left: 15%;
+}
+.form-comment {
+  margin-left: 5%;
+  width: 90%; 
+  height: 15%; 
+  border-radius: 1px solid grey;
+}
+
+.deleteBTN {
+  margin-top: 1%;
+  margin-left: 75%;
+}
+.submitBTN {
+  
+  margin-top: 1%;
+  margin-left: 83%;
+}
+.hr {
+  width: 110%; 
+  background-color: gray;
+}
+.hr2 {
+  margin-left: -5%;
+  width: 120%; 
+  background-color: gray;
+}
+.login-to-comment {
+  text-align: end;
+  margin: 7%;
+}
+
