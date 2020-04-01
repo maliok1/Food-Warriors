@@ -1,0 +1,18 @@
+.search-results-table{
+  max-width: 100vw;
+}
+.search-result-img{
+  width: 300px;
+}
+
+.search-results{
+ display: flex;
+ flex-direction: column;
+  justify-content: center; 
+}
+
+td{
+  @media (max-width:700px) {
+    max-width: 110px;
+  }
+}

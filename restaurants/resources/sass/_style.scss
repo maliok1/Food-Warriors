@@ -1,6 +1,27 @@
 html{
   background-color:#A7D2CB80 ;
 }
+
+body::-webkit-scrollbar {
+  width: 1.3em;
+  background-color: #C98474;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #874C62;
+  
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #874C62;
+  outline: 1px solid rgb(29, 2, 12);
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
 button{
   margin:10px 0;
 }
@@ -35,6 +56,3 @@ nav.navbar{
   margin: 10px;
   width: 80%;
 }
-
-
-
