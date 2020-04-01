@@ -33,7 +33,10 @@ nav.navbar .dropdown-menu-right {
 }
 
 .search-area {
+  display: flex;
+  align-items: center;
   margin: 10px;
+  width: 80%;
 }
 
 main {
@@ -10421,7 +10424,10 @@ nav.navbar .dropdown-menu-right {
 }
 
 .search-area {
+  display: flex;
+  align-items: center;
   margin: 10px;
+  width: 80%;
 }
 
 .restaurants {

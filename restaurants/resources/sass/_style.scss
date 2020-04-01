@@ -28,8 +28,12 @@ nav.navbar{
 .navbar-light .navbar-brand{
     color: seashell;
     }
+
 .search-area{
+  display: flex;
+  align-items: center;
   margin: 10px;
+  width: 80%;
 }
 
 
