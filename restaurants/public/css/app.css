@@ -3,6 +3,25 @@ html {
   background-color: #A7D2CB80;
 }
 
+body::-webkit-scrollbar {
+  width: 1.3em;
+  background-color: #C98474;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #874C62;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #874C62;
+  outline: 1px solid #1d020c;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
 button {
   margin: 10px 0;
 }
@@ -10394,6 +10413,25 @@ html {
   background-color: #A7D2CB80;
 }
 
+body::-webkit-scrollbar {
+  width: 1.3em;
+  background-color: #C98474;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #874C62;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #874C62;
+  outline: 1px solid #1d020c;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+}
+
 button {
   margin: 10px 0;
 }
@@ -10573,7 +10611,7 @@ nav.navbar .dropdown-menu-right {
   font-size: 1.5rem;
   font-weight: bolder;
   color: #874C62;
-  text-shadow: 0.2px 0.5px black;
+  text-shadow: 0.2px 0.5px #a7a1a1;
 }
 
 .comments-title {
