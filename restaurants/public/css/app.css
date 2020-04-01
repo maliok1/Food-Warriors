@@ -51,8 +51,10 @@ main {
   -ms-border-radius: 45%;
   -o-border-radius: 45%;
 }
-.userInfo .profile-image-holder, .userInfo .buttons {
-  padding-left: 13%;
+@media (min-width: 700px) {
+  .userInfo .profile-image-holder, .userInfo .buttons {
+    padding-left: 13%;
+  }
 }
 .userInfo .buttons {
   display: flex;
@@ -60,6 +62,7 @@ main {
 }
 .userInfo .buttons .btn-update {
   background-color: #C98474;
+  color: whitesmoke;
 }
 .userInfo .buttons .btn-danger {
   margin-top: 15px;
