@@ -70559,8 +70559,7 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
       file: null
     };
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
-    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this)); // this.logout = this.logout.bind(this);
-
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -70726,10 +70725,10 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
         className: "row buttons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.handleFormSubmit,
-        className: "btn btn-update col-md-6 col-lg-3 "
+        className: "btn btn-update col-lg-3 "
       }, "Update"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         onClick: this.handleDelete,
-        className: "btn btn-danger col-md-6 col-lg-3"
+        className: "btn btn-danger col-lg-3"
       }, "Delete my account"))));
     }
   }]);
