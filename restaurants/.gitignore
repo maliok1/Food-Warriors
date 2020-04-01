@@ -15,4 +15,4 @@ yarn-error.log
 env
 package.json
 package-lock.json
-phploy.ini
+../phploy.ini

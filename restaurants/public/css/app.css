@@ -10152,6 +10152,25 @@ nav.navbar .dropdown-menu-right {
   margin-left: 90px;
 }
 
+.restaurant-title {
+  margin: 2%;
+}
+.restaurant-title h2 {
+  font-weight: bold;
+}
+
+.addmeal {
+  width: 80%;
+}
+
+.imagemeal {
+  width: 20rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10%;
+}
+
 .button-style {
   margin: 6px;
   padding: 0.5rem 0.7rem;
@@ -10213,7 +10232,7 @@ nav.navbar .dropdown-menu-right {
 }
 
 .hr2 {
-  margin-left: -5%;
+  margin-left: -6%;
   width: 120%;
   background-color: gray;
 }

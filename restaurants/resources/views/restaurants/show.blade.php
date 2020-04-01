@@ -2,11 +2,12 @@
 
 @section('restaurant detailed')
 
-    <img class="img-fluid" style="margin-top:-23px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-    <h2 class="m-3">{{$restaurant->name}}</h2>
-    <h2 class="mr-3 mb-5 pull-right">{{$restaurant->city}}</h2>
-    <p class="m-3">{{$restaurant->description}}</p>
-
+    <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+  <div class=" restaurant-title">
+    <h2>{{$restaurant->name}}</h2>
+    <h3>{{$restaurant->city}}</h3>
+    <p>{{$restaurant->description}}</p>
+ </div>
 <!-- A form for to create a meal -->
     
     @auth
@@ -76,9 +77,9 @@
     @foreach($restaurant->meals as $meal)
       <div class="d-inline-flex">
         
-        <div class="card m-3" style="width: 20rem; border-radius: 5%">
+        <div class="card m-3" style="width: 20rem; height: 35rem; border-radius: 10%">
           @if($meal->image)
-          <img  class="card-img-top" style="border-radius: 5%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
+          <img  class="card-img-top imagemeal" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
         <div class="card-body">
           <h3 class="card-title">{{$meal->name}}</h3>
@@ -168,7 +169,7 @@
 
     <!-- Reserve a meal -> log in -->
         @guest
-          <a href="/login">Reserve meal</a>
+          <a class="mt-2 button-style" href="/login">Reserve meal</a>
         @endguest
       </div>
     </div>
@@ -184,7 +185,7 @@
     @foreach($restaurant->comments as $comment)
       
       <div class="comment-head"> 
-        <span>{{$comment->user->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+        <span class="head-of-comment">{{$comment->user->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
       </div> 
       <div class="comment-body"> 
         <p >{{$comment->comment}}</p> 

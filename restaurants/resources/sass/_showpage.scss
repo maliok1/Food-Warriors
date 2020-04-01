@@ -2,6 +2,23 @@
   margin-left: 90px;
   
 }
+.restaurant-title {
+  margin:2%;
+  h2 {
+    font-weight: bold;
+    
+  }
+  
+}
+.addmeal {
+  width: 80%;
+}
+.imagemeal {
+  width: 20rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 10%;
+}
 
 .button-style {
   margin: 6px;
@@ -26,6 +43,7 @@
   margin-bottom: 2%;
   
 }
+
 .comment-body {
   margin-left: 5%;
   
@@ -42,6 +60,7 @@
   width: 90%; 
   height: 15%; 
   border-radius: 1px solid grey;
+  
 }
 
 .deleteBTN {
@@ -58,12 +77,12 @@
   background-color: gray;
 }
 .hr2 {
-  margin-left: -5%;
+  margin-left: -6%;
   width: 120%; 
   background-color: gray;
 }
 .login-to-comment {
   text-align: end;
   margin: 7%;
+  
 }
-
