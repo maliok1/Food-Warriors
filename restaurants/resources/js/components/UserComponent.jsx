@@ -79,7 +79,7 @@ export default class UserComponent extends React.Component {
                     <form className='row form__group field'>
                         <div className="profile-image-holder col-md-6">
                             <img src={this.state.image} />
-                            <label>
+                            <label className='label-img'>
                                 Click to select your profile image...
                                 <input
                                     className="image-upload"

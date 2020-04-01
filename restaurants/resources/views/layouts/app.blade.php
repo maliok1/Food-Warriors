@@ -2,6 +2,20 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 <style>
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom:90px;
+}
+body {
+  margin-bottom: 90px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 97px;
+}
 #map {
     height: 400px;
     width: 80%;
@@ -128,7 +142,7 @@
         </main>
 
         
-        <footer class="fixed-bottom" id = "footer">
+        <footer id = "footer">
         </footer>
     </div>
 </body>

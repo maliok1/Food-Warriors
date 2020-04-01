@@ -37,11 +37,13 @@ ul {
     justify-content: space-between ;
     margin: 0 0;
 }
-/* @media (min-width: 768px) { 
+@media (max-width: 600px) { 
     .footer-social-icons {
-        position: static;
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
-} */
+}
 .social-icon {
     color: #fff;
     font-size: 2em;
