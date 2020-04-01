@@ -185,7 +185,7 @@
     @foreach($restaurant->comments as $comment)
       
       <div class="comment-head"> 
-        <span class="head-of-comment">{{$comment->user->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+        <span class="head-of-comment"><span class="comment-name">{{$comment->user->name}}</span><span class="ml-3 comment-time">{{$comment->created_at}}</span></span>
       </div> 
       <div class="comment-body"> 
         <p >{{$comment->comment}}</p> 
@@ -196,7 +196,10 @@
   <div class="display-reply-comment">
       @if($comment->comment_reply !== null)
        <div class="comment-head">
-        <span>Reply from {{$comment->restaurant->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
+        <span>Reply from
+        <span class="comment-name">{{$comment->restaurant->name}}</span>
+         <span class="ml-3 comment-time">{{$comment->created_at}}</span>
+        </span>
        </div>
        <div class="comment-body">
          <p >{{$comment->comment_reply->reply}}</p>   
