@@ -168,7 +168,7 @@
 
     <!-- Reserve a meal -> log in -->
         @guest
-          <a href="/login">Reserve meal</a>
+          <a class="mt-2 button-style" href="/login">Reserve meal</a>
         @endguest
       </div>
     </div>
