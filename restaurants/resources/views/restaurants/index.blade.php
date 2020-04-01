@@ -4,36 +4,39 @@
 
    <!-- Go to your restaurant button-->
 
-<div class="m-4" style="font-family: 'Roboto', sans-serif">
+
       @auth 
         @foreach($restaurants as $restaurant)
           @if(auth()->user()->id === $restaurant->user_id)
-            <a class="m-2 btn btn-dark" href="restaurant/{{$restaurant->id}}">Go to my restaurant</a>
+            <a class="mr-5 pull-right btn btn-dark" href="restaurant/{{$restaurant->id}}">Go to my restaurant</a>
           @endif
         @endforeach 
       @endauth
 
     <!-- List of restaurants -->
 
-      <h1 class="m-2">Restaurants</h1>
+      <h1 class="ml-5">Restaurants</h1>
         <hr>
+        <div class="restaurants">
           @foreach($restaurants as $restaurant)
-            <div class="d-inline-flex m-2">
-              <div class="align-self-center">
-                <div class="card" style="width: 20rem; border-radius: 15px">
+            <div class="d-inline-flex m-3">
+              <div class="cards">
                   @if($restaurant->image)
-                    <img class="card-img-top" style="border-radius: 15px" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
+                    <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
                   @endif
-                  <div class="card-body">
+                    <div class="restaurant-body-card">
                     <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
                     <h5 class="card-title">{{$restaurant->city}}</h5>
                   </div>
-                </div>
+                 
                </div>
+             
               </div>
             @endforeach
+       </div>  
     @endsection
-</div>
+
+
 
 {{-- for overlaping 
 <div class="card-img-overlay">

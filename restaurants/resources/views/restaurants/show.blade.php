@@ -2,11 +2,9 @@
 
 @section('restaurant detailed')
 
-  <h2 class="m-3">{{$restaurant->name}}</h2> 
- 
-  <img  class="img-fluid" style="width: 100vw; height: 20rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-   
-    <h2 class="m-3">{{$restaurant->city}}</h2>
+    <img class="img-fluid" style="margin-top:-23px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+    <h2 class="m-3">{{$restaurant->name}}</h2>
+    <h2 class="mr-3 mb-5 pull-right">{{$restaurant->city}}</h2>
     <p class="m-3">{{$restaurant->description}}</p>
 
 <!-- A form for to create a meal -->
@@ -78,7 +76,7 @@
     @foreach($restaurant->meals as $meal)
       <div class="d-inline-flex">
         
-        <div class="card m-3" style="width: 30rem; border-radius: 5%">
+        <div class="card m-3" style="width: 33%; border-radius: 5%">
           @if($meal->image)
           <img  class="card-img-top" style="border-radius: 5%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
@@ -200,11 +198,12 @@
         <span>Reply from {{$comment->restaurant->name}}<span class="ml-3 text-secondary">{{$comment->created_at}}</span></span>
        </div>
        <div class="comment-body">
-         <p >{{$comment->comment_reply->reply}}</p> 
-         <hr class="hr">
-       </div>
+         <p >{{$comment->comment_reply->reply}}</p>   
+         <hr class="hr2">
+       </div> 
       @endif
   </div>
+          
 <!--Delete a comment  -->
     @auth
     <div class="ml-5">
@@ -251,8 +250,8 @@
 
 <!-- Log-in section -->
       @guest
-        <div class="ml-5">
-          <h3 class="mb-5">Please <a href="{{ route('login') }}">login</a> to leave a comment!</h3>
+        <div class="login-to-comment">
+          <h3>Please <a href="{{ route('login') }}">login</a> to leave a comment!</h3>
         </div>
       @endguest
   @endsection
