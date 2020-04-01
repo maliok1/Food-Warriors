@@ -85,7 +85,7 @@ main{
 	z-index: -1;
 }
 
-.image-upload , label {
+.image-upload , .label-img {
   cursor: pointer; 
   font-size: 1.25em;
   font-weight: 700;
@@ -94,6 +94,6 @@ main{
   display: inline-block;
 }
 
-.image-upload:focus,  label:hover {
+.image-upload:focus,  .label-img:hover {
   background-color: whitesmoke;
 }

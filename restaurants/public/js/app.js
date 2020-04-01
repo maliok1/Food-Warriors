@@ -86183,7 +86183,9 @@ var UserComponent = /*#__PURE__*/function (_React$Component) {
         className: "profile-image-holder col-md-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
         src: this.state.image
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Click to select your profile image...", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", {
+        className: "label-img"
+      }, "Click to select your profile image...", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         className: "image-upload",
         type: "file",
         name: "image_file",
