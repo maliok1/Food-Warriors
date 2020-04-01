@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios , { post, get } from "axios";
-import  { Redirect } from 'react-router-dom'
 
 export default class UserComponent extends React.Component {
     constructor(props) {
@@ -75,51 +74,74 @@ export default class UserComponent extends React.Component {
 
     render() {
         return (
-            <div className="userInfo">
-                <form onSubmit={this.handleFormSubmit}>
-                    <h3>Name</h3>
-                    <input
-                        type="text"
-                        label="username"
-                        value= {this.state.name}
-                        name="name"
-                        onChange={e => {
-                            this.setState({ name: e.target.value });
-                        }}
-                    />
-                    <h3>Email</h3>
-                    <input
-                        type="email"
-                        label="email"
-                        value={this.state.email}
-                        name="email"
-                        onChange={e => {
-                            this.setState({ email: e.target.value });
-                        }}
-                    />
-                    <h3>Phone number</h3>
-                    <input
-                        type="text"
-                        label="phonenumber"
-                        value={this.state.phonenumber}
-                        name="phonenumber"
-                        onChange={e => {
-                            this.setState({ phonenumber: e.target.value });
-                        }}
-                    />
-                    <br/>
-                    <img src={this.state.image} />
-                    <h3>Change your profile picture: </h3>
-                    <input
-                     type="file"
-                     name="image_file"
-                     onChange={e => {
-                        this.setState({file: e.target.files[0]});}}
-                      /> 
-                    <button className="btn btn-success">Update</button>
-                </form>
-                
-                 <button onClick = {this.handleDelete} className="btn btn-danger">Delete my account</button>
+            <div className="userInfo ">
+                <div className='container'>
+                    <form className='row form__group field'>
+                        <div className="profile-image-holder col-md-6">
+                            <img src={this.state.image} />
+                            <label>
+                                Click to select your profile image...
+                                <input
+                                    className="image-upload"
+                                    type="file"
+                                    name="image_file"
+                                    onChange={e => {
+                                        this.setState({ file: e.target.files[0] });
+                                    }}
+                                /> 
+                            </label> 
+                        </div>
+                        <div className="profile-info col-md-6">
+                            <h4>Name</h4>
+                            <input
+                                
+                                className="form__field"
+                                type="text"
+                                label="username"
+                                value={this.state.name}
+                                name="name"
+                                onChange={e => {
+                                    this.setState({ name: e.target.value });
+                                }}
+                            />
+                            <h4>Email</h4>
+                            <input
+                                className="form__field"
+                                type="email"
+                                label="email"
+                                value={this.state.email}
+                                name="email"
+                                onChange={e => {
+                                    this.setState({ email: e.target.value });
+                                }}
+                            />
+
+                            <h4>Phone number</h4>
+                            <input 
+                                className="form__field"
+                                type="text"
+                                label="phonenumber"
+                                value={this.state.phonenumber}
+                                name="phonenumber"
+                                onChange={e => {
+                                    this.setState({ phonenumber: e.target.value });
+                                }}
+                            />
+                            <br/>
+                            
+                        </div>
+                    </form> 
+
+                    <div className="row buttons">
+
+                        <button onClick={this.handleFormSubmit}  className="btn btn-update col-md-6 col-lg-2 ">Update</button>
+                        
+                        <button onClick={this.handleDelete} className="btn btn-danger col-md-4 col-lg-2">
+                            Delete my account
+                        </button>
+                    </div>
+                    
+                </div>
             </div>
         );
     }
