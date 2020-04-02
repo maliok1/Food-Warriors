@@ -8,7 +8,7 @@
       @auth 
         @foreach($restaurants as $restaurant)
           @if(auth()->user()->id === $restaurant->user_id)
-            <a class="mr-5 pull-right btn btn-dark" href="restaurant/{{$restaurant->id}}">Go to my restaurant</a>
+            <a class="button-style pull-right mr-5 mb-4 " href="restaurant/{{$restaurant->id}}">Go to my restaurant</a>
           @endif
         @endforeach 
       @endauth
