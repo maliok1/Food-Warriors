@@ -1,0 +1,74 @@
+.block-news {
+    height: 330px;
+    background: rgba(86,61,124,.15);
+    margin-bottom: 30px;
+  }
+  
+  .btn-more {
+    font-size: .85rem;
+    font-weight: bold;
+    background-color: #C98474;
+  }
+
+  .btn-more:hover {
+    background-color: rgb(173, 86, 66);
+    color: white;
+  }
+
+  .box1 {
+    background-image: url('./menu.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.box1:hover {
+  color: white;
+}
+
+  .box2 {
+      background-image: url('./restaurant-1.jpg');
+      background-size: cover;
+      color: white;
+  }
+
+  .box2:hover {
+    color: white;
+  }
+
+  .box3 {
+    background-image: url('./tapas.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.box3:hover {
+  color: white;
+}
+.box4 {
+    background-image: url('./homemade.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.box4:hover {
+  color: white;
+}
+.box5 {
+    background-image: url('./backery.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.box5:hover {
+  color: white;
+}
+
+  .description {
+      font-family:'Georgia';
+      font-size: large;
+      font-weight: bolder;
+  }
+
+  .description:hover {
+      color: white;
+  }

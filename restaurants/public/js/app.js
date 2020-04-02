@@ -9756,7 +9756,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lat
 exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);", ""]);
 
 // module
-exports.push([module.i, "a {\n    text-decoration: none;\n    color: #fff;\n}\n\na:hover {\n    text-decoration: none;\n}\n\nul {\n    padding:0;\n    list-style: none;\n}\n.footer-copyright {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background: #874C62;\n    padding-bottom: 1em;\n}\n\n.footer-social-icons {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background:#874C62;\n    -webkit-font-smoothing: antialiased;\n    width: 100%;\n    display: inline-flex;\n    flex-wrap: wrap;\n    justify-content: space-between ;\n    margin: 0 0;\n}\n@media (max-width: 600px) { \n    .footer-social-icons {\n        display: flex;\n        justify-content: center;\n        width: 100%;\n        padding-top: 2em;\n    }\n}\n.social-icon {\n    color: #fff;\n    font-size: 2em;\n}\n\nul.social-icons {\n    margin-top: 10px;\n}\n.social-icons li {\n    vertical-align: top;\n    display: inline;\n}\n.social-icons a {\n    color: #fff;\n    text-decoration: none;\n}\n.fa-facebook {\n    padding:10px 19px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-facebook:hover {\n    background-color: #3d5b99;\n}\n.fa-twitter {\n    padding:10px 12px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-twitter:hover {\n    background-color: #00aced;\n}\n\n.fa-linkedin {\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-linkedin:hover {\n    background-color: #0073a4;\n}\n.fa-github {\n    margin-right: 7px;\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-github:hover {\n    background-color: #5a32a3;\n}", ""]);
+exports.push([module.i, "a {\n    text-decoration: none;\n    color: #fff;\n}\n\na:hover {\n    text-decoration: none;\n}\n\nul {\n    padding:0;\n    list-style: none;\n}\n\n.route {\n    font-size: 17px;\n}\n.footer-copyright {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background: #874C62;\n    padding-bottom: 1em;\n}\n\n.footer-social-icons {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background:#874C62;\n    -webkit-font-smoothing: antialiased;\n    width: 100%;\n    display: inline-flex;\n    flex-wrap: wrap;\n    justify-content: space-between ;\n    margin: 0 0;\n}\n@media (max-width: 600px) { \n    .footer-social-icons {\n        display: flex;\n        justify-content: center;\n        width: 100%;\n    }\n}\n@media (max-width: 600px) { \n    .social-icons {\n        padding-bottom: 1.5em;\n    }\n}\n.social-icon {\n    color: #fff;\n    font-size: 2em;\n}\n\nul.social-icons {\n    margin-top: 10px;\n}\n.social-icons li {\n    vertical-align: top;\n    display: inline;\n}\n.social-icons a {\n    color: #fff;\n    text-decoration: none;\n}\n.fa-facebook {\n    padding:10px 19px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-facebook:hover {\n    background-color: #3d5b99;\n}\n.fa-twitter {\n    padding:10px 12px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-twitter:hover {\n    background-color: #00aced;\n}\n\n.fa-linkedin {\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-linkedin:hover {\n    background-color: #0073a4;\n}\n.fa-github {\n    margin-right: 7px;\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-github:hover {\n    background-color: #5a32a3;\n}", ""]);
 
 // exports
 
@@ -9808,12 +9808,13 @@ exports.push([module.i, "@media (max-width: 600px) { \n    .container-contact {\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".block-news {\n    height: 330px;\n    background: rgba(86,61,124,.15);\n    margin-bottom: 30px;\n  }\n  \n  .btn-more {\n    font-size: .85rem;\n    font-weight: bold;\n    background-color: #C98474;\n  }\n\n  .btn-more:hover {\n    background-color: rgb(173, 86, 66);\n    color: white;\n  }\n\n  .box1 {\n    background-image: url(" + escape(__webpack_require__(/*! ./menu.jpg */ "./resources/js/components/footer/menu.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box1:hover {\n  color: white;\n}\n\n  .box2 {\n      background-image: url(" + escape(__webpack_require__(/*! ./restaurant-1.jpg */ "./resources/js/components/footer/restaurant-1.jpg")) + ");\n      background-size: cover;\n      color: white;\n  }\n\n  .box2:hover {\n    color: white;\n  }\n\n  .box3 {\n    background-image: url(" + escape(__webpack_require__(/*! ./tapas.jpg */ "./resources/js/components/footer/tapas.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box3:hover {\n  color: white;\n}\n.box4 {\n    background-image: url(" + escape(__webpack_require__(/*! ./homemade.jpg */ "./resources/js/components/footer/homemade.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box4:hover {\n  color: white;\n}\n.box5 {\n    background-image: url(" + escape(__webpack_require__(/*! ./backery.jpg */ "./resources/js/components/footer/backery.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box5:hover {\n  color: white;\n}\n\n  .description {\n      font-family:'Georgia';\n      font-size: large;\n      font-weight: bolder;\n  }\n\n  .description:hover {\n      color: white;\n  }", ""]);
 
 // exports
 
@@ -9902,6 +9903,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -86713,7 +86741,56 @@ var News = /*#__PURE__*/function (_Component) {
   _createClass(News, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Some news comes here . . .");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box1",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Pizza Menu You Don't Expect To See In Your Area."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box2",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Not Sure Where To Eat? Here Is The 10 Best Restaurants In Prague."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box3",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Tapas Bar Opened This Week, First 100 Clients Get 25% discount."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box4",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "74 Cheap And Easy Dinner Recipes So You Never Have To Cook A Boring Meal Again."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box5",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Explore Our Baking Courses To Find The Right Recipe and Share Your Kitchen Creations with Loved Ones."))))));
     }
   }]);
 
@@ -86725,6 +86802,61 @@ var News = /*#__PURE__*/function (_Component) {
 if (document.getElementById('news')) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(News, null), document.getElementById('news'));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/backery.jpg":
+/*!****************************************************!*\
+  !*** ./resources/js/components/footer/backery.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/backery.jpg?fd5b717e5e31a94f2ea4950756af9e1e";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/homemade.jpg":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/footer/homemade.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/homemade.jpg?871145cd0e3ea995c42306a5378de821";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/menu.jpg":
+/*!*************************************************!*\
+  !*** ./resources/js/components/footer/menu.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/menu.jpg?d50dfd53d162d728f69e5bc43fe6de6f";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/restaurant-1.jpg":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/footer/restaurant-1.jpg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/restaurant-1.jpg?26bdd25416f6b67618e23ef26151eebd";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/tapas.jpg":
+/*!**************************************************!*\
+  !*** ./resources/js/components/footer/tapas.jpg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/tapas.jpg?907180af85d02d080a0722c917998a71";
 
 /***/ }),
 
