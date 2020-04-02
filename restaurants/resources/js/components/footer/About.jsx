@@ -24,7 +24,7 @@ export default class About extends Component {
                     <Col xs={12} sm={4} className="person-wrapper">
                         <Image src="images/Michaela.jpg"  className="profile-pic" />
                         <h3>Michaela</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At debitis consectetur quis, temporibus tempore nostrum tempora laborum quibusdam perferendis? Et suscipit tempora doloribus officia mollitia molestias, at voluptas praesentium! Esse.</p>
+                        <p>Hello, I am Michaela a Junior Full-stack Web Developer, mostly insterested in UX, Front-end development, and testing. I love dogs and avocados.  </p>
                     </Col> 
                     </Row>
             </Container>
