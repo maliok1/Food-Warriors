@@ -71,11 +71,11 @@ main {
 }
 .userInfo img {
   width: 70%;
-  border-radius: 45%;
-  -webkit-border-radius: 45%;
-  -moz-border-radius: 45%;
-  -ms-border-radius: 45%;
-  -o-border-radius: 45%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 @media (min-width: 776px) {
   .userInfo .profile-image-holder {
@@ -111,7 +111,7 @@ main {
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 1.3rem;
-  color: #fff;
+  color: #C98474;
   padding: 7px 0;
   margin-bottom: 20px;
   background: transparent;
