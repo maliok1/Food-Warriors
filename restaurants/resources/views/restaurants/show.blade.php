@@ -189,11 +189,17 @@
     @foreach($restaurant->comments as $comment)
       
       <div class="comment-head"> 
-        
-      <img class="user-img" src="{{$comment->user->image}}" />
+      @if($comment->user)
+    
+        @if($comment->user->image)
+          <img class="user-img" src="{{$comment->user->image}}" />
+        @endif
 
         <span class="head-of-comment"><span class="comment-name">{{$comment->user->name}}</span></span>
+        @else <span class="comment-name">Anonymous</span>
+        @endif
       </div> 
+
       <div class="comment-body"> 
         <p >{{$comment->comment}}</p> 
       </div>
