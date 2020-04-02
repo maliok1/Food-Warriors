@@ -11,10 +11,10 @@
 <!-- A form for to create a meal -->
     
     @auth
-     <hr>
-    <h2 class="m-2 ml-4 ">Create a new meal package</h2>
-    
     @if(auth()->user()->id === $restaurant->user_id)
+    <hr>
+    <h2 class="m-2 ml-4 ">Create a new meal package</h2>
+
     <div class="card-body">
    
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="col-md-12" style="display:flex; justify-content: center">
-          <input type="submit" value="submit"  class="button-style">
+          <input type="submit" value="Add package"  class="button-style">
         </div>
       </form>
 </div>
@@ -79,7 +79,7 @@
   <div class="con">
     @foreach($restaurant->meals as $meal)
     <div class="d-inline-flex" style="margin: 1.5%">
-        <div class="card" style="width: 25rem; height: 45rem; border-radius: 10%; box-shadow: 2px 2px 5px grey;">
+        <div class="card" style="width: 25rem; height: 49rem; border-radius: 10%; box-shadow: 2px 2px 5px grey;">
           @if($meal->image)
           <img  class="card-img-top" style="width: 25rem; height: 20rem; content-fit: cover; border-radius: 10%" src="{{$meal->image}}" alt="{{$meal->name}}"> 
           @endif
@@ -89,36 +89,41 @@
           <hr style="margin: 0"> 
           <p class="m-1 mt-2">Price: {{$meal->price}} CZK</p>  
           <p class="m-1">Left: {{$meal->quantity}}</p>
-          <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
-
+          <p class="m-1 mb-1">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
+          <hr style="margin: 0"> 
   @auth
 
 <!-- Display an allergen -->
-    <h5 class="m-1">Allergens:</h5>
+    <h5 class="ml-1 mt-1">Allergens:</h5>
       @foreach($meal->allergens as $allergen)
-        <li class="m-1">{{$allergen->name}}</li>
-
+      <div class="d-flex">
+        <div class="col-6">
+        <li class="ml-2" style="font-size: 1.1rem">{{$allergen->name}}</li>
+      </div>
 <!-- remove an allergen -->
+      <div>
         @if(auth()->user()->id === $restaurant->user_id)
-          <form class="m-1" form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
+          <form form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
             @csrf 
-            <input class="m-1 button-style" type="submit" value="delete allergen">
+            <input class="ml-1 xbtn" type="submit" value="X">
             <input class="m-1" type="hidden" name="allergen" value={{$allergen->id}}> 
           </form> 
          @endif
-      @endforeach
+      </div>  
+    </div>  
+  @endforeach
    
     <p>{{$meal->pickup_time}}</p>
 
 <!-- Add an allergen -->
     @if(auth()->user()->id === $restaurant->user_id)
-      <form action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
+      <form  class="ml-2" action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
         @csrf
         <select name="allergen">
           @foreach($allergens as $allergen)
             <option value="{{$allergen->id}}">{{$allergen->name}}</option>
           @endforeach
-          <input class="mt-2 button-style" type="submit" value="submit allergen">
+          <input class="mt-1 button-styles" type="submit" value="Add allergen">
         </select>
       </form>
 
@@ -156,7 +161,7 @@
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
-          <input class="mt-2 button-style" type="submit" value="delete meal">
+          <input class="mt-1 button-styles" type="submit" value="Delete meal">
         </form>
       @endif
 
@@ -172,7 +177,9 @@
 
     <!-- Reserve a meal -> log in -->
         @guest
+        <div class="mt-5">
           <a class="button-style btn2" href="/login">Reserve meal</a>
+        </div>  
         @endguest
       </div>
     </div>
@@ -230,7 +237,7 @@
           <form action="{{ action('CommentsController@deleteComment', $comment->id) }}" method="post">
             @method('delete')
             @csrf
-            <input class="button-style deleteBTN" type="submit" value="delete comment">
+            <input class="button-style deleteBTN" type="submit" value="Delete comment">
           </form>
         @endif
       </div>
@@ -243,7 +250,7 @@
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
         <textarea class="form-comment" type="text" id="" name="reply"></textarea>
-        <input class=" mt-2 button-style submitBTN" type="submit" value="reply">
+        <input class=" mt-2 button-style submitBTN" type="submit" value="Reply">
       </form>
       @endif
     </div> 
@@ -259,7 +266,7 @@
         @csrf
         <h4 style="margin: 5%">Leave your comment</h4>
         <textarea class="form-comment" name="comment" id=""></textarea>
-        <input class="mt-2 button-style submitBTN" type="submit" value="submit">
+        <input class="mt-2 button-style submitBTN" type="submit" value="Submit">
       
       </form> 
     </div>

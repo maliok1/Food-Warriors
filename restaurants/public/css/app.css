@@ -10531,6 +10531,31 @@ nav.navbar .dropdown-menu-right {
   color: white;
 }
 
+.button-styles {
+  margin-left: 2%;
+  padding: 0.2rem 0.4rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.xbtn {
+  background-color: #C98474;
+  border: none;
+  border-radius: 10%;
+  color: white;
+  padding: 3px 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.xbtn:hover {
+  background-color: #ad5642;
+  color: white;
+}
+
 .comment-section {
   width: 50%;
   margin: 4% 5%;
@@ -10582,7 +10607,7 @@ nav.navbar .dropdown-menu-right {
 }
 
 .btn2 {
-  margin: 15% 25%;
+  margin: 5% 32%;
 }
 
 .hr {

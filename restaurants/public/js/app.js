@@ -9756,11 +9756,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lat
 exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);", ""]);
 
 // module
-<<<<<<< HEAD
 exports.push([module.i, "a {\n    text-decoration: none;\n    color: #fff;\n}\n\na:hover {\n    text-decoration: none;\n}\n\nul {\n    padding:0;\n    list-style: none;\n}\n\n.route {\n    font-size: 17px;\n}\n.footer-copyright {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background: #874C62;\n    padding-bottom: 1em;\n}\n\n.footer-social-icons {\n    font-family: 'Lato', sans-serif;\n    color: #FFF;\n    background:#874C62;\n    -webkit-font-smoothing: antialiased;\n    width: 100%;\n    display: inline-flex;\n    flex-wrap: wrap;\n    justify-content: space-between ;\n    margin: 0 0;\n}\n@media (max-width: 600px) { \n    .footer-social-icons {\n        display: flex;\n        justify-content: center;\n        width: 100%;\n    }\n}\n@media (max-width: 600px) { \n    .social-icons {\n        padding-bottom: 1.5em;\n    }\n}\n.social-icon {\n    color: #fff;\n    font-size: 2em;\n}\n\nul.social-icons {\n    margin-top: 10px;\n}\n.social-icons li {\n    vertical-align: top;\n    display: inline;\n}\n.social-icons a {\n    color: #fff;\n    text-decoration: none;\n}\n.fa-facebook {\n    padding:10px 19px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-facebook:hover {\n    background-color: #3d5b99;\n}\n.fa-twitter {\n    padding:10px 12px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-twitter:hover {\n    background-color: #00aced;\n}\n\n.fa-linkedin {\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-linkedin:hover {\n    background-color: #0073a4;\n}\n.fa-github {\n    margin-right: 7px;\n    padding:10px 14px;\n    transition: .5s;\n    background-color: #874C62;\n}\n.fa-github:hover {\n    background-color: #5a32a3;\n}", ""]);
-=======
-exports.push([module.i, "a {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\na:hover {\r\n    text-decoration: none;\r\n}\r\n\r\nul {\r\n    padding:0;\r\n    list-style: none;\r\n}\r\n\r\n.route {\r\n    font-size: 17px;\r\n}\r\n.footer-copyright {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background: #874C62;\r\n    padding-bottom: 1em;\r\n}\r\n\r\n.footer-social-icons {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background:#874C62;\r\n    -webkit-font-smoothing: antialiased;\r\n    width: 100%;\r\n    display: inline-flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-between ;\r\n    margin: 0 0;\r\n}\r\n@media (max-width: 600px) { \r\n    .footer-social-icons {\r\n        display: flex;\r\n        justify-content: center;\r\n        width: 100%;\r\n    }\r\n}\r\n@media (max-width: 600px) { \r\n    .social-icons {\r\n        padding-bottom: 1.5em;\r\n    }\r\n}\r\n.social-icon {\r\n    color: #fff;\r\n    font-size: 2em;\r\n}\r\n\r\nul.social-icons {\r\n    margin-top: 10px;\r\n}\r\n.social-icons li {\r\n    vertical-align: top;\r\n    display: inline;\r\n}\r\n.social-icons a {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n.fa-facebook {\r\n    padding:10px 19px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-facebook:hover {\r\n    background-color: #3d5b99;\r\n}\r\n.fa-twitter {\r\n    padding:10px 12px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-twitter:hover {\r\n    background-color: #00aced;\r\n}\r\n\r\n.fa-linkedin {\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-linkedin:hover {\r\n    background-color: #0073a4;\r\n}\r\n.fa-github {\r\n    margin-right: 7px;\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-github:hover {\r\n    background-color: #5a32a3;\r\n}", ""]);
->>>>>>> master
 
 // exports
 
@@ -9779,7 +9775,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\r\n.person-wrapper {\r\n    margin-bottom: 2em;\r\n}\r\n\r\n.profile-pic {\r\n    \r\n    width: 70%;\r\n    border-radius: 50%;\r\n    margin-bottom: 1em;\r\n    margin-top: 3em;\r\n\r\n}\r\n.profile-pic:hover {\r\n    transition: .5s;\r\n    width: 90%;\r\n    border-radius: 50%;\r\n\r\n}\r\n\r\n\r\nh3 {\r\n    margin-bottom: 1em;\r\n}\r\n\r\n/* @media (max-height:800px){\r\n    footer { position: static; }\r\n} */", ""]);
+exports.push([module.i, "\n.person-wrapper {\n    margin-bottom: 2em;\n}\n\n.profile-pic {\n    \n    width: 70%;\n    border-radius: 50%;\n    margin-bottom: 1em;\n    margin-top: 3em;\n\n}\n.profile-pic:hover {\n    transition: .5s;\n    width: 90%;\n    border-radius: 50%;\n\n}\n\n\nh3 {\n    margin-bottom: 1em;\n}\n\n/* @media (max-height:800px){\n    footer { position: static; }\n} */", ""]);
 
 // exports
 
@@ -9798,7 +9794,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@media (max-width: 600px) { \r\n    .container-contact {\r\n        display: flex;\r\n        justify-content: space-around;\r\n        width: 90%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "@media (max-width: 600px) { \n    .container-contact {\n        display: flex;\n        justify-content: space-around;\n        width: 90%;\n    }\n}", ""]);
 
 // exports
 
@@ -9818,7 +9814,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".block-news {\r\n    height: 330px;\r\n    background: rgba(86,61,124,.15);\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .btn-more {\r\n    font-size: .85rem;\r\n    font-weight: bold;\r\n    background-color: #C98474;\r\n  }\r\n\r\n  .btn-more:hover {\r\n    background-color: rgb(173, 86, 66);\r\n    color: white;\r\n  }\r\n\r\n  .box1 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./menu.jpg */ "./resources/js/components/footer/menu.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box1:hover {\r\n  color: white;\r\n}\r\n\r\n  .box2 {\r\n      background-image: url(" + escape(__webpack_require__(/*! ./restaurant-1.jpg */ "./resources/js/components/footer/restaurant-1.jpg")) + ");\r\n      background-size: cover;\r\n      color: white;\r\n  }\r\n\r\n  .box2:hover {\r\n    color: white;\r\n  }\r\n\r\n  .box3 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./tapas.jpg */ "./resources/js/components/footer/tapas.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box3:hover {\r\n  color: white;\r\n}\r\n.box4 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./homemade.jpg */ "./resources/js/components/footer/homemade.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box4:hover {\r\n  color: white;\r\n}\r\n.box5 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./backery.jpg */ "./resources/js/components/footer/backery.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box5:hover {\r\n  color: white;\r\n}\r\n\r\n  .description {\r\n      font-family:'Georgia';\r\n      font-size: large;\r\n      font-weight: bolder;\r\n  }\r\n\r\n  .description:hover {\r\n      color: white;\r\n  }", ""]);
+exports.push([module.i, ".block-news {\n    height: 330px;\n    background: rgba(86,61,124,.15);\n    margin-bottom: 30px;\n  }\n  \n  .btn-more {\n    font-size: .85rem;\n    font-weight: bold;\n    background-color: #C98474;\n  }\n\n  .btn-more:hover {\n    background-color: rgb(173, 86, 66);\n    color: white;\n  }\n\n  .box1 {\n    background-image: url(" + escape(__webpack_require__(/*! ./menu.jpg */ "./resources/js/components/footer/menu.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box1:hover {\n  color: white;\n}\n\n  .box2 {\n      background-image: url(" + escape(__webpack_require__(/*! ./restaurant-1.jpg */ "./resources/js/components/footer/restaurant-1.jpg")) + ");\n      background-size: cover;\n      color: white;\n  }\n\n  .box2:hover {\n    color: white;\n  }\n\n  .box3 {\n    background-image: url(" + escape(__webpack_require__(/*! ./tapas.jpg */ "./resources/js/components/footer/tapas.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box3:hover {\n  color: white;\n}\n.box4 {\n    background-image: url(" + escape(__webpack_require__(/*! ./homemade.jpg */ "./resources/js/components/footer/homemade.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box4:hover {\n  color: white;\n}\n.box5 {\n    background-image: url(" + escape(__webpack_require__(/*! ./backery.jpg */ "./resources/js/components/footer/backery.jpg")) + ");\n    background-size: cover;\n    color: white;\n}\n\n.box5:hover {\n  color: white;\n}\n\n  .description {\n      font-family:'Georgia';\n      font-size: large;\n      font-weight: bolder;\n  }\n\n  .description:hover {\n      color: white;\n  }", ""]);
 
 // exports
 
@@ -86905,13 +86901,8 @@ module.exports = "/images/tapas.jpg?907180af85d02d080a0722c917998a71";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Web\food-warriors\restaurants\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> master
 
 
 /***/ })
