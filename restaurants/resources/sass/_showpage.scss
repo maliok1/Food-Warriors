@@ -86,10 +86,13 @@
 }
 .form-comment {
   margin-left: 5%;
-  width: 90%; 
-  height: 15%; 
-  border-radius: 1px solid grey;
-  
+  width: 90%;
+  height: 15%;
+  border-radius: 1000px solid grey;
+  -webkit-border-radius: 1000px solid grey;
+  -moz-border-radius: 1000px solid grey;
+  -ms-border-radius: 1000px solid grey;
+  -o-border-radius: 1000px solid grey;
 }
 
 .deleteBTN {
