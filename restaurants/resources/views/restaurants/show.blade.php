@@ -3,11 +3,43 @@
 @section('restaurant detailed')
 
     <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-  <div class=" restaurant-title">
+  <div class="container restaurant-title">
+  <div class="row no-gutter">
+    <div class="col-3">
     <h2>{{$restaurant->name}}</h2>
-    <h3>{{$restaurant->city}}</h3>
-    <p>{{$restaurant->description}}</p>
- </div>
+    <p>Location: {{$restaurant->address_address}}</p>
+    <p>Description: {{$restaurant->description}}</p>
+    </div>
+    <di class="col-9"><div id="map"></div></div>
+    </div>
+    <script>
+      function initMap() {
+          const position = {lat: {{$restaurant->address_latitude}}, lng: {{$restaurant->address_longitude}}};
+          const opt = {
+              center: position,
+              zoom: 17,
+          };
+          const map = new google.maps.Map(document.getElementById("map"), opt);
+
+
+          const marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: 'Name of Restaurant'
+          });
+
+          const info = new google.maps.InfoWindow({
+              content: 'Some information about restaurant'
+          });
+
+          marker.addListener("click", function() {
+              info.open(map, marker);
+          });
+      }
+  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
+  type="text/javascript"></script>
+ 
 <!-- A form for to create a meal -->
     
     @auth
@@ -122,34 +154,6 @@
         </select>
       </form>
 
-      <!-- <div id="map"></div>
-    <script>
-      function initMap() {
-          const position = {lat: 50.092282, lng: 14.497125}; // there we should provide location from DB (so it means when a restaurant is registering they should input LAT and LNG) or some idea how to do it eaisier?
-          const opt = {
-              center: position,
-              zoom: 17,
-          };
-          const map = new google.maps.Map(document.getElementById("map"), opt);
-
-
-          const marker = new google.maps.Marker({
-          position: position,
-          map: map,
-          title: 'Name of Restaurant'
-          });
-
-          const info = new google.maps.InfoWindow({
-              content: 'Some information about restaurant'
-          });
-
-          marker.addListener("click", function() {
-              info.open(map, marker);
-          });
-      }
-  </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
-  type="text/javascript"></script> -->
 
     <!--Delete a meal  --> 
       
