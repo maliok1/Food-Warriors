@@ -91,14 +91,16 @@
           <p class="m-1">Left: {{$meal->quantity}}</p>
           <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
 
-  @auth
-
+ 
+ 
 <!-- Display an allergen -->
     <h5 class="m-1">Allergens:</h5>
       @foreach($meal->allergens as $allergen)
         <li class="m-1">{{$allergen->name}}</li>
-
+      @endforeach
 <!-- remove an allergen -->
+  @auth
+      @foreach($meal->allergens as $allergen)
         @if(auth()->user()->id === $restaurant->user_id)
           <form class="m-1" form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
             @csrf 
