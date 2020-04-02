@@ -14,6 +14,10 @@ ul {
     padding:0;
     list-style: none;
 }
+
+.route {
+    font-size: 17px;
+}
 .footer-copyright {
     font-family: 'Lato', sans-serif;
     color: #FFF;
@@ -37,7 +41,11 @@ ul {
         display: flex;
         justify-content: center;
         width: 100%;
-        padding-top: 2em;
+    }
+}
+@media (max-width: 600px) { 
+    .social-icons {
+        padding-bottom: 1.5em;
     }
 }
 .social-icon {
