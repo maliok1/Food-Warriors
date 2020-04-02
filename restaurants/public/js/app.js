@@ -9756,7 +9756,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lat
 exports.push([module.i, "@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);", ""]);
 
 // module
-exports.push([module.i, "a {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\na:hover {\r\n    text-decoration: none;\r\n}\r\n\r\nul {\r\n    padding:0;\r\n    list-style: none;\r\n}\r\n.footer-copyright {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background: #874C62;\r\n    padding-bottom: 1em;\r\n}\r\n\r\n.footer-social-icons {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background:#874C62;\r\n    -webkit-font-smoothing: antialiased;\r\n    width: 100%;\r\n    display: inline-flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-between ;\r\n    margin: 0 0;\r\n}\r\n@media (max-width: 600px) { \r\n    .footer-social-icons {\r\n        display: flex;\r\n        justify-content: center;\r\n        width: 100%;\r\n        padding-top: 2em;\r\n    }\r\n}\r\n.social-icon {\r\n    color: #fff;\r\n    font-size: 2em;\r\n}\r\n\r\nul.social-icons {\r\n    margin-top: 10px;\r\n}\r\n.social-icons li {\r\n    vertical-align: top;\r\n    display: inline;\r\n}\r\n.social-icons a {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n.fa-facebook {\r\n    padding:10px 19px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-facebook:hover {\r\n    background-color: #3d5b99;\r\n}\r\n.fa-twitter {\r\n    padding:10px 12px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-twitter:hover {\r\n    background-color: #00aced;\r\n}\r\n\r\n.fa-linkedin {\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-linkedin:hover {\r\n    background-color: #0073a4;\r\n}\r\n.fa-github {\r\n    margin-right: 7px;\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-github:hover {\r\n    background-color: #5a32a3;\r\n}", ""]);
+exports.push([module.i, "a {\r\n    text-decoration: none;\r\n    color: #fff;\r\n}\r\n\r\na:hover {\r\n    text-decoration: none;\r\n}\r\n\r\nul {\r\n    padding:0;\r\n    list-style: none;\r\n}\r\n\r\n.route {\r\n    font-size: 17px;\r\n}\r\n.footer-copyright {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background: #874C62;\r\n    padding-bottom: 1em;\r\n}\r\n\r\n.footer-social-icons {\r\n    font-family: 'Lato', sans-serif;\r\n    color: #FFF;\r\n    background:#874C62;\r\n    -webkit-font-smoothing: antialiased;\r\n    width: 100%;\r\n    display: inline-flex;\r\n    flex-wrap: wrap;\r\n    justify-content: space-between ;\r\n    margin: 0 0;\r\n}\r\n@media (max-width: 600px) { \r\n    .footer-social-icons {\r\n        display: flex;\r\n        justify-content: center;\r\n        width: 100%;\r\n    }\r\n}\r\n@media (max-width: 600px) { \r\n    .social-icons {\r\n        padding-bottom: 1.5em;\r\n    }\r\n}\r\n.social-icon {\r\n    color: #fff;\r\n    font-size: 2em;\r\n}\r\n\r\nul.social-icons {\r\n    margin-top: 10px;\r\n}\r\n.social-icons li {\r\n    vertical-align: top;\r\n    display: inline;\r\n}\r\n.social-icons a {\r\n    color: #fff;\r\n    text-decoration: none;\r\n}\r\n.fa-facebook {\r\n    padding:10px 19px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-facebook:hover {\r\n    background-color: #3d5b99;\r\n}\r\n.fa-twitter {\r\n    padding:10px 12px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-twitter:hover {\r\n    background-color: #00aced;\r\n}\r\n\r\n.fa-linkedin {\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-linkedin:hover {\r\n    background-color: #0073a4;\r\n}\r\n.fa-github {\r\n    margin-right: 7px;\r\n    padding:10px 14px;\r\n    transition: .5s;\r\n    background-color: #874C62;\r\n}\r\n.fa-github:hover {\r\n    background-color: #5a32a3;\r\n}", ""]);
 
 // exports
 
@@ -9808,12 +9808,13 @@ exports.push([module.i, "@media (max-width: 600px) { \r\n    .container-contact 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var escape = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".block-news {\r\n    height: 330px;\r\n    background: rgba(86,61,124,.15);\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .btn-more {\r\n    font-size: .85rem;\r\n    font-weight: bold;\r\n    background-color: #C98474;\r\n  }\r\n\r\n  .btn-more:hover {\r\n    background-color: rgb(173, 86, 66);\r\n    color: white;\r\n  }\r\n\r\n  .box1 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./menu.jpg */ "./resources/js/components/footer/menu.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box1:hover {\r\n  color: white;\r\n}\r\n\r\n  .box2 {\r\n      background-image: url(" + escape(__webpack_require__(/*! ./restaurant-1.jpg */ "./resources/js/components/footer/restaurant-1.jpg")) + ");\r\n      background-size: cover;\r\n      color: white;\r\n  }\r\n\r\n  .box2:hover {\r\n    color: white;\r\n  }\r\n\r\n  .box3 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./tapas.jpg */ "./resources/js/components/footer/tapas.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box3:hover {\r\n  color: white;\r\n}\r\n.box4 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./homemade.jpg */ "./resources/js/components/footer/homemade.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box4:hover {\r\n  color: white;\r\n}\r\n.box5 {\r\n    background-image: url(" + escape(__webpack_require__(/*! ./backery.jpg */ "./resources/js/components/footer/backery.jpg")) + ");\r\n    background-size: cover;\r\n    color: white;\r\n}\r\n\r\n.box5:hover {\r\n  color: white;\r\n}\r\n\r\n  .description {\r\n      font-family:'Georgia';\r\n      font-size: large;\r\n      font-weight: bolder;\r\n  }\r\n\r\n  .description:hover {\r\n      color: white;\r\n  }", ""]);
 
 // exports
 
@@ -9902,6 +9903,33 @@ function toComment(sourceMap) {
 	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
 
 	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/lib/url/escape.js":
+/*!***************************************************!*\
+  !*** ./node_modules/css-loader/lib/url/escape.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function escape(url) {
+    if (typeof url !== 'string') {
+        return url
+    }
+    // If url is already wrapped in quotes, remove them
+    if (/^['"].*['"]$/.test(url)) {
+        url = url.slice(1, -1);
+    }
+    // Should url be wrapped?
+    // See https://drafts.csswg.org/css-values-3/#urls
+    if (/["'() \t\n]/.test(url)) {
+        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
+    }
+
+    return url
 }
 
 
@@ -86736,7 +86764,56 @@ var News = /*#__PURE__*/function (_Component) {
   _createClass(News, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, "Some news comes here . . .");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box1",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Pizza Menu You Don't Expect To See In Your Area."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box2",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Not Sure Where To Eat? Here Is The 10 Best Restaurants In Prague."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box3",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Tapas Bar Opened This Week, First 100 Clients Get 25% discount."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box4",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "74 Cheap And Easy Dinner Recipes So You Never Have To Cook A Boring Meal Again."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-12 col-md-6 col-xl-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "d-flex flex-column align-items-end justify-content-between p-3 block-news box5",
+        href: ""
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-more"
+      }, "Read more"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "description"
+      }, "Explore Our Baking Courses To Find The Right Recipe and Share Your Kitchen Creations with Loved Ones."))))));
     }
   }]);
 
@@ -86751,6 +86828,61 @@ if (document.getElementById('news')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/footer/backery.jpg":
+/*!****************************************************!*\
+  !*** ./resources/js/components/footer/backery.jpg ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/backery.jpg?fd5b717e5e31a94f2ea4950756af9e1e";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/homemade.jpg":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/footer/homemade.jpg ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/homemade.jpg?871145cd0e3ea995c42306a5378de821";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/menu.jpg":
+/*!*************************************************!*\
+  !*** ./resources/js/components/footer/menu.jpg ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/menu.jpg?d50dfd53d162d728f69e5bc43fe6de6f";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/restaurant-1.jpg":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/footer/restaurant-1.jpg ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/restaurant-1.jpg?26bdd25416f6b67618e23ef26151eebd";
+
+/***/ }),
+
+/***/ "./resources/js/components/footer/tapas.jpg":
+/*!**************************************************!*\
+  !*** ./resources/js/components/footer/tapas.jpg ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/tapas.jpg?907180af85d02d080a0722c917998a71";
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -86758,7 +86890,7 @@ if (document.getElementById('news')) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n14 │ >>>>>>> michaela2\r\n   │                  ^\n   ╵\n  resources\\sass\\_showpage.scss 14:18  @import\n  C:\\Web\\food-warriors\\restaurants\\resources\\sass\\app.scss 17:9                           root stylesheet\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Web\\food-warriors\\restaurants\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:87203:16)\n    at _render_closure1.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:76994:12)\n    at _RootZone.runBinary$3$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25521:18)\n    at _RootZone.runBinary$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25525:19)\n    at _FutureListener.handleError$1 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23975:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:24271:40)\n    at Object._Future__propagateToListeners (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3500:88)\n    at _Future._completeError$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:24099:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23491:12)\n    at Object._asyncRethrow (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3256:17)\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:13326:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3279:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23512:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23504:25)\n    at _RootZone.runBinary$3$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25521:18)\n    at _RootZone.runBinary$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25525:19)\n    at _FutureListener.handleError$1 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23975:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:24271:40)\n    at Object._Future__propagateToListeners (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3500:88)\n    at _Future._completeError$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:24099:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23491:12)\n    at Object._asyncRethrow (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3256:17)\n    at C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:15981:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3279:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23512:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23504:25)\n    at _RootZone.runBinary$3$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25521:18)\n    at _RootZone.runBinary$3 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:25525:19)\n    at _FutureListener.handleError$1 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:23975:19)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:24271:40)\n    at Object._Future__propagateToListeners (C:\\Web\\food-warriors\\restaurants\\node_modules\\sass\\sass.dart.js:3500:88)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
