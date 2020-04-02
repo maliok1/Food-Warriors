@@ -2,7 +2,7 @@
 
 @section('restaurant detailed')
 
-    <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+    <img class="img-fluid" style="margin-top:-24px; width: 100%; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
   <div class=" restaurant-title">
     <h2>{{$restaurant->name}}</h2>
     <h3>{{$restaurant->city}}</h3>
@@ -11,10 +11,12 @@
 <!-- A form for to create a meal -->
     
     @auth
+     <hr>
+    <h2 class="m-2 ml-4 ">Create a new meal package</h2>
     
     @if(auth()->user()->id === $restaurant->user_id)
-    <hr>
-    
+    <div class="card-body">
+   
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row ">
@@ -37,9 +39,7 @@
             <input type="number" name="price"  class="form-controll">
           </div>
         </div>
-                
         <div class="form-group row ">
-         
           <label for=""  class="col-md-2 col-form-label text-md-right">Pick-up from</label>
           <div class="col-md-4">
             <input type="time" name="pickup_time_start"  class="form-controll">
@@ -70,7 +70,7 @@
       @endif
     @endif  
   @endauth
-   
+  <hr>
 
 <!-- Display Meals -->
 
