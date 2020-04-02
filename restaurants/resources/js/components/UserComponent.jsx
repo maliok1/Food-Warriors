@@ -9,7 +9,7 @@ export default class UserComponent extends React.Component {
             email: "",
             phonenumber: "",
             image: "",
-            file: null
+            file: null,
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -54,7 +54,7 @@ export default class UserComponent extends React.Component {
             .then(data => {
                this.props.history.replace('/users/'+ data.name),
                this.setState({
-                   image: data.image
+                   image: data.image,
                });
                console.log(data);
             });
