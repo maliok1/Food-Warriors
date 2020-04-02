@@ -63,6 +63,9 @@ Route::post('/search', 'RestaurantController@search');
 Route::get('/users/{path?}', 'UserController@index');
 Route::get('/user/{path?}', 'UserController@index');
 
+
+
+
 // Footer links
 Route::get( '/about', function(){
     return view( 'users.about' );

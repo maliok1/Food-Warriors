@@ -9,7 +9,6 @@
 <div class="block">
 <h1 class="is">Your meal is reserved!</h1>
 <button class="btn btn-restaurant"><a class="back" href="{{ URL::previous() }}">Back to the restaurant</a><i class="material-icons">chevron_right</i></button>
-
 </div>
 
 @endsection

@@ -35,8 +35,6 @@ class MealController extends Controller
             $meal->image = '/uploads/meals/'.$original_name;
         }
 
-        
-
         $meal->restaurant_id = $restaurant_id;
         $meal->name = $request->input('name');
         $meal->description = $request->input('description');
@@ -57,12 +55,10 @@ class MealController extends Controller
     }
 
     public function showCart() {
-
         return view('restaurants.cart');
     }
 
     public function cart($id) {
-
         $meal = Meal::find($id);
 
     if ($meal->quantity > 0) {
@@ -71,7 +67,6 @@ class MealController extends Controller
 
         return view('restaurants.cart');
     }else {
-
         return redirect()->back();
         }
       }
