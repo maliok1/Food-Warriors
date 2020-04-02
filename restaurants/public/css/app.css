@@ -10503,7 +10503,12 @@ nav.navbar .dropdown-menu-right {
 }
 
 .restaurant-title {
-  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 auto;
+  margin-top: 2%;
 }
 .restaurant-title h2 {
   font-weight: bold;
@@ -10594,6 +10599,10 @@ nav.navbar .dropdown-menu-right {
   width: 90%;
   height: 15%;
   border-radius: 1px solid grey;
+  -webkit-border-radius: 1px solid grey;
+  -moz-border-radius: 1px solid grey;
+  -ms-border-radius: 1px solid grey;
+  -o-border-radius: 1px solid grey;
 }
 
 .deleteBTN {
