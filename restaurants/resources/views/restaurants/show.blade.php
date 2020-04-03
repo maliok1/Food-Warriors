@@ -1,15 +1,41 @@
 @extends ('layouts.app')
-
 @section('restaurant detailed')
-
-    <img class="img-fluid" style="margin-top:-24px; width: 100%; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-  <div class=" restaurant-title">
+    <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+  <div class="container restaurant-title">
+  <div class="row">
+    <div class="col-sm-4 disc">
     <h2>{{$restaurant->name}}</h2>
-    <h3>{{$restaurant->city}}</h3>
-    <p>{{$restaurant->description}}</p>
- </div>
+    <p>Location: {{$restaurant->address_address}}</p>
+    <p>Description: {{$restaurant->description}}</p>
+    </div>
+    <div class="col-sm-8"><div id="map"></img></div>
+    </div>
+</div>
+</div>
+    <script>
+      function initMap() {
+          const position = {lat: {{$restaurant->address_latitude}}, lng: {{$restaurant->address_longitude}}};
+          const opt = {
+              center: position,
+              zoom: 15,
+          };
+          const map = new google.maps.Map(document.getElementById("map"), opt);
+          const marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: 'Name of Restaurant'
+          });
+          const info = new google.maps.InfoWindow({
+              content: 'Some information about restaurant'
+          });
+          marker.addListener("click", function() {
+              info.open(map, marker);
+          });
+      }
+  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
+  type="text/javascript"></script>
 <!-- A form for to create a meal -->
-    
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
     <hr>
@@ -17,13 +43,12 @@
 <br>
   <div class="ml-4">
     <div class="card-body">
-   
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group row ">
           <label for=""  class="col-md-2 col-form-label text-md-right">Name of the package</label>
           <div class="col-md-4">
-            <input type="text" name="name" class="form-controll">
+            <input type="text" name="name" class="form-controll" action="<?php echo $_SERVER["PHP_SELF"];?>">
           </div>
           <label for=""  class="col-md-2 col-form-label text-md-right">Describe your package</label>
           <div class="col-md-4">
@@ -72,13 +97,9 @@
       @endif
     @endif  
   @endauth
-
   <hr>
-
 <!-- Display Meals -->
-
   <h2 class="ml-5 mt-4 mb-4">Meals available today</h2> 
- 
   <div class="con">
     @foreach($restaurant->meals as $meal)
     <div class="d-inline-flex" style="margin: 1.5%">
@@ -95,7 +116,6 @@
           <p class="m-1 mb-1">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
           <hr style="margin: 0"> 
   @auth
-
 <!-- Display an allergen -->
     <h5 class="ml-1 mt-1">Allergens:</h5>
       @foreach($meal->allergens as $allergen)
@@ -115,9 +135,7 @@
       </div>  
     </div>  
   @endforeach
-   
     <p>{{$meal->pickup_time}}</p>
-
 <!-- Add an allergen -->
     @if(auth()->user()->id === $restaurant->user_id)
       <form  class="ml-2" action="{{action('AllergenController@addAllergen' , $meal->id)}}" method="post">
@@ -129,7 +147,6 @@
           <input class="mt-1 button-styles" type="submit" value="Add allergen">
         </select>
       </form>
-
       <!-- <div id="map"></div>
     <script>
       function initMap() {
@@ -139,18 +156,14 @@
               zoom: 17,
           };
           const map = new google.maps.Map(document.getElementById("map"), opt);
-
-
           const marker = new google.maps.Marker({
           position: position,
           map: map,
           title: 'Name of Restaurant'
           });
-
           const info = new google.maps.InfoWindow({
               content: 'Some information about restaurant'
           });
-
           marker.addListener("click", function() {
               info.open(map, marker);
           });
@@ -158,18 +171,14 @@
   </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
   type="text/javascript"></script> -->
-
     <!--Delete a meal  --> 
-      
         <form action="{{ action('MealController@deleteMeal', $meal->id) }}" method="post">
           @method('delete')
           @csrf
           <input class="mt-1 button-styles" type="submit" value="Delete meal">
         </form>
       @endif
-
   <!-- Reserve a meal -> user -->
-  
       @if(auth()->user()->id !== $restaurant->user_id)
         <form action="{{action ('MealController@cart', $meal->id)}}" method="post">
           @csrf 
@@ -177,7 +186,6 @@
         </form>
       @endif
     @endauth   
-
     <!-- Reserve a meal -> log in -->
         @guest
         <div class="mt-5">
@@ -188,34 +196,26 @@
     </div>
   </div>
   @endforeach
-
 </div> 
   <hr>
-
 <!-- Comments display -->
 <div class="comment-section">
-
    <h3 class="mb-5 comments-title">Comments:</h3>
     @foreach($restaurant->comments as $comment)
-      
       <div class="comment-head"> 
       @if($comment->user)
-    
         @if($comment->user->image)
           <img class="user-img" src="{{$comment->user->image}}" />
         @endif
-
         <span class="head-of-comment"><span class="comment-name">{{$comment->user->name}}</span></span>
         @else <span class="comment-name">Anonymous</span>
         @endif
       </div> 
-
       <div class="comment-body"> 
         <p >{{$comment->comment}}</p> 
       </div>
       <hr class="hr">
       <span class="ml-3 mb-2 comment-time pull-right">{{$comment->created_at}}</span>
-
 <!-- Reply display -->
   <div class="display-reply-comment">
       @if($comment->comment_reply !== null)
@@ -230,7 +230,6 @@
        </div> 
       @endif
   </div>
-          
 <!--Delete a comment  -->
     @auth
     <div class="ml-5">
@@ -243,20 +242,19 @@
         @endif
       </div>
     @endauth  
-    
 <!-- Reply to a comment-->
   @auth
     <div class="reply-comment">
+      @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
         <textarea class="form-comment" type="text" id="" name="reply"></textarea>
         <input class=" mt-2 button-style submitBTN" type="submit" value="Reply">
       </form>
+      @endif
     </div> 
-  
   @endauth    
   @endforeach
-
 <!-- Leave a comment -->
    @auth  
    @if(auth()->user()->id !== $restaurant->user_id)
@@ -267,13 +265,11 @@
         <h4 style="margin: 5%">Leave your comment</h4>
         <textarea class="form-comment" name="comment" id=""></textarea>
         <input class="mt-2 button-style submitBTN" type="submit" value="Submit">
-      
       </form> 
     </div>
   </div>
     @endif
    @endauth
-
 <!-- Log-in section -->
       @guest
         <div class="login-to-comment">
@@ -281,5 +277,4 @@
         </div>
       @endguest
      </div>
- 
   @endsection
