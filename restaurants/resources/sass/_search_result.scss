@@ -17,15 +17,20 @@ img.search-result-img{
   justify-content: center; 
 }
 
-td{
-  @media (max-width:700px) {
-    max-width: 110px;
-  }
 
-  .search-result-description, .search-result-city, .search-result-name{
+  // @media (max-width:700px) {
+  //   max-width: 110px;
+
+
+ a.search-result-name{
+      text-decoration: none;
+      color:black;
+      font-weight: bolder;
+      font-size: 1rem;
+      
     @media (max-width:700px) {
       max-width: 110px;
     }
   }
-}
+
 

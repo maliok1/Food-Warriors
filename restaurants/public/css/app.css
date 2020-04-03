@@ -10719,13 +10719,14 @@ img.search-result-img {
   justify-content: center;
 }
 
-@media (max-width: 700px) {
-  td {
-    max-width: 110px;
-  }
+a.search-result-name {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  font-size: 1rem;
 }
 @media (max-width: 700px) {
-  td .search-result-description, td .search-result-city, td .search-result-name {
+  a.search-result-name {
     max-width: 110px;
   }
 }
