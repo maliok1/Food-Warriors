@@ -86901,8 +86901,8 @@ module.exports = "/images/tapas.jpg?907180af85d02d080a0722c917998a71";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/bakhodir/Web/FINAL PROJECT/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/Misjak/WEB/Exercises/Final project/Food-Warriors/restaurants/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
