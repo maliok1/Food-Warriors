@@ -3,7 +3,12 @@
   
 }
 .restaurant-title {
-  margin:2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 auto;
+  margin-top:2%;
   h2 {
     font-weight: bold;
     
@@ -14,10 +19,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
-  
+   
 }
-
 
 .button-style {
   margin: 6px;
@@ -29,6 +32,28 @@
   box-shadow: 2px 2px 5px grey;
 }
 .button-style:hover {
+  background-color: rgb(173, 86, 66);
+  color: white;
+}
+.button-styles {
+  margin-left: 2%;
+  padding: 0.2rem 0.4rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+.xbtn {
+    background-color: #C98474;
+    border: none;
+    border-radius: 10%;
+    color: white;
+    padding: 3px 6px;
+    font-size: 10px;
+    cursor: pointer; 
+}
+.xbtn:hover {
   background-color: rgb(173, 86, 66);
   color: white;
 }
@@ -66,10 +91,13 @@
 }
 .form-comment {
   margin-left: 5%;
-  width: 90%; 
-  height: 15%; 
+  width: 90%;
+  height: 15%;
   border-radius: 1px solid grey;
-  
+  -webkit-border-radius: 1px solid grey;
+  -moz-border-radius: 1px solid grey;
+  -ms-border-radius: 1px solid grey;
+  -o-border-radius: 1px solid grey;
 }
 
 .deleteBTN {
@@ -82,7 +110,7 @@
   margin-left: 83%;
 }
 .btn2 {
-  margin: 15% 25%;
+  margin: 5% 32%;
 }
 .hr {
   width: 110%; 

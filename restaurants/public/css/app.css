@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+* {
+  outline: none;
+}
+
 html {
   background-color: #A7D2CB80;
 }
@@ -10412,6 +10416,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  outline: none;
+}
+
 html {
   background-color: #A7D2CB80;
 }
@@ -10480,6 +10488,21 @@ nav.navbar .dropdown-menu-right {
   margin: 10px 5px;
 }
 
+.button-style {
+  margin: 6px;
+  padding: 0.5rem 0.7rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.button-style:hover {
+  background-color: #ad5642;
+  color: white;
+}
+
 .cards {
   width: 20rem;
   height: 20rem;
@@ -10490,6 +10513,7 @@ nav.navbar .dropdown-menu-right {
 }
 .cards img {
   width: 100%;
+  height: 12rem;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10%;
@@ -10503,7 +10527,12 @@ nav.navbar .dropdown-menu-right {
 }
 
 .restaurant-title {
-  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 auto;
+  margin-top: 2%;
 }
 .restaurant-title h2 {
   font-weight: bold;
@@ -10527,6 +10556,31 @@ nav.navbar .dropdown-menu-right {
 }
 
 .button-style:hover {
+  background-color: #ad5642;
+  color: white;
+}
+
+.button-styles {
+  margin-left: 2%;
+  padding: 0.2rem 0.4rem;
+  border: thin #C98474;
+  background-color: #C98474;
+  color: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.xbtn {
+  background-color: #C98474;
+  border: none;
+  border-radius: 10%;
+  color: white;
+  padding: 3px 6px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.xbtn:hover {
   background-color: #ad5642;
   color: white;
 }
@@ -10569,6 +10623,10 @@ nav.navbar .dropdown-menu-right {
   width: 90%;
   height: 15%;
   border-radius: 1px solid grey;
+  -webkit-border-radius: 1px solid grey;
+  -moz-border-radius: 1px solid grey;
+  -ms-border-radius: 1px solid grey;
+  -o-border-radius: 1px solid grey;
 }
 
 .deleteBTN {
@@ -10582,7 +10640,7 @@ nav.navbar .dropdown-menu-right {
 }
 
 .btn2 {
-  margin: 15% 25%;
+  margin: 5% 32%;
 }
 
 .hr {
