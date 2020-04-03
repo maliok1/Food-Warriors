@@ -216,7 +216,6 @@
       </div>
       <hr class="hr">
       <span class="ml-3 mb-2 comment-time pull-right">{{$comment->created_at}}</span>
-        
 
 <!-- Reply display -->
   <div class="display-reply-comment">
@@ -248,8 +247,11 @@
     
 <!-- Reply to a comment-->
   @auth
+    
+  
     <div class="reply-comment">
       @if(auth()->user()->id === $restaurant->user_id)
+      
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
         <textarea class="form-comment" type="text" id="" name="reply"></textarea>
@@ -257,6 +259,7 @@
       </form>
       @endif
     </div> 
+  
   @endauth    
   @endforeach
 

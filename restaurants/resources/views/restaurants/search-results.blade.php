@@ -16,12 +16,11 @@
           <tbody>
               @foreach($details as $restaurant)
               <tr>
-                  <td><a href="/restaurant/{{$restaurant->id}}">{{$restaurant->name}}</a></td>
-                  <td>{{$restaurant->city}}</td>
-                  <td>{{$restaurant->description}}</td>
+                  <td class="search-result-name"><a href="/restaurant/{{$restaurant->id}}">{{$restaurant->name}}</a></td>
+                  <td class="search-result-city">{{$restaurant->city}}</td>
+                  <td class="search-result-description">{{$restaurant->description}}</td>
                   <td><img class="search-result-img" src="{{$restaurant->image}}" alt="{{$restaurant->name}}"></td>
               </tr>
-            
               @endforeach
           </tbody>
       </table>

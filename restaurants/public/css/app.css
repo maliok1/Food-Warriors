@@ -10705,6 +10705,11 @@ img.search-result-img {
     max-width: 110px;
   }
 }
+@media (max-width: 700px) {
+  td .search-result-description, td .search-result-city, td .search-result-name {
+    max-width: 110px;
+  }
+}
 
 .block {
   display: flex;

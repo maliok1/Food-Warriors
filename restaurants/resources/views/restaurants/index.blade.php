@@ -4,7 +4,6 @@
 
    <!-- Go to your restaurant button-->
 
-
       @auth 
         @foreach($restaurants as $restaurant)
           @if(auth()->user()->id === $restaurant->user_id)
@@ -26,11 +25,9 @@
                   @endif
                     <div class="restaurant-body-card">
                     <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
-                    <h5 class="card-title">{{$restaurant->city}}</h5>
+                    <h5 class="card-title">{{$restaurant->address_address}}</h5>
                   </div>
-                 
                </div>
-             
               </div>
             @endforeach
        </div>  
