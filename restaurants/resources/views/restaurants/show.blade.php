@@ -10,8 +10,10 @@
     <p>Location: {{$restaurant->address_address}}</p>
     <p>Description: {{$restaurant->description}}</p>
     </div>
-    <di class="col-sm-8"><div id="map"></img></div>
+    <div class="col-sm-8"><div id="map"></img></div>
     </div>
+</div>
+</div>
     <script>
       function initMap() {
           const position = {lat: {{$restaurant->address_latitude}}, lng: {{$restaurant->address_longitude}}};
@@ -45,7 +47,7 @@
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
     <hr>
-    <h2 class="m-2 ml-4 ">Create a new meal package</h2>
+    <h2 class="m-2 ml-5 ">Create a new meal package</h2>
 
     <div class="card-body">
    
