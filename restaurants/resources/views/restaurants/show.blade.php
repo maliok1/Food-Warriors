@@ -2,6 +2,7 @@
 
 @section('restaurant detailed')
 
+<<<<<<< HEAD
     <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
   <div class="container restaurant-title">
   <div class="row">
@@ -42,13 +43,26 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
   type="text/javascript"></script>
  
+=======
+    <img class="img-fluid" style="margin-top:-24px; width: 100%; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
+  <div class=" restaurant-title">
+    <h2>{{$restaurant->name}}</h2>
+    <h3>{{$restaurant->city}}</h3>
+    <p>{{$restaurant->description}}</p>
+ </div>
+>>>>>>> michaela2
 <!-- A form for to create a meal -->
     
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
     <hr>
     <h2 class="m-2 ml-5 ">Create a new meal package</h2>
+<<<<<<< HEAD
 
+=======
+<br>
+  <div class="ml-4">
+>>>>>>> michaela2
     <div class="card-body">
    
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
@@ -93,6 +107,7 @@
           <input type="submit" value="Add package"  class="button-style">
         </div>
       </form>
+ </div>
 </div>
       @if($errors->any())
         <div class="alert alert-danger">
@@ -104,12 +119,13 @@
       @endif
     @endif  
   @endauth
+
   <hr>
 
 <!-- Display Meals -->
 
   <h2 class="ml-5 mt-4 mb-4">Meals available today</h2> 
-  
+ 
   <div class="con">
     @foreach($restaurant->meals as $meal)
     <div class="d-inline-flex" style="margin: 1.5%">
@@ -161,6 +177,34 @@
         </select>
       </form>
 
+      <!-- <div id="map"></div>
+    <script>
+      function initMap() {
+          const position = {lat: 50.092282, lng: 14.497125}; // there we should provide location from DB (so it means when a restaurant is registering they should input LAT and LNG) or some idea how to do it eaisier?
+          const opt = {
+              center: position,
+              zoom: 17,
+          };
+          const map = new google.maps.Map(document.getElementById("map"), opt);
+
+
+          const marker = new google.maps.Marker({
+          position: position,
+          map: map,
+          title: 'Name of Restaurant'
+          });
+
+          const info = new google.maps.InfoWindow({
+              content: 'Some information about restaurant'
+          });
+
+          marker.addListener("click", function() {
+              info.open(map, marker);
+          });
+      }
+  </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
+  type="text/javascript"></script> -->
 
     <!--Delete a meal  --> 
       

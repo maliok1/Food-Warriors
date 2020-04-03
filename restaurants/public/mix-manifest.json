@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
     "/js/app.js": "/js/app.js?id=7f14a2908e5aeb3a11cb",
     "/css/app.css": "/css/app.css?id=59d3d0716102e65046e1",
     "/js/app.js.map": "/js/app.js.map?id=304ac63268bea80dd465",
     "/css/app.css.map": "/css/app.css.map?id=3f4b4288efdd15b88024"
+=======
+    "/js/app.js": "/js/app.js?id=9112a4a46e4775ff6bcf",
+    "/css/app.css": "/css/app.css?id=a1b0b45e6d45c59f0d58",
+    "/js/app.js.map": "/js/app.js.map?id=4582a4ddef08b324dbd2",
+    "/css/app.css.map": "/css/app.css.map?id=34a5f59bff5aa0188158"
+>>>>>>> michaela2
 }
