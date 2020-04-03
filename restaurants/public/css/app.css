@@ -228,8 +228,7 @@ main {
   font-family: "Fredoka One", cursive;
   color: #3498db;
   font-size: 30px;
-  padding: 10px;
-  margin: auto;
+  padding: 15px;
 }
 @media (max-width: 1000px) {
   .sad-p {
