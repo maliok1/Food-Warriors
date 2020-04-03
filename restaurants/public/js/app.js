@@ -86429,7 +86429,7 @@ var About = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Image"], {
         src: "images/Nastja.jpg",
         className: "profile-pic"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Anastasia"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Lorem ipsum dolor sit amet consectetur adipisicing elit. At debitis consectetur quis, temporibus tempore nostrum tempora laborum quibusdam perferendis? Et suscipit tempora doloribus officia mollitia molestias, at voluptas praesentium! Esse.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Anastasia"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hi, I am a Junior Full-stack Web Developer who greatly enjoys solving puzzles and building things. I stay curious and constatntly explore new technologies and ways to better my code. ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
         xs: 12,
         sm: 4,
         className: "person-wrapper"
@@ -86443,7 +86443,7 @@ var About = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Image"], {
         src: "images/Michaela.jpg",
         className: "profile-pic"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michaela"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, I am Michaela a Junior Full-stack Web Developer, mostly insterested in UX, Front-end development, and testing. I love dogs and avocados.  "))));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Michaela"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Hello, I am Michaela a Junior Full-stack Web Developer, mostly insterested in UX, Front-end development, and testing. I love dogs and avocados. "))));
     }
   }]);
 
