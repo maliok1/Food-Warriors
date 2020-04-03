@@ -121,34 +121,19 @@
           <hr style="margin: 0"> 
           <p class="m-1 mt-2">Price: {{$meal->price}} CZK</p>  
           <p class="m-1">Left: {{$meal->quantity}}</p>
-<<<<<<< HEAD
-          <p class="m-1 mb-3">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
-
- 
- 
-=======
           <p class="m-1 mb-1">Pick-up time: {{ date('H:i',strtotime( $meal->pickup_time_start)) }} - {{ date('H:i',strtotime( $meal->pickup_time_end)) }}</p>
           <hr style="margin: 0"> 
   @auth
 
->>>>>>> master
 <!-- Display an allergen -->
     <h5 class="ml-1 mt-1">Allergens:</h5>
       @foreach($meal->allergens as $allergen)
-<<<<<<< HEAD
-        <li class="m-1">{{$allergen->name}}</li>
-      @endforeach
-<!-- remove an allergen -->
-  @auth
-      @foreach($meal->allergens as $allergen)
-=======
       <div class="d-flex">
         <div class="col-6">
         <li class="ml-2" style="font-size: 1.1rem">{{$allergen->name}}</li>
       </div>
 <!-- remove an allergen -->
       <div>
->>>>>>> master
         @if(auth()->user()->id === $restaurant->user_id)
           <form form action="{{action ('AllergenController@removeAllergen', $meal->id)}}" method="get">
             @csrf 
@@ -230,21 +215,20 @@
         <p >{{$comment->comment}}</p> 
       </div>
       <hr class="hr">
-      <span class="ml-3 comment-time pull-right">{{$comment->created_at}}</span>
+      <span class="ml-3 mb-2 comment-time pull-right">{{$comment->created_at}}</span>
         
 
 <!-- Reply display -->
   <div class="display-reply-comment">
       @if($comment->comment_reply !== null)
        <div class="comment-head">
-        <span>Reply from
-        <span class="comment-name">{{$comment->restaurant->name}}</span>
-         <span class="ml-3 comment-time ">{{$comment->created_at}}</span>
-        </span>
+        <span class='mr-2'>Reply from</span>
+        <span class="comment-name">{{$comment->restaurant->name}}</span>       
        </div>
        <div class="comment-body">
          <p >{{$comment->comment_reply->reply}}</p>   
          <hr class="hr2">
+         <span class="ml-3 mb-2 comment-time pull-right ">{{$comment->created_at}}</span>
        </div> 
       @endif
   </div>
