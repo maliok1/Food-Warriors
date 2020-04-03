@@ -248,10 +248,8 @@
 <!-- Reply to a comment-->
   @auth
     
-  
     <div class="reply-comment">
       @if(auth()->user()->id === $restaurant->user_id)
-      
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
       @csrf
         <textarea class="form-comment" type="text" id="" name="reply"></textarea>
