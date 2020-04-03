@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+* {
+  outline: none;
+}
+
 html {
   background-color: #A7D2CB80;
 }
@@ -10412,6 +10416,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  outline: none;
+}
+
 html {
   background-color: #A7D2CB80;
 }
@@ -10521,15 +10529,34 @@ nav.navbar .dropdown-menu-right {
 .restaurant-title {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 0 auto;
   margin-top: 2%;
 }
 .restaurant-title h2 {
   font-weight: bold;
 }
 
+.disc {
+  align-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .disc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 769px) {
+  #map {
+    width: 50vw;
+    padding: 0 0;
+  }
+}
 .con {
   margin: 2%;
   display: flex;

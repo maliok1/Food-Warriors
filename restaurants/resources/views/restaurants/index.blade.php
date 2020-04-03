@@ -22,10 +22,10 @@
             <div class="d-inline-flex m-3">
               <div class="cards">
                   @if($restaurant->image)
-                    <img src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
+                  <a href="/restaurant/{{$restaurant->id}}"><img src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
                   @endif
                     <div class="restaurant-body-card">
-                    <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
+                    <h2>{{$restaurant->name}}</h2></a>
                     <h5 class="card-title">{{$restaurant->city}}</h5>
                   </div>
                  
