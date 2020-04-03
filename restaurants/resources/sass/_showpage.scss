@@ -1,6 +1,5 @@
 .reply-comment {
   margin-left: 90px;
-  
 }
 .restaurant-title {
   display: flex;
@@ -10,10 +9,8 @@
   margin-top:2%;
   h2 {
     font-weight: bold;
-    
   }
 }
-
 .disc {
   align-content: center;
   align-items: center;
@@ -27,22 +24,18 @@
     align-items: center;
 }
 }
-
 @media(min-width: 769px ){
   #map { 
     width: 50vw;
     padding: 0 0;
 }
 }
-
 .con {
   margin: 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-   
 }
-
 .button-style {
   margin: 6px;
   padding: 0.5rem 0.7rem;
@@ -78,11 +71,9 @@
   background-color: rgb(173, 86, 66);
   color: white;
 }
-
 .comment-section {
   width: 50%;
   margin: 4% 5%;
-
 }
 .user-img{
   width: 80px;
@@ -96,12 +87,9 @@
 .comment-head {
   margin-left: 2%;
   margin-bottom: 2%;
-  
 }
-
 .comment-body {
   margin-left: 5%;
-  
 }
 .reply-comment {
   margin-top:2%;
@@ -121,15 +109,12 @@
   -o-border-radius: 1px solid grey;
 }
 .createmeal {
-  
 }
-
 .deleteBTN {
   margin-top: 1%;
   margin-left: 75%;
 }
 .submitBTN {
-  
   margin-top: 1%;
   margin-left: 83%;
 }
@@ -148,9 +133,7 @@
 .login-to-comment {
   text-align: end;
   margin: 7%;
-  
 }
-
 .comment-time{
   font-size: 0.7rem;
   font-weight: lighter;
@@ -158,14 +141,12 @@
   text-shadow: 0.5px 0.5px rgb(167, 161, 161);
   margin-top: 1%;
 }
-
 .comment-name{
   font-size: 1.5rem;
   font-weight: bolder;
   color: #874C62;
   text-shadow: 0.2px 0.5px rgb(167, 161, 161);
 }
-
 .comments-title{
   color: #C98474;
   text-shadow: 0.5px 0.5px rgb(167, 161, 161);
