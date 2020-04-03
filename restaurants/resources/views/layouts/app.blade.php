@@ -19,7 +19,7 @@ footer {
 #map {
     height: 400px;
     width: 80%;
-    margin-left: 5em;
+    margin-left: 2.5em;
     margin-bottom: 2em;
 }
 </style>

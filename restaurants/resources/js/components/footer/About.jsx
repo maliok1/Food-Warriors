@@ -19,7 +19,7 @@ export default class About extends Component {
                     <Col xs={12} sm={4} className="person-wrapper">
                         <Image src="images/Bakhodir.jpg"  className="profile-pic" />
                         <h3>Bakhodir</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At debitis consectetur quis, temporibus tempore nostrum tempora laborum quibusdam perferendis? Et suscipit tempora doloribus officia mollitia molestias, at voluptas praesentium! Esse.</p>
+                        <p>I am a Junior Full-stack Web Developer with  a passion for writing code. I actively seek out new technologies and stay up-to-date on industry trends and advancements.</p>
                     </Col> 
                     <Col xs={12} sm={4} className="person-wrapper">
                         <Image src="images/Michaela.jpg"  className="profile-pic" />

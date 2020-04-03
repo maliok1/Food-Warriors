@@ -4,20 +4,20 @@
 
     <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
   <div class="container restaurant-title">
-  <div class="row no-gutter">
-    <div class="col-3">
+  <div class="row">
+    <div class="col-sm-4 disc">
     <h2>{{$restaurant->name}}</h2>
     <p>Location: {{$restaurant->address_address}}</p>
     <p>Description: {{$restaurant->description}}</p>
     </div>
-    <di class="col-9"><div id="map"></div></div>
+    <di class="col-sm-8"><div id="map"></img></div>
     </div>
     <script>
       function initMap() {
           const position = {lat: {{$restaurant->address_latitude}}, lng: {{$restaurant->address_longitude}}};
           const opt = {
               center: position,
-              zoom: 17,
+              zoom: 15,
           };
           const map = new google.maps.Map(document.getElementById("map"), opt);
 
