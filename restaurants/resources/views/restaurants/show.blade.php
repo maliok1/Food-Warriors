@@ -2,7 +2,6 @@
 
 @section('restaurant detailed')
 
-<<<<<<< HEAD
     <img class="img-fluid" style="margin-top:-24px; width: 100vw; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
   <div class="container restaurant-title">
   <div class="row">
@@ -43,26 +42,14 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHvKCIIB8pZZY5IGb9huLHrxD1gyo7z9Q&callback=initMap"
   type="text/javascript"></script>
  
-=======
-    <img class="img-fluid" style="margin-top:-24px; width: 100%; height: 22rem; object-fit: cover" src="{{$restaurant->image}}" alt="{{$restaurant->name}}" > 
-  <div class=" restaurant-title">
-    <h2>{{$restaurant->name}}</h2>
-    <h3>{{$restaurant->city}}</h3>
-    <p>{{$restaurant->description}}</p>
- </div>
->>>>>>> michaela2
 <!-- A form for to create a meal -->
     
     @auth
     @if(auth()->user()->id === $restaurant->user_id)
     <hr>
     <h2 class="m-2 ml-5 ">Create a new meal package</h2>
-<<<<<<< HEAD
-
-=======
 <br>
   <div class="ml-4">
->>>>>>> michaela2
     <div class="card-body">
    
       <form class= "meal-form" action="{{ action ('MealController@storeMeal' , $restaurant->id )}}" method="post" enctype="multipart/form-data">
@@ -70,7 +57,7 @@
         <div class="form-group row ">
           <label for=""  class="col-md-2 col-form-label text-md-right">Name of the package</label>
           <div class="col-md-4">
-            <input type="text" name="name" class="form-controll">
+            <input type="text" name="name" class="form-controll" action="<?php echo $_SERVER["PHP_SELF"];?>">
           </div>
           <label for=""  class="col-md-2 col-form-label text-md-right">Describe your package</label>
           <div class="col-md-4">
