@@ -246,7 +246,7 @@
     
 <!-- Reply to a comment-->
   @auth
-  @if($comment->comment_reply == null)
+    
     <div class="reply-comment">
       @if(auth()->user()->id === $restaurant->user_id)
       <form action="{{ action ('CommentReplyController@store' , $comment->id )}}" method="post">
@@ -255,7 +255,6 @@
         <input class=" mt-2 button-style submitBTN" type="submit" value="Reply">
       </form>
       @endif
-    @endif
     </div> 
   
   @endauth    
