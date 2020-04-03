@@ -24,13 +24,8 @@
                   <a href="/restaurant/{{$restaurant->id}}"><img src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
                   @endif
                     <div class="restaurant-body-card">
-<<<<<<< HEAD
                     <a href="/restaurant/{{$restaurant->id}}"><h2>{{$restaurant->name}}</h2></a>
                     <h5 class="card-title">{{$restaurant->address_address}}</h5>
-=======
-                    <h2>{{$restaurant->name}}</h2></a>
-                    <h5 class="card-title">{{$restaurant->city}}</h5>
->>>>>>> master
                   </div>
                </div>
               </div>
